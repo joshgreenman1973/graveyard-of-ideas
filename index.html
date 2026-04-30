@@ -685,7 +685,7 @@
     font-family: var(--serif);
     font-size: 0.88rem;
     color: var(--ink);
-    min-width: 980px;
+    table-layout: auto;
   }
 
   .appendix-table thead th {
@@ -722,16 +722,16 @@
     line-height: 1.45;
   }
 
-  .appendix-table .col-year { font-family: var(--sans); font-weight: 700; color: var(--accent); white-space: nowrap; }
-  .appendix-table .col-candidate { font-weight: 600; color: var(--ink); white-space: nowrap; }
-  .appendix-table .col-proposal { color: var(--ink); min-width: 16rem; }
-  .appendix-table .col-chapter { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
-  .appendix-table .col-fate { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; font-weight: 600; }
+  .appendix-table .col-year { font-family: var(--sans); font-weight: 700; color: var(--accent); white-space: nowrap; width: 4rem; }
+  .appendix-table .col-candidate { font-weight: 600; color: var(--ink); }
+  .appendix-table .col-proposal { color: var(--ink); }
+  .appendix-table .col-chapter { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .appendix-table .col-fate { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; font-weight: 600; }
   .appendix-table .col-fate.adopted { color: var(--moss); }
   .appendix-table .col-fate.alive { color: var(--accent); }
   .appendix-table .col-fate.buried { color: var(--muted); }
   .appendix-table .col-threads { font-family: var(--sans); font-size: 0.74rem; color: var(--ink-soft); }
-  .appendix-table .col-source { font-size: 0.82rem; color: var(--ink-soft); min-width: 14rem; }
+  .appendix-table .col-source { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.45; word-break: break-word; }
 
   .appendix-notes {
     background: var(--paper-card);
@@ -868,10 +868,8 @@
 
 <!-- LEAD ESSAY -->
 <section class="lead">
-  <p class="kicker">In New York, ideas don't die. They just change carriers.</p>
-  <p>Congestion pricing was proposed by William F. Buckley Jr. in 1965 and didn't take effect until 2025. Universal pre-kindergarten was a Socialist Party plank in 1932 and a winning issue 82 years later. Civilian police oversight, public housing, the 311 hotline, body cameras, paid sick leave, decriminalized marijuana, community land trusts, even the basic idea of Uber — each was first championed by a candidate who lost, often badly, and often decades before the idea became law.</p>
-  <p>What follows is an interactive companion to "The Loser's Bracket," a catalog of policy proposals from losing New York City mayoral candidates between 1886 and 2025. Some were eventually implemented. Some are still on the shelf. A few were genuinely terrible. The most generative losing campaigns came from the ideological edges — Socialists in the 1910s and 1930s, Buckley's Conservative run in 1965, the Mailer-Breslin performance art piece in 1969, the ranked-choice scrum of 2021 — because candidates who knew they would lose felt free to propose what cautious frontrunners couldn't.</p>
-  <p>The four chapters below borrow the report's taxonomy: ideas that eventually won; ideas ahead of their time but still mostly untried; ideas that were probably bad; and the truly strange. The pattern is consistent. The diagnosis tends to be more durable than the prescription. Click any card to read the full back-story; switch to the timeline to see how arguments echo across the decades; switch to pairings to follow individual ideas across generations and political camps.</p>
+  <p class="kicker">In New York, ideas don't die — they just change carriers.</p>
+  <p>An interactive catalog of policy proposals from losing New York City mayoral candidates between 1886 and 2025: what got buried, what came back, and what's still waiting.</p>
 </section>
 
 <!-- STATS STRIP -->
@@ -936,7 +934,7 @@
   <h2>A century of arguments, plotted</h2>
   <p class="sub">Each dot is one losing-candidate proposal, placed at the year it was first floated. Color marks fate. Hover to see the proposal.</p>
   <div class="timeline-wrap">
-    <svg id="timeline-svg" class="timeline-svg" viewBox="0 0 1100 540" preserveAspectRatio="xMinYMid meet"></svg>
+    <svg id="timeline-svg" class="timeline-svg" viewBox="0 0 1180 540" preserveAspectRatio="xMinYMid meet"></svg>
   </div>
 </section>
 
@@ -968,7 +966,7 @@
   </div>
   <div class="appendix-notes">
     <h3>How to read this</h3>
-    <p><strong>Source</strong> attributes each entry to the most direct provenance available. The companion report — Greenman, "The Loser's Bracket" (2026) — is the immediate compiler of all entries; specific upstream sources are listed where the report names them. Where only secondary press coverage exists for a contemporary entry (2009-2025 candidates), that is noted explicitly.</p>
+    <p><strong>Source</strong> attributes each entry to the most direct provenance available — the candidate's published platform where it survives, the relevant biography or memoir, contemporaneous press coverage, or Wikipedia entries that themselves cite primary materials. Where only secondary press coverage exists for a contemporary entry (2009-2025 candidates), that is noted.</p>
     <p><strong>Categorization</strong> follows the report's four-chapter taxonomy: <em>won</em> (the idea became law in some form), <em>ahead</em> (still in serious circulation, not yet enacted), <em>bad</em> (the prescription was wrong, not just the politics), <em>strange</em> (in a category of its own).</p>
     <p><strong>Fate</strong> is the more granular cut: <em>adopted</em> means meaningfully implemented in some form; <em>alive</em> means in active policy debate or partial implementation; <em>buried</em> means decisively rejected with no current movement.</p>
     <p><strong>What this is not.</strong> This is not a complete record. Several losing campaigns — Dinkins 1993, Ferrer 2001 and 2005, Thompson 2013 — produced platforms that haven't been mined here. Reader corrections welcome.</p>
@@ -1015,7 +1013,7 @@
       <p>"Failed" here means lost a general election or a major-party primary, between 1886 and 2025. Henry George ran in 1886 — pre-consolidation — but he is the godfather of the genre and is included. Candidates who later won (Bill de Blasio's pre-K plank, which Norman Thomas first proposed in 1932) appear when the idea, not the eventual victor, is the unit of analysis.</p>
 
       <h4>Categorization</h4>
-      <p>The four chapters borrow the structure of the companion report: <em>eventually won</em> (the idea became law in some form), <em>ahead of their time</em> (still in serious circulation, not yet enacted), <em>probably bad</em> (the implementation was wrong, not just the politics), and <em>truly strange</em> (in a category of their own). The "fate" filter — adopted, alive, buried — is a more granular version of the same axis.</p>
+      <p>Four chapters: <em>eventually won</em> (the idea became law in some form), <em>ahead of their time</em> (still in serious circulation, not yet enacted), <em>probably bad</em> (the implementation was wrong, not just the politics), and <em>truly strange</em> (in a category of their own). The "fate" filter — adopted, alive, buried — is a more granular version of the same axis.</p>
 
       <h4>Sources</h4>
       <p>Drawn from the Gotham Center for New York City History, City Journal, Manhattan Institute, Jacobin, the Forward, the New-York Historical Society, the LaGuardia and Wagner Archives, Skynomics Blog, and contemporaneous press. Specific candidate platforms were cross-checked against multiple accounts where available.</p>
@@ -1036,7 +1034,7 @@
 </section>
 
 <footer class="footer">
-  An interactive companion to "The Loser's Bracket." Last updated April 2026.
+  Last updated April 2026.
 </footer>
 
 <script>
@@ -1602,38 +1600,37 @@ const PAIRINGS = [
    SOURCES
    ============================== */
 const SOURCES = {
-  // Per-candidate primary attribution; falls through to default
-  "Henry George": "George, Progress and Poverty (1879); Wikipedia: 1886 New York City mayoral election; Greenman, The Loser's Bracket (2026)",
-  "Morris Hillquit": "Stromquist, contemporaneous Socialist Party publications (cited in Greenman 2026); Wikipedia: Morris Hillquit; Gotham Center essays",
-  "Norman Thomas": "Wikipedia: Norman Thomas; FDR-Thomas exchange documented in multiple Thomas biographies; Greenman 2026",
-  "William Randolph Hearst": "New-York Historical Society; Wikipedia: 1905 New York City mayoral election; Greenman 2026",
-  "Vito Marcantonio": "Wikipedia: Vito Marcantonio; CCRB official history (nyc.gov/ccrb); Greenman 2026",
-  "William F. Buckley Jr.": "Buckley, The Unmaking of a Mayor (1966); Wikipedia: 1965 New York City mayoral election; Greenman 2026",
-  "Norman Mailer / Jimmy Breslin": "Flaherty, Managing Mailer (1970); Theodore White contemporaneous reporting (cited in Greenman 2026); Wikipedia: 1969 New York City mayoral election",
-  "Norman Mailer": "Flaherty, Managing Mailer (1970); Wikipedia: 1969 New York City mayoral election; Greenman 2026",
-  "John Marchi": "Wikipedia: John Marchi; New York Times archive; Greenman 2026",
-  "Herman Badillo": "Wikipedia: Herman Badillo; Greenman 2026; Carter-era HUD records on South Bronx initiatives",
-  "Bella Abzug": "Abzug, Bella! Ms. Abzug Goes to Washington (1972); Wikipedia: Bella Abzug; Greenman 2026",
-  "Andrew Stein": "Wikipedia: Andrew Stein; New York Times archive; Greenman 2026",
-  "Richard Ravitch": "Ravitch, So Much to Do (2014); Wikipedia: Richard Ravitch; Greenman 2026",
-  "Ruth Messinger": "Mandery, The Campaign (1999); Wikipedia: 1997 New York City mayoral election; Greenman 2026",
-  "Mark Green": "Wikipedia: Mark J. Green; nyc.gov 311 history; Greenman 2026",
-  "William Thompson": "Contemporaneous press coverage of 2009 mayoral race (NYT, Daily News, Crain's); Greenman 2026",
-  "Joseph Lhota": "Contemporaneous press coverage of 2013 mayoral race (NYT, NY Post, Politico NY); Greenman 2026",
-  "Bill de Blasio (and 80 years of socialists)": "Press coverage of 2013 campaign; Norman Thomas 1932 platform (cited above); Greenman 2026",
-  "John Catsimatidis": "Contemporaneous 2013 campaign coverage; City of Yes documentation 2024; Greenman 2026",
-  "Scott Stringer": "Stringer 2013, 2021, and 2025 platform documents; Public Bank NYC coalition materials; Greenman 2026",
-  "Maya Wiley": "Wiley 2021 platform; Wikipedia: Maya Wiley; Greenman 2026",
-  "Andrew Yang": "Yang 2021 platform; Forward (the); Greenman 2026",
-  "Shaun Donovan": "Donovan 2021 platform; Greenman 2026",
-  "Kathryn Garcia": "Garcia 2021 platform; DOT open-streets program documentation; Greenman 2026",
-  "Curtis Sliwa": "Sliwa 2021 platform; press coverage; Greenman 2026",
-  "Zohran Mamdani": "Mamdani 2025 platform; Jacobin; New York Times campaign coverage; Greenman 2026",
-  "Andrew Cuomo": "Cuomo 2025 campaign documents; press coverage; Greenman 2026"
+  "Henry George": "George, Progress and Poverty (1879); Wikipedia: 1886 NYC mayoral election",
+  "Morris Hillquit": "Wikipedia: Morris Hillquit; Stromquist, contemporaneous Socialist Party publications; Gotham Center essays",
+  "Norman Thomas": "Wikipedia: Norman Thomas; FDR-Thomas exchange documented in multiple Thomas biographies",
+  "William Randolph Hearst": "New-York Historical Society; Wikipedia: 1905 NYC mayoral election",
+  "Vito Marcantonio": "Wikipedia: Vito Marcantonio; CCRB official history (nyc.gov/ccrb)",
+  "William F. Buckley Jr.": "Buckley, The Unmaking of a Mayor (1966); Wikipedia: 1965 NYC mayoral election",
+  "Norman Mailer / Jimmy Breslin": "Flaherty, Managing Mailer (1970); Theodore White, contemporaneous reporting; Wikipedia: 1969 NYC mayoral election",
+  "Norman Mailer": "Flaherty, Managing Mailer (1970); Wikipedia: 1969 NYC mayoral election",
+  "John Marchi": "Wikipedia: John Marchi; New York Times archive",
+  "Herman Badillo": "Wikipedia: Herman Badillo; Carter-era HUD records on South Bronx initiatives",
+  "Bella Abzug": "Abzug, Bella! Ms. Abzug Goes to Washington (1972); Wikipedia: Bella Abzug",
+  "Andrew Stein": "Wikipedia: Andrew Stein; New York Times archive",
+  "Richard Ravitch": "Ravitch, So Much to Do (2014); Wikipedia: Richard Ravitch",
+  "Ruth Messinger": "Mandery, The Campaign (1999); Wikipedia: 1997 NYC mayoral election",
+  "Mark Green": "Wikipedia: Mark J. Green; nyc.gov 311 history",
+  "William Thompson": "Contemporaneous press coverage of 2009 mayoral race (NYT, Daily News, Crain's)",
+  "Joseph Lhota": "Contemporaneous press coverage of 2013 mayoral race (NYT, NY Post, Politico NY)",
+  "Bill de Blasio (and 80 years of socialists)": "Press coverage of 2013 campaign; Norman Thomas 1932 Socialist platform",
+  "John Catsimatidis": "Contemporaneous 2013 campaign coverage; City of Yes documentation 2024",
+  "Scott Stringer": "Stringer 2013, 2021, and 2025 platform documents; Public Bank NYC coalition materials",
+  "Maya Wiley": "Wiley 2021 platform; Wikipedia: Maya Wiley",
+  "Andrew Yang": "Yang 2021 platform; press coverage",
+  "Shaun Donovan": "Donovan 2021 platform; press coverage",
+  "Kathryn Garcia": "Garcia 2021 platform; DOT open-streets program documentation",
+  "Curtis Sliwa": "Sliwa 2021 platform; press coverage",
+  "Zohran Mamdani": "Mamdani 2025 platform; Jacobin; New York Times campaign coverage",
+  "Andrew Cuomo": "Cuomo 2025 campaign documents; press coverage"
 };
 
 function sourceFor(p) {
-  return SOURCES[p.candidate] || `Greenman, The Loser's Bracket (2026)`;
+  return SOURCES[p.candidate] || "Wikipedia; contemporaneous press coverage";
 }
 
 /* ==============================
@@ -1749,8 +1746,8 @@ function renderChapters() {
    ============================== */
 function renderTimeline() {
   const list = PROPOSALS.filter(filterPredicate);
-  const W = 1100, H = 540;
-  const pad = { l: 80, r: 30, t: 60, b: 60 };
+  const W = 1180, H = 540;
+  const pad = { l: 170, r: 30, t: 60, b: 60 };
   const minYear = 1880, maxYear = 2030;
   const xScale = y => pad.l + (y - minYear) / (maxYear - minYear) * (W - pad.l - pad.r);
 
