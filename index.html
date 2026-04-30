@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light only" />
+<title>The Graveyard of Good, Bad and So-So Ideas</title>
+<meta name="description" content="A century-plus of New York City mayoral proposals from candidates who lost — and the surprising number that eventually clawed their way back to life." />
+
+<style>
+  :root {
+    --paper: #f5f0e6;
+    --paper-card: #fbf8f0;
+    --ink: #1a1816;
+    --ink-soft: #3a3733;
+    --muted: #76716a;
+    --rule: #d8cfba;
+    --rule-soft: #e7dfca;
+    --accent: #8c2820;
+    --accent-soft: #c0644a;
+    --gold: #a07a1f;
+    --moss: #5a6b3c;
+    --slate: #4a5566;
+
+    --serif: "Charter", "Iowan Old Style", "Iowan Old Style BT", "Sitka Text", "Source Serif Pro", Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  html { color-scheme: light only; }
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--ink); }
+
+  /* ==============================
+     HERO
+     ============================== */
+  .hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 5rem 2rem 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 1.4rem 0;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(2.4rem, 5.6vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.012em;
+    margin: 0 0 1.4rem 0;
+    color: var(--ink);
+    max-width: 18ch;
+  }
+
+  .hero h1 .roman { font-style: normal; }
+
+  .hero .dek {
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin: 0 0 1.6rem 0;
+    max-width: 38rem;
+  }
+
+  .hero-meta {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta strong { color: var(--ink); font-weight: 600; }
+
+  /* ==============================
+     LEAD ESSAY
+     ============================== */
+  .lead {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2rem;
+  }
+
+  .lead p {
+    font-size: 1.08rem;
+    line-height: 1.65;
+    margin: 0 0 1.15rem 0;
+    color: var(--ink-soft);
+  }
+
+  .lead p.kicker {
+    font-size: 1.45rem;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 1.6rem;
+  }
+
+  .lead p:first-of-type:not(.kicker)::first-letter {
+    font-size: 3.6rem;
+    float: left;
+    line-height: 0.85;
+    padding: 0.35rem 0.55rem 0 0;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* ==============================
+     STATS STRIP
+     ============================== */
+  .stats {
+    max-width: 1080px;
+    margin: 1.5rem auto 0;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .stat .num {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat .label {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  /* ==============================
+     CONTROLS
+     ============================== */
+  .controls {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 2rem;
+  }
+
+  .controls-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0.85rem 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: var(--sans);
+  }
+
+  .ctrl-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--muted);
+    margin-right: 0.4rem;
+  }
+
+  .ctrl-group { display: flex; align-items: center; gap: 0.4rem; }
+
+  input[type="text"], select {
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid var(--rule);
+    background: var(--paper-card);
+    color: var(--ink);
+    border-radius: 2px;
+  }
+
+  input[type="text"] { width: 200px; }
+
+  input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(140, 40, 32, 0.12);
+  }
+
+  .view-toggle {
+    display: inline-flex;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .view-toggle button {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.5rem 0.85rem;
+    background: var(--paper-card);
+    color: var(--ink);
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .view-toggle button + button { border-left: 1px solid var(--ink); }
+
+  .view-toggle button.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* ==============================
+     CHAPTERS
+     ============================== */
+  .chapters { max-width: 1080px; margin: 0 auto; padding: 2.5rem 2rem 1rem; }
+
+  .chapter { margin-bottom: 4rem; scroll-margin-top: 5rem; }
+
+  .chapter-head {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .chapter-num {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .chapter-num .ch-roman {
+    display: block;
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 0.9;
+    margin-top: 0.4rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .chapter h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 0.85rem 0;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  .chapter-intro {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 56ch;
+  }
+
+  /* ==============================
+     CARDS
+     ============================== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 1.3rem 1.4rem 1.2rem;
+    position: relative;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    border-color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  .card-slug {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .card-slug .year { color: var(--accent); font-weight: 700; }
+  .card-slug .candidate { color: var(--ink); font-weight: 600; }
+
+  .card-mark {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .card-mark[data-fate="adopted"] { color: var(--moss); }
+  .card-mark[data-fate="alive"] { color: var(--accent); }
+  .card-mark[data-fate="buried"] { color: var(--muted); }
+
+  .card-proposal {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.18rem;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 0.7rem 0;
+    letter-spacing: -0.005em;
+  }
+
+  .card-summary {
+    font-family: var(--serif);
+    font-size: 0.94rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 0.85rem 0;
+  }
+
+  .card-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0 0 0.85rem 0;
+    padding-left: 0.8rem;
+    border-left: 2px solid var(--accent);
+  }
+
+  .card-quote .attrib {
+    font-style: normal;
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  .card-fate {
+    margin-top: auto;
+    padding-top: 0.85rem;
+    border-top: 1px dotted var(--rule);
+    font-family: var(--serif);
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  .card-fate strong {
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-threads {
+    margin-top: 0.7rem;
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .thread-tag {
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    padding: 0.18rem 0.5rem;
+    border-radius: 999px;
+    background: var(--rule-soft);
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+
+  .empty-chapter {
+    grid-column: 1 / -1;
+    padding: 2rem 0;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* ==============================
+     PATTERNS / "WHAT THIS TELLS US"
+     ============================== */
+  .patterns {
+    max-width: 1080px;
+    margin: 3rem auto 0;
+    padding: 3rem 2rem;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .patterns-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .patterns h2 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 2.2rem 0;
+    max-width: 22ch;
+  }
+
+  .patterns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .pattern h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--paper);
+    margin: 0 0 0.7rem 0;
+    border-top: 2px solid var(--accent-soft);
+    padding-top: 0.8rem;
+  }
+
+  .pattern p {
+    font-family: var(--serif);
+    font-size: 0.96rem;
+    line-height: 1.55;
+    color: rgba(245, 240, 230, 0.8);
+    margin: 0;
+  }
+
+  /* ==============================
+     PAIRINGS
+     ============================== */
+  .pairings {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: none;
+  }
+
+  .pairings.active { display: block; }
+
+  .pairings h2 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: var(--ink);
+  }
+
+  .pairings .sub {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 0 0 2rem 0;
+  }
+
+  .pairing {
+    border-top: 1px solid var(--rule);
+    padding: 1.6rem 0;
+  }
+
+  .pairing:last-child { border-bottom: 1px solid var(--rule); }
+
+  .pairing h3 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    line-height: 1.25;
+    font-weight: 700;
+    margin: 0 0 0.6rem 0;
+    color: var(--accent);
+  }
+
+  .pairing p {
+    font-family: var(--serif);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 0.7rem 0;
+  }
+
+  .pairing .who {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ==============================
+     TIMELINE
+     ============================== */
+  .timeline-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: none;
+  }
+
+  .timeline-section.active { display: block; }
+
+  .timeline-section h2 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: var(--ink);
+  }
+
+  .timeline-section .sub {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 0 0 2rem 0;
+  }
+
+  .timeline-wrap {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .timeline-svg { display: block; min-width: 980px; }
+
+  .timeline-dot { cursor: pointer; transition: all 0.15s ease; }
+  .timeline-dot:hover { r: 8; }
+
+  .timeline-tooltip {
+    position: absolute;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.7rem 0.9rem;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    line-height: 1.4;
+    max-width: 260px;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  }
+
+  .timeline-tooltip .tt-title { font-weight: 700; margin-bottom: 0.25rem; font-size: 0.86rem; }
+  .timeline-tooltip .tt-meta { color: rgba(245,240,230,0.65); font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* ==============================
+     APPENDIX
+     ============================== */
+  .appendix {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: none;
+  }
+  .appendix.active { display: block; }
+
+  .appendix-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .appendix h2 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: var(--ink);
+  }
+
+  .appendix .sub {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .csv-btn {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.15s ease;
+  }
+  .csv-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+  .appendix-meta {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 1.4rem 0 0.6rem 0;
+  }
+
+  .appendix-tablewrap {
+    border: 1px solid var(--rule);
+    background: var(--paper-card);
+    overflow-x: auto;
+    margin-bottom: 2rem;
+  }
+
+  .appendix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    color: var(--ink);
+    min-width: 980px;
+  }
+
+  .appendix-table thead th {
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--rule-soft);
+    text-align: left;
+    padding: 0.65rem 0.85rem;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+
+  .appendix-table th.sort { cursor: pointer; user-select: none; }
+  .appendix-table th.sort:hover { background: var(--rule); }
+  .appendix-table th.sort::after {
+    content: " \2195";
+    color: var(--muted);
+    font-size: 0.7rem;
+  }
+  .appendix-table th.sort.asc::after  { content: " \25B2"; color: var(--accent); }
+  .appendix-table th.sort.desc::after { content: " \25BC"; color: var(--accent); }
+
+  .appendix-table tbody tr { border-bottom: 1px solid var(--rule-soft); }
+  .appendix-table tbody tr:hover { background: rgba(140, 40, 32, 0.04); }
+  .appendix-table tbody tr:last-child { border-bottom: none; }
+
+  .appendix-table td {
+    padding: 0.7rem 0.85rem;
+    vertical-align: top;
+    line-height: 1.45;
+  }
+
+  .appendix-table .col-year { font-family: var(--sans); font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .appendix-table .col-candidate { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .appendix-table .col-proposal { color: var(--ink); min-width: 16rem; }
+  .appendix-table .col-chapter { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .appendix-table .col-fate { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; font-weight: 600; }
+  .appendix-table .col-fate.adopted { color: var(--moss); }
+  .appendix-table .col-fate.alive { color: var(--accent); }
+  .appendix-table .col-fate.buried { color: var(--muted); }
+  .appendix-table .col-threads { font-family: var(--sans); font-size: 0.74rem; color: var(--ink-soft); }
+  .appendix-table .col-source { font-size: 0.82rem; color: var(--ink-soft); min-width: 14rem; }
+
+  .appendix-notes {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 1.4rem 1.6rem;
+    margin-top: 1rem;
+    font-family: var(--serif);
+  }
+
+  .appendix-notes h3 {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 0.85rem 0;
+  }
+
+  .appendix-notes p {
+    font-size: 0.94rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .appendix-notes p:last-child { margin-bottom: 0; }
+
+  /* ==============================
+     SOURCES
+     ============================== */
+  .sources {
+    max-width: 760px;
+    margin: 4rem auto 0;
+    padding: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .sources details { font-family: var(--serif); }
+  .sources summary {
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    padding: 0.6rem 0;
+    list-style: none;
+  }
+  .sources summary::-webkit-details-marker { display: none; }
+  .sources summary::before {
+    content: "+";
+    display: inline-block;
+    width: 1.2rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .sources details[open] summary::before { content: "−"; }
+
+  .sources-body {
+    padding: 1rem 0 0 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .sources-body h4 {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 1.2rem 0 0.4rem 0;
+  }
+
+  .sources-body p, .sources-body ul { margin: 0 0 0.8rem 0; }
+  .sources-body ul { padding-left: 1.2rem; }
+
+  /* ==============================
+     FOOTER
+     ============================== */
+  .footer {
+    max-width: 1080px;
+    margin: 2rem auto 0;
+    padding: 2rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* ==============================
+     RESPONSIVE
+     ============================== */
+  @media (max-width: 720px) {
+    body { font-size: 17px; }
+    .hero { padding: 3rem 1.25rem 2rem; }
+    .lead { padding: 2rem 1.25rem 1.5rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; padding: 1.4rem 1.25rem; }
+    .controls-inner { padding: 0.7rem 1.25rem; gap: 0.6rem; }
+    input[type="text"] { width: 100%; }
+    .ctrl-group { flex-wrap: wrap; }
+    .chapters { padding: 2rem 1.25rem 0.5rem; }
+    .chapter-head { grid-template-columns: 1fr; gap: 0.6rem; }
+    .chapter-num .ch-roman { font-size: 2.6rem; }
+    .grid { grid-template-columns: 1fr; }
+    .patterns { padding: 2.5rem 1.25rem; }
+    .pairings, .timeline-section { padding: 1.5rem 1.25rem; }
+    .sources { padding: 1.5rem 1.25rem; }
+    .appendix { padding: 1.5rem 1.25rem; }
+    .appendix-head { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+
+  /* hide chapters when not in cards view */
+  .hidden { display: none !important; }
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow">An interactive essay</div>
+  <h1>The graveyard of <span class="roman">good</span>, bad and so-so ideas</h1>
+  <p class="dek">A century-and-change of New York City mayoral platforms from candidates who lost the race — and the surprising number of their proposals that eventually clawed their way back to life.</p>
+  <div class="hero-meta">
+    <span><strong>1886 to 2025</strong></span>
+    <span>48 proposals from 22 losing campaigns</span>
+    <span>Median lag from loss to law: about 22 years</span>
+  </div>
+</header>
+
+<!-- LEAD ESSAY -->
+<section class="lead">
+  <p class="kicker">In New York, ideas don't die. They just change carriers.</p>
+  <p>Congestion pricing was proposed by William F. Buckley Jr. in 1965 and didn't take effect until 2025. Universal pre-kindergarten was a Socialist Party plank in 1932 and a winning issue 82 years later. Civilian police oversight, public housing, the 311 hotline, body cameras, paid sick leave, decriminalized marijuana, community land trusts, even the basic idea of Uber — each was first championed by a candidate who lost, often badly, and often decades before the idea became law.</p>
+  <p>What follows is an interactive companion to "The Loser's Bracket," a catalog of policy proposals from losing New York City mayoral candidates between 1886 and 2025. Some were eventually implemented. Some are still on the shelf. A few were genuinely terrible. The most generative losing campaigns came from the ideological edges — Socialists in the 1910s and 1930s, Buckley's Conservative run in 1965, the Mailer-Breslin performance art piece in 1969, the ranked-choice scrum of 2021 — because candidates who knew they would lose felt free to propose what cautious frontrunners couldn't.</p>
+  <p>The four chapters below borrow the report's taxonomy: ideas that eventually won; ideas ahead of their time but still mostly untried; ideas that were probably bad; and the truly strange. The pattern is consistent. The diagnosis tends to be more durable than the prescription. Click any card to read the full back-story; switch to the timeline to see how arguments echo across the decades; switch to pairings to follow individual ideas across generations and political camps.</p>
+</section>
+
+<!-- STATS STRIP -->
+<section class="stats">
+  <div class="stat"><span class="num">48</span><span class="label">Proposals tracked</span></div>
+  <div class="stat"><span class="num">16</span><span class="label">Eventually adopted, in whole or part</span></div>
+  <div class="stat"><span class="num">24</span><span class="label">Still alive in current debate</span></div>
+  <div class="stat"><span class="num">8</span><span class="label">Decisively buried</span></div>
+</section>
+
+<!-- CONTROLS -->
+<section class="controls">
+  <div class="controls-inner">
+    <div class="ctrl-group">
+      <span class="ctrl-label">Search</span>
+      <input id="search-input" type="text" placeholder="candidate, proposal, idea" />
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Era</span>
+      <select id="decade-select">
+        <option value="all">All</option>
+        <option value="1880">1880s</option>
+        <option value="1900">1900s</option>
+        <option value="1910">1910s</option>
+        <option value="1920">1920s</option>
+        <option value="1930">1930s</option>
+        <option value="1940">1940s</option>
+        <option value="1960">1960s</option>
+        <option value="1970">1970s</option>
+        <option value="1980">1980s</option>
+        <option value="1990">1990s</option>
+        <option value="2000">2000s</option>
+        <option value="2010">2010s</option>
+        <option value="2020">2020s</option>
+      </select>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Fate</span>
+      <select id="fate-select">
+        <option value="all">All</option>
+        <option value="adopted">Eventually adopted</option>
+        <option value="alive">Still alive</option>
+        <option value="buried">Buried</option>
+      </select>
+    </div>
+    <div class="ctrl-group" style="margin-left:auto;">
+      <div class="view-toggle">
+        <button id="v-cards" class="active">Cards</button>
+        <button id="v-timeline">Timeline</button>
+        <button id="v-pairings">Pairings</button>
+        <button id="v-appendix">Appendix</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<main class="chapters" id="chapters"></main>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="timeline-section">
+  <h2>A century of arguments, plotted</h2>
+  <p class="sub">Each dot is one losing-candidate proposal, placed at the year it was first floated. Color marks fate. Hover to see the proposal.</p>
+  <div class="timeline-wrap">
+    <svg id="timeline-svg" class="timeline-svg" viewBox="0 0 1100 540" preserveAspectRatio="xMinYMid meet"></svg>
+  </div>
+</section>
+
+<!-- APPENDIX -->
+<section class="appendix" id="appendix-section">
+  <div class="appendix-head">
+    <div>
+      <h2>Data appendix</h2>
+      <p class="sub">Every proposal in the dataset, with category, fate, threads, and source attribution. Filters from the controls bar apply to this table. Click any column header to sort.</p>
+    </div>
+    <button id="csv-download" class="csv-btn">Download CSV</button>
+  </div>
+  <div class="appendix-meta" id="appendix-meta"></div>
+  <div class="appendix-tablewrap">
+    <table class="appendix-table" id="appendix-table">
+      <thead>
+        <tr>
+          <th data-sort="year" class="sort">Year</th>
+          <th data-sort="candidate" class="sort">Candidate</th>
+          <th data-sort="proposal" class="sort">Proposal</th>
+          <th data-sort="category" class="sort">Chapter</th>
+          <th data-sort="fate" class="sort">Fate</th>
+          <th>Threads</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody id="appendix-body"></tbody>
+    </table>
+  </div>
+  <div class="appendix-notes">
+    <h3>How to read this</h3>
+    <p><strong>Source</strong> attributes each entry to the most direct provenance available. The companion report — Greenman, "The Loser's Bracket" (2026) — is the immediate compiler of all entries; specific upstream sources are listed where the report names them. Where only secondary press coverage exists for a contemporary entry (2009-2025 candidates), that is noted explicitly.</p>
+    <p><strong>Categorization</strong> follows the report's four-chapter taxonomy: <em>won</em> (the idea became law in some form), <em>ahead</em> (still in serious circulation, not yet enacted), <em>bad</em> (the prescription was wrong, not just the politics), <em>strange</em> (in a category of its own).</p>
+    <p><strong>Fate</strong> is the more granular cut: <em>adopted</em> means meaningfully implemented in some form; <em>alive</em> means in active policy debate or partial implementation; <em>buried</em> means decisively rejected with no current movement.</p>
+    <p><strong>What this is not.</strong> This is not a complete record. Several losing campaigns — Dinkins 1993, Ferrer 2001 and 2005, Thompson 2013 — produced platforms that haven't been mined here. Reader corrections welcome.</p>
+  </div>
+</section>
+
+<!-- PAIRINGS -->
+<section class="pairings" id="pairings-section">
+  <h2>Surprise pairings</h2>
+  <p class="sub">Ideologically improbable echoes — same idea, different decade, different team jersey.</p>
+  <div id="pairings-list"></div>
+</section>
+
+<!-- PATTERNS -->
+<section class="patterns" id="patterns">
+  <div class="patterns-eyebrow">What this tells us</div>
+  <h2>Four patterns from the graveyard</h2>
+  <div class="patterns-grid">
+    <div class="pattern">
+      <h3>Losing candidates have often been better thinkers than the winners.</h3>
+      <p>Hillquit, Thomas, Buckley, Mailer-Breslin, Abzug, Green: people with serious, articulated worldviews who lost to candidates whose appeal was machine-based, charismatic, fiscal-emergency-oriented, or self-funded. Voters don't pick mayors based on idea density. The ideas keep coming back anyway.</p>
+    </div>
+    <div class="pattern">
+      <h3>Most "weird" ideas turn out to be early.</h3>
+      <p>Bike lanes were weird in 1965. Decriminalization was weird in 1965. Public housing was weird in 1917. Civil rights ordinances were weird in 1977. The category of "obviously crazy mayoral idea" should be regarded with some humility.</p>
+    </div>
+    <div class="pattern">
+      <h3>Some "weird" ideas are actually weird.</h3>
+      <p>Sweet Sunday was operationally impossible. Mandatory civil commitment for addicts is morally indefensible. Banning private cars from Manhattan in 1969 with no replacement infrastructure was a thought experiment, not a plan. The category of "actually unworkable" is also real.</p>
+    </div>
+    <div class="pattern">
+      <h3>The line between the two is implementation, not ideology.</h3>
+      <p>Hearst was right about utility capture and mostly wrong about whether municipal ownership would have improved things. Buckley was right about narcotics policy and wrong about what to do with addicts. The diagnosis tends to be more durable than the prescription, and voters should be more skeptical of the second than the first.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="sources">
+  <details>
+    <summary>Methodology, scope and sources</summary>
+    <div class="sources-body">
+      <h4>Scope</h4>
+      <p>"Failed" here means lost a general election or a major-party primary, between 1886 and 2025. Henry George ran in 1886 — pre-consolidation — but he is the godfather of the genre and is included. Candidates who later won (Bill de Blasio's pre-K plank, which Norman Thomas first proposed in 1932) appear when the idea, not the eventual victor, is the unit of analysis.</p>
+
+      <h4>Categorization</h4>
+      <p>The four chapters borrow the structure of the companion report: <em>eventually won</em> (the idea became law in some form), <em>ahead of their time</em> (still in serious circulation, not yet enacted), <em>probably bad</em> (the implementation was wrong, not just the politics), and <em>truly strange</em> (in a category of their own). The "fate" filter — adopted, alive, buried — is a more granular version of the same axis.</p>
+
+      <h4>Sources</h4>
+      <p>Drawn from the Gotham Center for New York City History, City Journal, Manhattan Institute, Jacobin, the Forward, the New-York Historical Society, the LaGuardia and Wagner Archives, Skynomics Blog, and contemporaneous press. Specific candidate platforms were cross-checked against multiple accounts where available.</p>
+
+      <h4>Recommended further reading</h4>
+      <ul>
+        <li>William F. Buckley Jr., <em>The Unmaking of a Mayor</em> (1966)</li>
+        <li>Joe Flaherty, <em>Managing Mailer</em> (1970)</li>
+        <li>Bella Abzug, <em>Bella! Ms. Abzug Goes to Washington</em> (1972)</li>
+        <li>Evan Mandery, <em>The Campaign</em> (1999)</li>
+        <li>Henry George, <em>Progress and Poverty</em> (1879)</li>
+      </ul>
+
+      <h4>A note on what's missing</h4>
+      <p>This is not a complete record. Several losing campaigns — David Dinkins's 1993 reelection bid, Fernando Ferrer's 2001 and 2005 runs, Bill Thompson's 2013 second-place finish — produced platforms that haven't been mined here. Reader suggestions welcome.</p>
+    </div>
+  </details>
+</section>
+
+<footer class="footer">
+  An interactive companion to "The Loser's Bracket." Last updated April 2026.
+</footer>
+
+<script>
+/* ==============================
+   DATA
+   ============================== */
+
+const THREADS = {
+  housing:    { label: "Housing & rent",          color: "#217ebe" },
+  policing:   { label: "Police oversight",        color: "#8c2820" },
+  municipal:  { label: "Municipal ownership",     color: "#394882" },
+  transit:    { label: "Transit",                 color: "#a07a1f" },
+  congestion: { label: "Congestion & streets",    color: "#c0644a" },
+  drugs:      { label: "Drug policy",             color: "#5a6b3c" },
+  rights:     { label: "Civil rights",            color: "#76716a" },
+  taxation:   { label: "Taxation & land value",   color: "#4a5566" }
+};
+
+const CATEGORIES = {
+  won:     { label: "Ideas that eventually won",                  num: "I",   roman: "I",   sub: "The diagnosis was right and the prescription stuck. Each of these started as a losing-candidate proposal and ended up as law — sometimes in the same decade, sometimes after a 50-year wait." },
+  ahead:   { label: "Ideas ahead of their time, still mostly untried", num: "II",  roman: "II",  sub: "Diagnoses that have aged well, prescriptions still working their way through the system. These are the proposals that show up in losing platforms cycle after cycle, gathering coalitions but not yet votes." },
+  bad:     { label: "Ideas that were probably bad",               num: "III", roman: "III", sub: "Not every losing idea was a prophetic gem. Some lost on their merits. The reframings here are the parts of otherwise serious platforms that have aged worst — usually because the diagnosis was right but the cure was worse than the disease." },
+  strange: { label: "The truly strange",                          num: "IV",  roman: "IV",  sub: "A few proposals deserve their own bin. Strange does not mean wrong. It means the political coordinates that made them legible barely exist anymore." }
+};
+
+const PROPOSALS = [
+  /* ==========================================
+     CHAPTER I - EVENTUALLY WON
+     ========================================== */
+  {
+    id: "george-1886-singletax",
+    year: 1886, candidate: "Henry George", role: "Mayoral candidate", party: "United Labor",
+    proposal: "The single tax on land value",
+    summary: "The Progress and Poverty author finished second to Tammany's Abram Hewitt — outpolling Theodore Roosevelt — on a platform of taxing the unimproved value of land at near 100 percent and abolishing taxes on income, sales, and improvements.",
+    quote: { text: "Land's value comes mostly from public investment and proximity to other people. Capturing it for public use would discourage speculation, encourage development, and obviate income and sales taxes.", attrib: "George's argument, paraphrased" },
+    category: "won",
+    fate: "alive",
+    whatHappened: "Pittsburgh used a split-rate version through most of the 20th century. Pennsylvania still has municipalities that do. The idea is hovering again now in YIMBY-adjacent circles, especially as a way to fix New York's notoriously regressive property-tax system.",
+    threads: ["taxation", "housing"]
+  },
+  {
+    id: "hillquit-1917-transit",
+    year: 1917, candidate: "Morris Hillquit", role: "Mayoral candidate", party: "Socialist",
+    proposal: "Public ownership of the subways",
+    summary: "The Latvian-born Jewish labor lawyer got 22 percent against a wartime fusion incumbent and a Tammany victor. His platform centered on city ownership of the privately operated IRT and BMT, then carrying nearly all subway riders.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "By 1940 the city had bought out both lines and merged them with the IND into what became the MTA. 23-year lag.",
+    threads: ["transit", "municipal"]
+  },
+  {
+    id: "hillquit-1917-housing",
+    year: 1917, candidate: "Morris Hillquit", role: "Mayoral candidate", party: "Socialist",
+    proposal: "Public housing to replace tenements",
+    summary: "Hillquit's 1917 platform called for city construction of low-rent apartments to replace the worst tenement housing — at the time a fringe socialist demand.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "NYCHA was created in 1934 and ultimately became the largest public-housing system in the country. 17-year lag.",
+    threads: ["housing", "municipal"]
+  },
+  {
+    id: "hillquit-1917-milk",
+    year: 1917, candidate: "Morris Hillquit", role: "Mayoral candidate", party: "Socialist",
+    proposal: "Buy milk direct from farmers, sell at cost",
+    summary: "Hillquit proposed bypassing the milk distribution cartel by having the city buy directly from upstate farmers and sell at cost — a response to documented price-fixing by the major distributors.",
+    quote: { text: "Put the milk profiteers out of business.", attrib: "Hillquit's slogan, 1917" },
+    category: "won",
+    fate: "adopted",
+    whatHappened: "La Guardia later set up city-run milk distribution and direct purchasing as a Depression-era price-control measure. The same logic — public provision to break cartels in essential goods — surfaces a century later in Mamdani's 2025 city-grocery plan.",
+    threads: ["municipal"]
+  },
+  {
+    id: "thomas-1929-newdeal",
+    year: 1929, candidate: "Norman Thomas", role: "Mayoral candidate", party: "Socialist",
+    proposal: "The proto-New Deal bundle",
+    summary: "Thomas's 1929 mayoral platform and 1932 presidential platform together demanded minimum-wage laws, low-cost public housing, a five-day workweek, unemployment insurance, health insurance for the elderly, civil rights for Black Americans, and old-age pensions.",
+    quote: { text: "You know, Norman, I think I'm a better politician than you are.", attrib: "Franklin Roosevelt to Thomas, after enacting most of his platform" },
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Most of the platform was inside the New Deal by 1938 and inside the Great Society by 1965. Thomas's reply to Roosevelt: \"I thought that was a damned obvious thing to say.\"",
+    threads: ["housing", "rights"]
+  },
+  {
+    id: "marcantonio-1949-ccrb",
+    year: 1949, candidate: "Vito Marcantonio", role: "Mayoral candidate", party: "American Labor",
+    proposal: "Independent civilian review of police",
+    summary: "Marcantonio called for an independent civilian board to investigate police misconduct — decades before such a body existed in any major U.S. city.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Civilian Complaint Review Board established 1953 (advisory), made independent and binding 1993. 44-year lag to a real version.",
+    threads: ["policing", "rights"]
+  },
+  {
+    id: "buckley-1965-bike",
+    year: 1965, candidate: "William F. Buckley Jr.", role: "Mayoral candidate", party: "Conservative",
+    proposal: "A network of bikeways the length of Manhattan",
+    summary: "Buckley's ten-point plan included dedicated bike infrastructure across Manhattan. The press laughed.",
+    quote: { text: "What would you do if you won? Demand a recount.", attrib: "Buckley to a reporter, 1965" },
+    category: "won",
+    fate: "adopted",
+    whatHappened: "First protected bike lanes built 2007; hundreds of miles installed under Bloomberg and de Blasio. 42-year lag.",
+    threads: ["congestion"]
+  },
+  {
+    id: "buckley-1965-decrim",
+    year: 1965, candidate: "William F. Buckley Jr.", role: "Mayoral candidate", party: "Conservative",
+    proposal: "Decriminalize narcotics for adults",
+    summary: "Buckley argued for treating addiction as a medical issue and allowing certified addicts to buy drugs at pharmacies — essentially the British clinic model. He floated broader decriminalization before pulling back in his final position papers.",
+    category: "won",
+    fate: "alive",
+    whatHappened: "Now mainstream thinking on opioids and methadone, partial reality with cannabis. The conservative case for harm reduction predated the progressive one by decades.",
+    threads: ["drugs"]
+  },
+  {
+    id: "buckley-1965-uber",
+    year: 1965, candidate: "William F. Buckley Jr.", role: "Mayoral candidate", party: "Conservative",
+    proposal: "Let licensed motorists use their cars as informal taxis",
+    summary: "A deregulation plank framed as a way to break the medallion cartel — which is exactly what eventually happened, fifty years later, when Uber and Lyft did it.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Functional implementation arrived in the 2010s as ride-hail. The medallion market collapsed. The intellectual paternity sits with someone who got 13 percent of the 1965 vote.",
+    threads: ["transit", "congestion"]
+  },
+  {
+    id: "buckley-1965-welfare",
+    year: 1965, candidate: "William F. Buckley Jr.", role: "Mayoral candidate", party: "Conservative",
+    proposal: "Residency-and-work requirement for welfare",
+    summary: "Buckley combined a residency requirement with a work requirement for public assistance — controversial in 1965, broadly bipartisan policy 30 years later.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Codified federally under Clinton-era welfare reform in 1996.",
+    threads: []
+  },
+  {
+    id: "badillo-1973-clt",
+    year: 1973, candidate: "Herman Badillo", role: "Mayoral candidate", party: "Democrat",
+    proposal: "Community land trusts",
+    summary: "Badillo lost a 1973 runoff to Abe Beame by four points. His housing platform centered on community-controlled land trusts as an alternative to public housing or speculation.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "First New York City CLTs established in the 1990s; significantly expanded under de Blasio and Adams.",
+    threads: ["housing"]
+  },
+  {
+    id: "green-2001-311",
+    year: 2001, candidate: "Mark Green", role: "Mayoral candidate, Public Advocate", party: "Democrat",
+    proposal: "A unified non-emergency hotline",
+    summary: "Green proposed a 311 system for non-emergency complaints, modeled on Baltimore's, while serving as the city's first Public Advocate. He won the 2001 Democratic primary and lost the general to Bloomberg by 2.5 points after 9/11.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Bloomberg launched 311 in 2003 — a two-year lag. It is now arguably the most-copied municipal innovation of the 21st century. The intellectual paternity sits with someone who never made it to City Hall.",
+    threads: []
+  },
+  {
+    id: "thompson-2009-paid-sick",
+    year: 2009, candidate: "William Thompson", role: "Mayoral candidate, Comptroller", party: "Democrat",
+    proposal: "Citywide mandatory paid sick leave",
+    summary: "Thompson endorsed mandated paid sick leave for private employers, opposed at the time by Bloomberg and the city's business lobby.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Earned Sick Time Act enacted 2014. Five-year lag.",
+    threads: []
+  },
+  {
+    id: "lhota-2013-bodycam",
+    year: 2013, candidate: "Joseph Lhota", role: "Mayoral candidate", party: "Republican",
+    proposal: "Body cameras on every NYPD officer",
+    summary: "Lhota called for outfitting all officers with body-worn cameras — at the time a fringe demand associated with police-reform advocates, not Republican mayoral candidates.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Pilot launched 2014; full deployment by 2017. 4-year lag.",
+    threads: ["policing"]
+  },
+  {
+    id: "deblasio-2013-prek",
+    year: 2013, candidate: "Bill de Blasio (and 80 years of socialists)", role: "Mayoral candidate (won)", party: "Democrat",
+    proposal: "Universal pre-kindergarten",
+    summary: "De Blasio won. But pre-K had been a losing-candidate idea since Norman Thomas put it on the Socialist platform in 1932 as a workforce and equity measure. De Blasio was the first to make it a winning issue.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Implemented 2014; 3-K added later. 82-year lag from first proposal to law.",
+    threads: ["rights"]
+  },
+
+  /* ==========================================
+     CHAPTER II - AHEAD OF THEIR TIME
+     ========================================== */
+  {
+    id: "hearst-1905-utilities",
+    year: 1905, candidate: "William Randolph Hearst", role: "Mayoral candidate", party: "Municipal Ownership League",
+    proposal: "Municipal ownership of gas, electricity, water, ice and streetcars",
+    summary: "Hearst formed his own party and ran on city ownership of every essential utility. He lost to Tammany's George B. McClellan Jr. by 3,500 votes amid widely documented voter fraud, broken poll-watcher fingers, and ballot boxes that disappeared. Republican opponents and the Times later acknowledged he had probably won.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "The subways were eventually municipalized in 1940; electricity was not. La Guardia tried to build a $101 million municipal power plant in 1934 and was sued out of it by Consolidated Gas. The question of public utilities returns every time rates spike.",
+    threads: ["municipal"]
+  },
+  {
+    id: "mailer-1969-51st-state",
+    year: 1969, candidate: "Norman Mailer / Jimmy Breslin", role: "Democratic primary candidates", party: "Democrat",
+    proposal: "Statehood for New York City",
+    summary: "Make the five boroughs the 51st state. Theodore White called the campaign \"one of the most serious campaigns run in the United States in the last five years.\" They finished fourth.",
+    quote: { text: "It's insanity that we let a bunch of lobster fishermen from Montauk and a bunch of jerks from Niagara Falls tell us how to run our schools.", attrib: "Jimmy Breslin, 1969" },
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Peter Vallone introduced a secession bill in 2003. The frustration is recurring; the structural answer never gets traction because Article IV requires both Albany and Congress to sign off.",
+    threads: []
+  },
+  {
+    id: "mailer-1969-neighborhood",
+    year: 1969, candidate: "Norman Mailer / Jimmy Breslin", role: "Democratic primary candidates", party: "Democrat",
+    proposal: "Neighborhood government",
+    summary: "Each neighborhood would run its own school district, its own police force, and set local policy on whatever could be set locally. The 1969 campaign argued that Ocean Hill–Brownsville had failed because the decentralization wasn't real, not because decentralization was wrong.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Community boards, participatory budgeting, neighborhood-level land-use review have all been adopted in piecemeal form. The full version has not.",
+    threads: []
+  },
+  {
+    id: "mailer-1969-rentcontrol",
+    year: 1969, candidate: "Norman Mailer / Jimmy Breslin", role: "Democratic primary candidates", party: "Democrat",
+    proposal: "Universal rent control on multi-family dwellings",
+    summary: "At the time a substantial expansion. The Mailer-Breslin proposal would have covered every multi-family building in the city.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "New York has stayed roughly inside the lines of what Mailer-Breslin proposed, with a multi-tier stabilization system covering about a million units.",
+    threads: ["housing"]
+  },
+  {
+    id: "mailer-1969-heroin",
+    year: 1969, candidate: "Norman Mailer / Jimmy Breslin", role: "Democratic primary candidates", party: "Democrat",
+    proposal: "Heroin clinics on the British model",
+    summary: "Methadone clinics and prescription drug distribution to certified addicts. The argument was the same as Buckley's four years earlier: the cost of prohibition is the criminal market it sustains.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "We are decades into a partial version: methadone, Suboxone, near-universal medical use of opioids, and supervised consumption sites in the experimental phase.",
+    threads: ["drugs"]
+  },
+  {
+    id: "abzug-1977-gayrights",
+    year: 1977, candidate: "Bella Abzug", role: "Mayoral candidate", party: "Democrat",
+    proposal: "A New York City gay civil rights ordinance",
+    summary: "Abzug finished fourth in the seven-way 1977 Democratic primary. Her platform was unusual for being explicitly feminist and gay-rights-forward at a moment when neither was a remotely safe political position. She had introduced the first federal gay rights bill, the Equality Act of 1974, with Ed Koch — the man who beat her for the nomination.",
+    category: "ahead",
+    fate: "adopted",
+    whatHappened: "City Council passed the ordinance in 1986, nine years after her loss. The 1977 mayoral race is remembered for fiscal crisis, the blackout, and Son of Sam. The woman who finished fourth was running the platform that aged best.",
+    threads: ["rights"]
+  },
+  {
+    id: "abzug-1977-payequity",
+    year: 1977, candidate: "Bella Abzug", role: "Mayoral candidate", party: "Democrat",
+    proposal: "Gender pay equity in city contracting",
+    summary: "Abzug's platform required gender-pay-equity audits of all city contractors and significant women's representation across city government — both hugely contested in 1977.",
+    category: "ahead",
+    fate: "adopted",
+    whatHappened: "Both became baseline assumptions by the Dinkins administration and after, though representation gains were uneven.",
+    threads: ["rights"]
+  },
+  {
+    id: "badillo-1973-bilingual",
+    year: 1973, candidate: "Herman Badillo", role: "Mayoral candidate", party: "Democrat",
+    proposal: "Bilingual education as the citywide standard",
+    summary: "Badillo had pioneered the issue in Congress and made it a centerpiece of multiple mayoral runs. He lost five times.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Partially adopted; debated and reorganized cyclically. Mayoral control of the schools — Badillo's later cause — was a 2002 Bloomberg-era victory that Badillo helped frame.",
+    threads: ["rights"]
+  },
+  {
+    id: "badillo-1977-southbronx",
+    year: 1977, candidate: "Herman Badillo", role: "Mayoral candidate", party: "Democrat",
+    proposal: "South Bronx revitalization through federal homeownership credit",
+    summary: "A comprehensive plan to rebuild the South Bronx through federally backed homeownership and small-business credit, modeled on Carter-era urban policy in Cleveland and Pittsburgh.",
+    category: "ahead",
+    fate: "buried",
+    whatHappened: "Koch effectively buried it after Badillo, briefly his deputy mayor, resigned over Koch's lack of follow-through. The South Bronx was eventually rebuilt — but largely through Koch's housing program, not Badillo's.",
+    threads: ["housing"]
+  },
+  {
+    id: "ravitch-1989-landuse",
+    year: 1989, candidate: "Richard Ravitch", role: "Mayoral candidate", party: "Democrat",
+    proposal: "Depoliticize land-use approvals",
+    summary: "Ravitch ran on insulating major land-use decisions from City Council member deference — the single biggest barrier to housing production.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Active debate as of 2025. Member deference remains intact.",
+    threads: ["housing"]
+  },
+  {
+    id: "messinger-1997-landuse",
+    year: 1997, candidate: "Ruth Messinger", role: "Mayoral candidate, Manhattan BP", party: "Democrat",
+    proposal: "Community-driven land-use decisions",
+    summary: "Messinger lost to Giuliani by 17 points in a campaign her own research director Evan Mandery later wrote was a blowout. Her platform centered on community-controlled planning, expanded affordable housing, and CUNY community-college investment.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "The community-control idea has had a strange life since. NIMBY neighborhood groups use it as a cudgel to block housing; Mamdani-style left politics uses it as the basis for democratic planning. The ambivalence in Messinger's platform — community control as both protection and obstacle — is a problem her successors haven't resolved.",
+    threads: ["housing"]
+  },
+  {
+    id: "messinger-1997-commissioner",
+    year: 1997, candidate: "Ruth Messinger", role: "Mayoral candidate, Manhattan BP", party: "Democrat",
+    proposal: "Independent civilian police commissioner",
+    summary: "Messinger called for a civilian commissioner appointed independently of the Mayor — a stronger version of the CCRB model.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Revived by Maya Wiley in 2021. Not implemented.",
+    threads: ["policing"]
+  },
+  {
+    id: "stringer-2013-broadband",
+    year: 2013, candidate: "Scott Stringer", role: "Mayoral candidate", party: "Democrat",
+    proposal: "Municipal broadband",
+    summary: "A city-run broadband utility to address the digital divide, particularly in NYCHA developments.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Pilot programs launched. Comprehensive rollout is still in debate.",
+    threads: ["municipal"]
+  },
+  {
+    id: "catsimatidis-2013-yimby",
+    year: 2013, candidate: "John Catsimatidis", role: "Mayoral candidate", party: "Republican",
+    proposal: "Aggressive supply-side housing deregulation",
+    summary: "Catsimatidis ran on zoning liberalization and removing barriers to construction — anticipating the YIMBY argument that became mainstream a decade later.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Core argument of Adams's 2024 City of Yes proposal. The idea didn't change. The political coalition did.",
+    threads: ["housing"]
+  },
+  {
+    id: "stringer-2021-bank",
+    year: 2021, candidate: "Scott Stringer", role: "Mayoral candidate (RCV)", party: "Democrat",
+    proposal: "A New York City public bank",
+    summary: "Stringer's 2021 platform included a public bank to finance affordable housing and small business — echoing the Socialist platforms of the 1920s and Hillquit's 1932 proposal.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Public Bank NYC coalition active; state authorization stalled. Costa Rica, North Dakota, and a small public-banking movement in California operate versions.",
+    threads: ["municipal"]
+  },
+  {
+    id: "donovan-2021-vacancy",
+    year: 2021, candidate: "Shaun Donovan", role: "Mayoral candidate (RCV)", party: "Democrat",
+    proposal: "Vacancy tax on warehoused units",
+    summary: "A tax on residential and commercial properties left vacant — to discourage warehousing of housing.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Requires state authorization. Pending.",
+    threads: ["housing", "taxation"]
+  },
+  {
+    id: "sliwa-2021-vacancy",
+    year: 2021, candidate: "Curtis Sliwa", role: "Mayoral candidate", party: "Republican",
+    proposal: "Vacancy tax on commercial landlords",
+    summary: "Sliwa joined Donovan in calling for a vacancy tax — focused on commercial corridors with chronic empty storefronts. Cross-ideological policy convergence the political coalitions never reached.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Same fate as Donovan's plan. The agreement is real and revealing; the politics never followed.",
+    threads: ["housing", "taxation"]
+  },
+  {
+    id: "garcia-2021-streets",
+    year: 2021, candidate: "Kathryn Garcia", role: "Mayoral candidate (RCV)", party: "Democrat",
+    proposal: "A permanent open-streets network",
+    summary: "Garcia proposed making the pandemic-era open streets permanent and expanding to a connected network across the city.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Partial implementation. Mixed reviews on permanence.",
+    threads: ["congestion"]
+  },
+  {
+    id: "wiley-2021-commissioner",
+    year: 2021, candidate: "Maya Wiley", role: "Mayoral candidate (RCV)", party: "Democrat",
+    proposal: "Civilian police commissioner",
+    summary: "Wiley revived Messinger's 1997 proposal: a commissioner appointed independently from the Mayor.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Active debate. Not implemented.",
+    threads: ["policing"]
+  },
+  {
+    id: "yang-2021-cash",
+    year: 2021, candidate: "Andrew Yang", role: "Mayoral candidate (RCV)", party: "Democrat",
+    proposal: "Basic-income style cash relief",
+    summary: "Yang's signature proposal: a cash transfer for low-income New Yorkers.",
+    category: "ahead",
+    fate: "buried",
+    whatHappened: "Small pilots launched in other cities. No New York City version.",
+    threads: []
+  },
+  {
+    id: "mamdani-2025-grocery",
+    year: 2025, candidate: "Zohran Mamdani", role: "Mayoral candidate (won)", party: "Democrat / DSA",
+    proposal: "City-owned grocery stores",
+    summary: "Municipal grocery stores in food deserts — directly echoing Hillquit's 1932 Socialist platform on city food distribution and his 1917 milk-at-cost plan. Whether either works depends on whether a real cartel-style market failure exists today.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Pilot rolling out in 2026 under the new administration.",
+    threads: ["municipal"]
+  },
+  {
+    id: "mamdani-2025-buses",
+    year: 2025, candidate: "Zohran Mamdani", role: "Mayoral candidate (won)", party: "Democrat / DSA",
+    proposal: "Free city buses",
+    summary: "A flagship Mamdani proposal. Pilot programs in 2024 produced mixed but mostly positive results.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Pilot completed. Full implementation contested over funding.",
+    threads: ["transit"]
+  },
+  {
+    id: "cuomo-2025-mta",
+    year: 2025, candidate: "Andrew Cuomo", role: "Mayoral candidate", party: "Democrat (Independent line)",
+    proposal: "Transfer MTA city operations from state to city",
+    summary: "Cuomo proposed handing New York City subway and bus operations from the state-controlled MTA to city control — almost a century after John Hylan ran on the same idea in 1925.",
+    category: "ahead",
+    fate: "buried",
+    whatHappened: "Cuomo lost. Idea remains dormant. 100-year lag and counting.",
+    threads: ["transit", "municipal"]
+  },
+  {
+    id: "stringer-2025-piedaterre",
+    year: 2025, candidate: "Scott Stringer", role: "Mayoral candidate", party: "Democrat",
+    proposal: "Pied-à-terre tax on luxury second homes",
+    summary: "A tax on luxury units occupied less than half the year — primarily affecting Billionaire's Row.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Requires state authorization; repeatedly blocked.",
+    threads: ["housing", "taxation"]
+  },
+
+  /* ==========================================
+     CHAPTER III - PROBABLY BAD
+     ========================================== */
+  {
+    id: "mailer-1969-monorail",
+    year: 1969, candidate: "Norman Mailer / Jimmy Breslin", role: "Democratic primary candidates", party: "Democrat",
+    proposal: "Ban private cars in Manhattan, build a monorail",
+    summary: "Distinct from Sweet Sunday: a permanent ban on private cars in Manhattan, replaced by an unspecified monorail system. Cost unspecified. Operational details unspecified. Political feasibility, charitably, low.",
+    category: "bad",
+    fate: "buried",
+    whatHappened: "Congestion pricing — a much milder version of the same instinct — took 60 years to implement and remains contested. The ban-cars-and-build-elevated-rail version was a thought experiment, not a plan.",
+    threads: ["congestion", "transit"]
+  },
+  {
+    id: "buckley-1965-quarantine",
+    year: 1965, candidate: "William F. Buckley Jr.", role: "Mayoral candidate", party: "Conservative",
+    proposal: "Mandatory quarantine of drug addicts",
+    summary: "Civil commitment of certified addicts in mandatory treatment facilities until \"cured.\" Critics converted this to \"concentration camps,\" which it wasn't quite — but the framing remains the part of the platform that has aged worst.",
+    category: "bad",
+    fate: "buried",
+    whatHappened: "The decriminalization plank from the same platform aged into mainstream policy. The civil-commitment plank did not. Buckley got the diagnosis right (prohibition produces the criminal market) and the treatment partly wrong.",
+    threads: ["drugs", "rights"]
+  },
+  {
+    id: "hearst-1905-runthings",
+    year: 1905, candidate: "William Randolph Hearst", role: "Mayoral candidate", party: "Municipal Ownership League",
+    proposal: "I should run things because I'm rich",
+    summary: "Hearst's policy ideas were better than his political character. His underlying argument for municipal ownership was substantive. His personal pitch — \"I should be mayor because I'm rich enough not to need the salary\" — was a cruder version of what we'd later get from Bloomberg, with none of the operational discipline.",
+    category: "bad",
+    fate: "buried",
+    whatHappened: "His press empire's behavior during both campaigns suggested someone whose interest in checking concentrated power did not extend to his own. He later ran for governor and president for the same reason.",
+    threads: []
+  },
+  {
+    id: "stein-1989-trial",
+    year: 1989, candidate: "Andrew Stein", role: "City Council President", party: "Democrat",
+    proposal: "Trial-balloon position papers",
+    summary: "Stein, the City Council President and son of a publisher, considered running for mayor in 1989 and 1993. He produced a series of position papers — heavy on senior services, nursing-home reform, and tough-on-crime rhetoric — that mostly read in retrospect as a hunt for a coalition rather than a coherent governing vision.",
+    category: "bad",
+    fate: "buried",
+    whatHappened: "Never made it onto the mayoral ballot. His nursing-home work, however, was genuinely consequential and produced lasting state-level reform. Some politicians have one good fight in them and shouldn't reach for the largest office.",
+    threads: []
+  },
+
+  /* ==========================================
+     CHAPTER IV - TRULY STRANGE
+     ========================================== */
+  {
+    id: "mailer-1969-sweet-sunday",
+    year: 1969, candidate: "Norman Mailer / Jimmy Breslin", role: "Democratic primary candidates", party: "Democrat",
+    proposal: "Sweet Sunday",
+    summary: "The last Sunday of every month, all motorized transport in the city would shut down except emergency vehicles. No cars, no trucks, no subway trains, no electric power. The idea was to force New Yorkers to talk to their neighbors and let the air clear.",
+    category: "strange",
+    fate: "alive",
+    whatHappened: "Half-step toward what Paris does monthly with car-free Sundays, what Bogotá does weekly with Ciclovía, and what New York City did in 2020 with Open Streets at much smaller scale. As proposed, a logistical nightmare for a 24/7 city. As a thought experiment, it captured something about urban scale and rest that nothing in the actual mayoral debate has captured since.",
+    threads: ["congestion"]
+  },
+  {
+    id: "mailer-1969-huey",
+    year: 1969, candidate: "Norman Mailer", role: "Democratic primary candidate", party: "Democrat",
+    proposal: "Free Huey Newton (and oppose fluoridation)",
+    summary: "Mailer's platform formally endorsed freeing the Black Panther leader from prison. As a mayoral platform plank in a New York City Democratic primary, this is in a category of its own. He also opposed compulsory water fluoridation — which is roughly where one finds him on the political map: somewhere that doesn't really exist anymore.",
+    category: "strange",
+    fate: "buried",
+    whatHappened: "Newton was freed in 1970 on appeal, unrelated to the mayoral campaign. Fluoridation in New York City continues.",
+    threads: ["rights"]
+  },
+  {
+    id: "hillquit-1932-bank",
+    year: 1932, candidate: "Morris Hillquit", role: "Mayoral candidate", party: "Socialist",
+    proposal: "A city-chartered public bank",
+    summary: "Hillquit proposed that New York City charter its own bank to break the dependency of the city on the Wall Street firms whose collapse had triggered its near-default. Extreme at the time.",
+    category: "strange",
+    fate: "alive",
+    whatHappened: "More or less what Costa Rica, North Dakota, and a small public-banking movement in California propose now. Whether New York City should have a public bank is a real, current policy debate — see Stringer 2021.",
+    threads: ["municipal"]
+  },
+  {
+    id: "thomas-1925-garden",
+    year: 1925, candidate: "Norman Thomas", role: "Mayoral candidate", party: "Socialist",
+    proposal: "Ebenezer Howard garden cities, scaled to the boroughs",
+    summary: "Thomas proposed building Howard-style planned new towns within the boroughs — shared green space, mixed housing, integrated transit. Forest Hills Gardens had been built on the model in 1908; Thomas wanted to scale it citywide.",
+    category: "strange",
+    fate: "alive",
+    whatHappened: "Prefigured Greenbelt, Maryland and what eventually got built at Co-op City and Starrett City, though the planned-community ambition was steadily diluted in execution.",
+    threads: ["housing"]
+  },
+  {
+    id: "buckley-1965-cabs",
+    year: 1965, candidate: "William F. Buckley Jr.", role: "Mayoral candidate", party: "Conservative",
+    proposal: "Licensed cabs anywhere, anytime, in any borough",
+    summary: "A small piece of Buckley's platform: end the geographic restrictions on for-hire vehicles so any licensed cab could operate in any borough at any time. Anticipated the unification of the for-hire vehicle market under TLC regulation.",
+    category: "strange",
+    fate: "adopted",
+    whatHappened: "Functional unification arrived in the 21st century with the green-cab program and the TLC's app-based licensing.",
+    threads: ["transit"]
+  }
+];
+
+const PAIRINGS = [
+  {
+    title: "William F. Buckley meets the harm-reduction left",
+    body: "In 1965, the founder of National Review proposed treating drug addiction as a medical issue and decriminalizing low-level possession — a position that wouldn't reach mainstream Democratic politics until the 2010s. Four years later, Norman Mailer ran on the same idea. The conservative case for harm reduction predated the progressive one by decades, and the two converged in the same New York City living rooms.",
+    who: "Buckley 1965 / Mailer-Breslin 1969"
+  },
+  {
+    title: "Curtis Sliwa and progressive housing advocates agree on a tax",
+    body: "In 2021, the Republican Curtis Sliwa endorsed essentially the same vacancy-tax proposal as Shaun Donovan and progressive housing groups. The political coalition didn't materialize. The policy convergence was real and revealing.",
+    who: "Donovan 2021 / Sliwa 2021"
+  },
+  {
+    title: "John Hylan, Andrew Cuomo, and the eternal MTA fight",
+    body: "Hylan ran on city control of transit in 1925. Cuomo ran on it in 2025. Same argument, same Albany obstacle, same loss. A 100-year graveyard, with no signs of resurrection.",
+    who: "Hylan 1925 / Cuomo 2025"
+  },
+  {
+    title: "From Hillquit's milk to Mamdani's grocery",
+    body: "Morris Hillquit proposed direct municipal milk distribution in 1917 as a response to documented price-fixing by the dairy cartel. Mamdani proposed city-owned grocery stores in 2025 as an affordability measure. Same ideological lineage, 108 years apart, with the second carrier finally winning the office. Whether the underlying market failure is the same is the question that matters for whether it works.",
+    who: "Hillquit 1917 / Mamdani 2025"
+  },
+  {
+    title: "Catsimatidis to Adams: the YIMBY journey",
+    body: "John Catsimatidis ran a 2013 campaign on supply-side housing deregulation and was treated as a curiosity. A decade later, the same argument — repackaged as City of Yes — became official Adams administration policy. The idea didn't change. The political coalition did.",
+    who: "Catsimatidis 2013 / Adams City of Yes 2024"
+  },
+  {
+    title: "Henry George waves at the YIMBYs",
+    body: "George ran for mayor in 1886 on a single tax on land value, finished second to Tammany, and outpolled Theodore Roosevelt. The idea has bounced back into respectable economics every couple of decades and is hovering again now. New York's notoriously regressive property-tax system — co-ops in Park Slope subsidizing Class 1 mansions in Riverdale — is one of the few places where Georgist logic feels obviously useful again.",
+    who: "George 1886 / contemporary land-value-tax revival"
+  }
+];
+
+/* ==============================
+   SOURCES
+   ============================== */
+const SOURCES = {
+  // Per-candidate primary attribution; falls through to default
+  "Henry George": "George, Progress and Poverty (1879); Wikipedia: 1886 New York City mayoral election; Greenman, The Loser's Bracket (2026)",
+  "Morris Hillquit": "Stromquist, contemporaneous Socialist Party publications (cited in Greenman 2026); Wikipedia: Morris Hillquit; Gotham Center essays",
+  "Norman Thomas": "Wikipedia: Norman Thomas; FDR-Thomas exchange documented in multiple Thomas biographies; Greenman 2026",
+  "William Randolph Hearst": "New-York Historical Society; Wikipedia: 1905 New York City mayoral election; Greenman 2026",
+  "Vito Marcantonio": "Wikipedia: Vito Marcantonio; CCRB official history (nyc.gov/ccrb); Greenman 2026",
+  "William F. Buckley Jr.": "Buckley, The Unmaking of a Mayor (1966); Wikipedia: 1965 New York City mayoral election; Greenman 2026",
+  "Norman Mailer / Jimmy Breslin": "Flaherty, Managing Mailer (1970); Theodore White contemporaneous reporting (cited in Greenman 2026); Wikipedia: 1969 New York City mayoral election",
+  "Norman Mailer": "Flaherty, Managing Mailer (1970); Wikipedia: 1969 New York City mayoral election; Greenman 2026",
+  "John Marchi": "Wikipedia: John Marchi; New York Times archive; Greenman 2026",
+  "Herman Badillo": "Wikipedia: Herman Badillo; Greenman 2026; Carter-era HUD records on South Bronx initiatives",
+  "Bella Abzug": "Abzug, Bella! Ms. Abzug Goes to Washington (1972); Wikipedia: Bella Abzug; Greenman 2026",
+  "Andrew Stein": "Wikipedia: Andrew Stein; New York Times archive; Greenman 2026",
+  "Richard Ravitch": "Ravitch, So Much to Do (2014); Wikipedia: Richard Ravitch; Greenman 2026",
+  "Ruth Messinger": "Mandery, The Campaign (1999); Wikipedia: 1997 New York City mayoral election; Greenman 2026",
+  "Mark Green": "Wikipedia: Mark J. Green; nyc.gov 311 history; Greenman 2026",
+  "William Thompson": "Contemporaneous press coverage of 2009 mayoral race (NYT, Daily News, Crain's); Greenman 2026",
+  "Joseph Lhota": "Contemporaneous press coverage of 2013 mayoral race (NYT, NY Post, Politico NY); Greenman 2026",
+  "Bill de Blasio (and 80 years of socialists)": "Press coverage of 2013 campaign; Norman Thomas 1932 platform (cited above); Greenman 2026",
+  "John Catsimatidis": "Contemporaneous 2013 campaign coverage; City of Yes documentation 2024; Greenman 2026",
+  "Scott Stringer": "Stringer 2013, 2021, and 2025 platform documents; Public Bank NYC coalition materials; Greenman 2026",
+  "Maya Wiley": "Wiley 2021 platform; Wikipedia: Maya Wiley; Greenman 2026",
+  "Andrew Yang": "Yang 2021 platform; Forward (the); Greenman 2026",
+  "Shaun Donovan": "Donovan 2021 platform; Greenman 2026",
+  "Kathryn Garcia": "Garcia 2021 platform; DOT open-streets program documentation; Greenman 2026",
+  "Curtis Sliwa": "Sliwa 2021 platform; press coverage; Greenman 2026",
+  "Zohran Mamdani": "Mamdani 2025 platform; Jacobin; New York Times campaign coverage; Greenman 2026",
+  "Andrew Cuomo": "Cuomo 2025 campaign documents; press coverage; Greenman 2026"
+};
+
+function sourceFor(p) {
+  return SOURCES[p.candidate] || `Greenman, The Loser's Bracket (2026)`;
+}
+
+/* ==============================
+   STATE
+   ============================== */
+const state = { search: "", decade: "all", fate: "all", view: "cards", sortKey: "year", sortDir: "asc" };
+
+const els = {
+  search: document.getElementById("search-input"),
+  decade: document.getElementById("decade-select"),
+  fate:   document.getElementById("fate-select"),
+  chapters: document.getElementById("chapters"),
+  timelineSection: document.getElementById("timeline-section"),
+  timelineSvg: document.getElementById("timeline-svg"),
+  pairingsSection: document.getElementById("pairings-section"),
+  pairingsList: document.getElementById("pairings-list"),
+  appendixSection: document.getElementById("appendix-section"),
+  appendixBody: document.getElementById("appendix-body"),
+  appendixMeta: document.getElementById("appendix-meta"),
+  appendixTable: document.getElementById("appendix-table"),
+  csvBtn: document.getElementById("csv-download"),
+  vCards: document.getElementById("v-cards"),
+  vTimeline: document.getElementById("v-timeline"),
+  vPairings: document.getElementById("v-pairings"),
+  vAppendix: document.getElementById("v-appendix"),
+  patterns: document.getElementById("patterns")
+};
+
+/* ==============================
+   HELPERS
+   ============================== */
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[c]);
+}
+
+function fateMark(fate) {
+  if (fate === "adopted") return { mark: "double-dagger", char: "‡", label: "Eventually adopted" };
+  if (fate === "alive")   return { mark: "dagger",        char: "†", label: "Still alive" };
+  return { mark: "buried", char: "", label: "Buried" };
+}
+
+function filterPredicate(p) {
+  if (state.decade !== "all") {
+    const d = parseInt(state.decade);
+    if (p.year < d || p.year >= d + 10) return false;
+  }
+  if (state.fate !== "all" && p.fate !== state.fate) return false;
+  if (state.search) {
+    const s = state.search.toLowerCase();
+    const hay = (p.proposal + " " + p.candidate + " " + p.summary + " " + p.party + " " + (p.whatHappened || "")).toLowerCase();
+    if (!hay.includes(s)) return false;
+  }
+  return true;
+}
+
+/* ==============================
+   RENDER: CARDS BY CHAPTER
+   ============================== */
+function renderChapters() {
+  const order = ["won", "ahead", "bad", "strange"];
+  let html = "";
+
+  order.forEach(catKey => {
+    const cat = CATEGORIES[catKey];
+    const items = PROPOSALS.filter(p => p.category === catKey && filterPredicate(p));
+
+    html += `<section class="chapter" id="chapter-${catKey}">
+      <header class="chapter-head">
+        <div class="chapter-num">Chapter <span class="ch-roman">${cat.roman}</span></div>
+        <div>
+          <h2>${escapeHtml(cat.label)}</h2>
+          <p class="chapter-intro">${escapeHtml(cat.sub)}</p>
+        </div>
+      </header>
+      <div class="grid">`;
+
+    if (items.length === 0) {
+      html += `<div class="empty-chapter">No proposals match these filters in this chapter.</div>`;
+    } else {
+      items.forEach(p => {
+        const fm = fateMark(p.fate);
+        const threadHtml = (p.threads || []).map(k => {
+          const t = THREADS[k];
+          return t ? `<span class="thread-tag" style="background:${t.color}1f; color:${t.color};">${escapeHtml(t.label)}</span>` : "";
+        }).join("");
+
+        const quoteHtml = p.quote ? `<blockquote class="card-quote">${escapeHtml(p.quote.text)}<span class="attrib">${escapeHtml(p.quote.attrib)}</span></blockquote>` : "";
+
+        html += `<article class="card">
+          <div class="card-slug">
+            <span><span class="year">${p.year}</span> &nbsp; <span class="candidate">${escapeHtml(p.candidate)}</span></span>
+            <span class="card-mark" data-fate="${p.fate}" title="${fm.label}">${fm.char}</span>
+          </div>
+          <h3 class="card-proposal">${escapeHtml(p.proposal)}</h3>
+          <p class="card-summary">${escapeHtml(p.summary)}</p>
+          ${quoteHtml}
+          <div class="card-fate"><strong>${fm.label}</strong>${escapeHtml(p.whatHappened || "")}</div>
+          ${threadHtml ? `<div class="card-threads">${threadHtml}</div>` : ""}
+        </article>`;
+      });
+    }
+
+    html += `</div></section>`;
+  });
+
+  els.chapters.innerHTML = html;
+}
+
+/* ==============================
+   RENDER: TIMELINE
+   ============================== */
+function renderTimeline() {
+  const list = PROPOSALS.filter(filterPredicate);
+  const W = 1100, H = 540;
+  const pad = { l: 80, r: 30, t: 60, b: 60 };
+  const minYear = 1880, maxYear = 2030;
+  const xScale = y => pad.l + (y - minYear) / (maxYear - minYear) * (W - pad.l - pad.r);
+
+  const lanes = ["won", "ahead", "bad", "strange"];
+  const laneLabels = {
+    won:     "I. Eventually won",
+    ahead:   "II. Ahead of time",
+    bad:     "III. Probably bad",
+    strange: "IV. Truly strange"
+  };
+  const laneY = i => pad.t + 30 + i * ((H - pad.t - pad.b - 30) / (lanes.length - 0.5));
+
+  let svg = "";
+
+  // Decade gridlines
+  for (let y = 1890; y <= 2020; y += 10) {
+    const x = xScale(y);
+    svg += `<line x1="${x}" y1="${pad.t}" x2="${x}" y2="${H - pad.b}" stroke="#e7dfca" stroke-width="1"/>`;
+    svg += `<text x="${x}" y="${H - pad.b + 22}" text-anchor="middle" font-size="11" fill="#76716a" font-family="-apple-system, Inter, sans-serif">${y}</text>`;
+  }
+
+  // Lane labels and rules
+  lanes.forEach((lane, i) => {
+    svg += `<line x1="${pad.l}" y1="${laneY(i)}" x2="${W - pad.r}" y2="${laneY(i)}" stroke="#efe7d2" stroke-width="1"/>`;
+    svg += `<text x="${pad.l - 14}" y="${laneY(i) + 4}" text-anchor="end" font-size="11" font-weight="600" fill="#3a3733" font-family="-apple-system, Inter, sans-serif">${laneLabels[lane]}</text>`;
+  });
+
+  // Legend
+  const lx = pad.l;
+  svg += `<g font-family="-apple-system, Inter, sans-serif" font-size="11">
+    <circle cx="${lx + 6}" cy="${30}" r="5" fill="#5a6b3c"/><text x="${lx + 18}" y="${34}" fill="#3a3733">Eventually adopted</text>
+    <circle cx="${lx + 165}" cy="${30}" r="5" fill="#8c2820"/><text x="${lx + 177}" y="${34}" fill="#3a3733">Still alive</text>
+    <circle cx="${lx + 270}" cy="${30}" r="5" fill="#76716a"/><text x="${lx + 282}" y="${34}" fill="#3a3733">Buried</text>
+  </g>`;
+
+  // Dots — group by (lane, year) to offset overlapping
+  const buckets = {};
+  list.forEach(p => {
+    const key = p.category + "-" + p.year;
+    buckets[key] = (buckets[key] || 0) + 1;
+  });
+  const used = {};
+  list.forEach(p => {
+    const key = p.category + "-" + p.year;
+    used[key] = (used[key] || 0);
+    const offset = (used[key] - (buckets[key] - 1) / 2) * 11;
+    used[key]++;
+
+    const cx = xScale(p.year);
+    const cy = laneY(lanes.indexOf(p.category)) + offset;
+    const fill = p.fate === "adopted" ? "#5a6b3c"
+               : p.fate === "alive"   ? "#8c2820"
+               : "#76716a";
+    svg += `<circle class="timeline-dot" cx="${cx}" cy="${cy}" r="5" fill="${fill}" stroke="${fill}" stroke-width="1" data-id="${p.id}"/>`;
+  });
+
+  els.timelineSvg.innerHTML = svg;
+
+  // Tooltip
+  let tip = document.querySelector(".timeline-tooltip");
+  if (!tip) {
+    tip = document.createElement("div");
+    tip.className = "timeline-tooltip";
+    tip.style.display = "none";
+    document.body.appendChild(tip);
+  }
+
+  els.timelineSvg.querySelectorAll(".timeline-dot").forEach(dot => {
+    const id = dot.getAttribute("data-id");
+    const p = PROPOSALS.find(x => x.id === id);
+    const show = e => {
+      tip.innerHTML = `<div class="tt-title">${escapeHtml(p.proposal)}</div>
+        <div class="tt-meta">${p.year} &middot; ${escapeHtml(p.candidate)}</div>`;
+      tip.style.display = "block";
+      tip.style.left = (e.pageX + 14) + "px";
+      tip.style.top  = (e.pageY + 14) + "px";
+    };
+    dot.addEventListener("mousemove", show);
+    dot.addEventListener("mouseleave", () => { tip.style.display = "none"; });
+    dot.addEventListener("touchstart", show, { passive: true });
+  });
+}
+
+/* ==============================
+   RENDER: PAIRINGS
+   ============================== */
+function renderPairings() {
+  els.pairingsList.innerHTML = PAIRINGS.map(p =>
+    `<article class="pairing">
+      <h3>${escapeHtml(p.title)}</h3>
+      <p>${escapeHtml(p.body)}</p>
+      <div class="who">${escapeHtml(p.who)}</div>
+    </article>`
+  ).join("");
+}
+
+/* ==============================
+   RENDER: APPENDIX
+   ============================== */
+const CHAPTER_LABEL = {
+  won: "I. Eventually won",
+  ahead: "II. Ahead of time",
+  bad: "III. Probably bad",
+  strange: "IV. Truly strange"
+};
+
+function renderAppendix() {
+  const list = PROPOSALS.filter(filterPredicate).slice();
+  const dir = state.sortDir === "asc" ? 1 : -1;
+  const key = state.sortKey;
+  list.sort((a, b) => {
+    let va = a[key], vb = b[key];
+    if (key === "year") { va = +va; vb = +vb; }
+    else { va = String(va).toLowerCase(); vb = String(vb).toLowerCase(); }
+    if (va < vb) return -1 * dir;
+    if (va > vb) return  1 * dir;
+    return 0;
+  });
+
+  els.appendixMeta.textContent = `Showing ${list.length} of ${PROPOSALS.length} proposals.`;
+
+  els.appendixBody.innerHTML = list.map(p => {
+    const threadNames = (p.threads || []).map(k => THREADS[k] ? THREADS[k].label : k).join(", ");
+    return `<tr>
+      <td class="col-year">${p.year}</td>
+      <td class="col-candidate">${escapeHtml(p.candidate)}</td>
+      <td class="col-proposal">${escapeHtml(p.proposal)}</td>
+      <td class="col-chapter">${escapeHtml(CHAPTER_LABEL[p.category] || p.category)}</td>
+      <td class="col-fate ${p.fate}">${escapeHtml(p.fate)}</td>
+      <td class="col-threads">${escapeHtml(threadNames || "—")}</td>
+      <td class="col-source">${escapeHtml(sourceFor(p))}</td>
+    </tr>`;
+  }).join("");
+
+  // Sort indicators
+  els.appendixTable.querySelectorAll("th.sort").forEach(th => {
+    th.classList.remove("asc", "desc");
+    if (th.dataset.sort === state.sortKey) th.classList.add(state.sortDir);
+  });
+}
+
+function downloadCsv() {
+  const list = PROPOSALS.filter(filterPredicate);
+  const headers = ["Year","Candidate","Role","Party","Proposal","Summary","Chapter","Fate","WhatHappened","Threads","Source"];
+  const esc = v => {
+    const s = String(v == null ? "" : v).replace(/"/g, '""');
+    return /[",\n]/.test(s) ? `"${s}"` : s;
+  };
+  const rows = [headers.join(",")];
+  list.forEach(p => {
+    rows.push([
+      p.year,
+      p.candidate,
+      p.role || "",
+      p.party || "",
+      p.proposal,
+      p.summary,
+      CHAPTER_LABEL[p.category] || p.category,
+      p.fate,
+      p.whatHappened || "",
+      (p.threads || []).map(k => THREADS[k] ? THREADS[k].label : k).join("; "),
+      sourceFor(p)
+    ].map(esc).join(","));
+  });
+  const csv = rows.join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "graveyard-proposals.csv";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* ==============================
+   VIEW SWITCHING
+   ============================== */
+function setView(v) {
+  state.view = v;
+  els.vCards.classList.toggle("active", v === "cards");
+  els.vTimeline.classList.toggle("active", v === "timeline");
+  els.vPairings.classList.toggle("active", v === "pairings");
+  els.vAppendix.classList.toggle("active", v === "appendix");
+
+  els.chapters.classList.toggle("hidden", v !== "cards");
+  els.patterns.classList.toggle("hidden", v !== "cards");
+  els.timelineSection.classList.toggle("active", v === "timeline");
+  els.pairingsSection.classList.toggle("active", v === "pairings");
+  els.appendixSection.classList.toggle("active", v === "appendix");
+
+  if (v === "timeline") renderTimeline();
+  if (v === "pairings") renderPairings();
+  if (v === "appendix") renderAppendix();
+}
+
+function renderAll() {
+  if (state.view === "cards") renderChapters();
+  if (state.view === "timeline") renderTimeline();
+  if (state.view === "appendix") renderAppendix();
+}
+
+/* ==============================
+   BINDINGS
+   ============================== */
+els.search.addEventListener("input", e => { state.search = e.target.value; renderAll(); });
+els.decade.addEventListener("change", e => { state.decade = e.target.value; renderAll(); });
+els.fate.addEventListener("change", e => { state.fate = e.target.value; renderAll(); });
+els.vCards.addEventListener("click", () => setView("cards"));
+els.vTimeline.addEventListener("click", () => setView("timeline"));
+els.vPairings.addEventListener("click", () => setView("pairings"));
+els.vAppendix.addEventListener("click", () => setView("appendix"));
+els.csvBtn.addEventListener("click", downloadCsv);
+
+els.appendixTable.querySelectorAll("th.sort").forEach(th => {
+  th.addEventListener("click", () => {
+    const k = th.dataset.sort;
+    if (state.sortKey === k) {
+      state.sortDir = state.sortDir === "asc" ? "desc" : "asc";
+    } else {
+      state.sortKey = k;
+      state.sortDir = "asc";
+    }
+    renderAppendix();
+  });
+});
+
+/* Initial render */
+renderChapters();
+renderPairings();
+</script>
+
+</body>
+</html>
