@@ -761,6 +761,102 @@
   .appendix-notes p:last-child { margin-bottom: 0; }
 
   /* ==============================
+     QUIXOTIC
+     ============================== */
+  .quixotic {
+    max-width: 1080px;
+    margin: 3rem auto 0;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .quixotic-head { max-width: 60ch; margin-bottom: 2.2rem; }
+
+  .quixotic-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
+  }
+
+  .quixotic h2 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 0.85rem 0;
+    color: var(--ink);
+  }
+
+  .quixotic .sub {
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .quixotic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .quix-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 1rem 1.15rem 1.1rem;
+  }
+
+  .quix-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .quix-meta .qy { color: var(--accent); font-weight: 700; }
+  .quix-meta .qf { color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  .quix-card h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 0.15rem 0;
+    color: var(--ink);
+  }
+
+  .qparty {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin: 0 0 0.6rem 0;
+  }
+
+  .qidea {
+    font-family: var(--serif);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* hide quixotic when not in cards view */
+  body.view-timeline .quixotic,
+  body.view-pairings .quixotic,
+  body.view-appendix .quixotic { display: none; }
+
+  /* ==============================
      SOURCES
      ============================== */
   .sources {
@@ -1001,6 +1097,81 @@
       <h3>The line between the two is implementation, not ideology.</h3>
       <p>Hearst was right about utility capture and mostly wrong about whether municipal ownership would have improved things. Buckley was right about narcotics policy and wrong about what to do with addicts. The diagnosis tends to be more durable than the prescription, and voters should be more skeptical of the second than the first.</p>
     </div>
+  </div>
+</section>
+
+<!-- QUIXOTIC -->
+<section class="quixotic" id="quixotic-section">
+  <div class="quixotic-head">
+    <div class="quixotic-eyebrow">A separate list</div>
+    <h2>Quixotic candidates</h2>
+    <p class="sub">No-chance contenders who left a documentable trace anyway. Not in the main dataset because each finished with under two percent — but each ran on one specific big idea worth remembering.</p>
+  </div>
+  <div class="quixotic-grid">
+
+    <article class="quix-card">
+      <div class="quix-meta"><span class="qy">1985</span><span class="qf">~0.5%</span></div>
+      <h3>Gracie Mansion</h3>
+      <p class="qparty">Independent</p>
+      <p class="qidea">East Village artist who legally took the name of the mayor's residence and ran a conceptual-art campaign promising to turn City Hall into a gallery.</p>
+    </article>
+
+    <article class="quix-card">
+      <div class="quix-meta"><span class="qy">1985</span><span class="qf">~0.4%</span></div>
+      <h3>Lenora Fulani</h3>
+      <p class="qparty">New Alliance Party</p>
+      <p class="qidea">Black-led independent socialist running a two-tier critique that both major parties were rigged against working-class communities of color. The first of several New York City runs.</p>
+    </article>
+
+    <article class="quix-card">
+      <div class="quix-meta"><span class="qy">1993</span><span class="qf">~1.4%</span></div>
+      <h3>George Marlin</h3>
+      <p class="qparty">Conservative Party</p>
+      <p class="qidea">Bond-trader and Buckley acolyte running a doctrinaire libertarian-conservative platform: abolish rent regulation, shrink City Hall, privatize what could be privatized.</p>
+    </article>
+
+    <article class="quix-card">
+      <div class="quix-meta"><span class="qy">2005, 2009</span><span class="qf">&lt;1%</span></div>
+      <h3>Jimmy McMillan</h3>
+      <p class="qparty">The Rent Is Too Damn High Party</p>
+      <p class="qidea">A one-man party built around a single sentence and a pair of black gloves. The platform was the party name. He repeated it with greater intensity each cycle.</p>
+    </article>
+
+    <article class="quix-card">
+      <div class="quix-meta"><span class="qy">2017</span><span class="qf">~0.3%</span></div>
+      <h3>Akeem Browder</h3>
+      <p class="qparty">Green</p>
+      <p class="qidea">Brother of Kalief Browder, who took his life in 2015 after three years on Rikers awaiting trial. Browder's flagship plank was closing Rikers immediately and ending cash bail.</p>
+    </article>
+
+    <article class="quix-card">
+      <div class="quix-meta"><span class="qy">2017</span><span class="qf">~1.0%</span></div>
+      <h3>Bo Dietl</h3>
+      <p class="qparty">Independent</p>
+      <p class="qidea">Celebrity ex-NYPD detective whose flagship plank was placing an armed retired cop in every public school to prevent, in his framing, a "Sandy Hook in New York."</p>
+    </article>
+
+    <article class="quix-card">
+      <div class="quix-meta"><span class="qy">2017</span><span class="qf">~0.4%</span></div>
+      <h3>Robert Gangi</h3>
+      <p class="qparty">Reform Party</p>
+      <p class="qidea">Longtime director of the Police Reform Organizing Project running a single-issue campaign to end Broken Windows policing.</p>
+    </article>
+
+    <article class="quix-card">
+      <div class="quix-meta"><span class="qy">2021</span><span class="qf">&lt;1%</span></div>
+      <h3>Paperboy Love Prince</h3>
+      <p class="qparty">Democratic primary</p>
+      <p class="qidea">Brooklyn rapper and performance artist whose platform was $2,000-a-month universal basic income, rainbow costumes, and free-food giveaways. Took it as seriously as anyone in the field.</p>
+    </article>
+
+    <article class="quix-card">
+      <div class="quix-meta"><span class="qy">2021</span><span class="qf">&lt;0.5%</span></div>
+      <h3>Quanda Francis</h3>
+      <p class="qparty">Empowerment Party</p>
+      <p class="qidea">Self-described first AI-assisted mayoral candidate, with an algorithmic-budgeting platform that no one else was talking about in 2021 and many people are talking about in 2025.</p>
+    </article>
+
   </div>
 </section>
 
@@ -1833,7 +2004,8 @@ const els = {
   vTimeline: document.getElementById("v-timeline"),
   vPairings: document.getElementById("v-pairings"),
   vAppendix: document.getElementById("v-appendix"),
-  patterns: document.getElementById("patterns")
+  patterns: document.getElementById("patterns"),
+  quixotic: document.getElementById("quixotic-section")
 };
 
 /* ==============================
@@ -2113,6 +2285,7 @@ function setView(v) {
 
   els.chapters.classList.toggle("hidden", v !== "cards");
   els.patterns.classList.toggle("hidden", v !== "cards");
+  els.quixotic.classList.toggle("hidden", v !== "cards");
   els.timelineSection.classList.toggle("active", v === "timeline");
   els.pairingsSection.classList.toggle("active", v === "pairings");
   els.appendixSection.classList.toggle("active", v === "appendix");
