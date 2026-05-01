@@ -430,6 +430,19 @@
     letter-spacing: 0.04em;
   }
 
+  .card-link {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+  }
+  .card-link:hover { color: var(--ink); }
+
   .empty-chapter {
     grid-column: 1 / -1;
     padding: 2rem 0;
@@ -957,8 +970,8 @@
   <p class="dek">A century-and-change of New York City mayoral platforms from candidates who lost the race — and the surprising number of their proposals that eventually clawed their way back to life.</p>
   <div class="hero-meta">
     <span><strong>1886 to 2025</strong></span>
-    <span>64 proposals from 44 losing campaigns</span>
-    <span>Median lag from loss to law: about 17 years</span>
+    <span>58 proposals from 38 losing campaigns</span>
+    <span>Median lag from loss to law: about 16 years</span>
   </div>
 </header>
 
@@ -970,10 +983,10 @@
 
 <!-- STATS STRIP -->
 <section class="stats">
-  <div class="stat"><span class="num">64</span><span class="label">Proposals tracked</span></div>
-  <div class="stat"><span class="num">22</span><span class="label">Eventually adopted, in whole or part</span></div>
-  <div class="stat"><span class="num">35</span><span class="label">Still alive in current debate</span></div>
-  <div class="stat"><span class="num">7</span><span class="label">Decisively buried</span></div>
+  <div class="stat"><span class="num">58</span><span class="label">Proposals tracked</span></div>
+  <div class="stat"><span class="num">19</span><span class="label">Eventually adopted, in whole or part</span></div>
+  <div class="stat"><span class="num">33</span><span class="label">Still alive in current debate</span></div>
+  <div class="stat"><span class="num">6</span><span class="label">Decisively buried</span></div>
 </section>
 
 <!-- CONTROLS -->
@@ -1054,6 +1067,7 @@
           <th data-sort="category" class="sort">Chapter</th>
           <th data-sort="fate" class="sort">Fate</th>
           <th>Threads</th>
+          <th>Coverage</th>
           <th>Source</th>
         </tr>
       </thead>
@@ -1181,7 +1195,7 @@
     <summary>Methodology, scope and sources</summary>
     <div class="sources-body">
       <h4>Scope</h4>
-      <p>"Failed" here means lost a general election or a major-party primary, between 1886 and 2025. Henry George ran in 1886 — pre-consolidation — but he is the godfather of the genre and is included. Candidates who later won (Bill de Blasio's pre-K plank, which Norman Thomas first proposed in 1932) appear when the idea, not the eventual victor, is the unit of analysis.</p>
+      <p>"Failed" here means lost a general election or a major-party primary, between 1886 and 2025. Henry George ran in 1886 — pre-consolidation — but he is the godfather of the genre and is included. Ideas first proposed by losing candidates that were later adopted by winning candidates appear under the original loser-proposer; eventual victors are mentioned only as carriers of someone else's prior idea.</p>
 
       <h4>Categorization</h4>
       <p>Four chapters: <em>eventually won</em> (the idea became law in some form), <em>ahead of their time</em> (still in serious circulation, not yet enacted), <em>probably bad</em> (the implementation was wrong, not just the politics), and <em>truly strange</em> (in a category of their own). The "fate" filter — adopted, alive, buried — is a more granular version of the same axis.</p>
@@ -1246,7 +1260,8 @@ const PROPOSALS = [
     category: "won",
     fate: "alive",
     whatHappened: "Pittsburgh used a split-rate version through most of the 20th century. Pennsylvania still has municipalities that do. The idea is hovering again now in YIMBY-adjacent circles, especially as a way to fix New York's notoriously regressive property-tax system.",
-    threads: ["taxation", "housing"]
+    threads: ["taxation", "housing"],
+    link: { url: "https://en.wikipedia.org/wiki/1886_New_York_City_mayoral_election", label: "1886 election (Wikipedia)" }
   },
   {
     id: "george-1897-finalrun",
@@ -1256,7 +1271,8 @@ const PROPOSALS = [
     category: "won",
     fate: "alive",
     whatHappened: "Same outcome as 1886: a substantial vote share for an idea that wouldn't become law. The single-tax revival continues into the 21st century through land-value-tax reform debates.",
-    threads: ["taxation", "housing"]
+    threads: ["taxation", "housing"],
+    link: { url: "https://en.wikipedia.org/wiki/1897_New_York_City_mayoral_election", label: "1897 election (Wikipedia)" }
   },
   {
     id: "hillquit-1917-transit",
@@ -1266,7 +1282,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "By 1940 the city had bought out both lines and merged them with the IND into what became the MTA. 23-year lag.",
-    threads: ["transit", "municipal"]
+    threads: ["transit", "municipal"],
+    link: { url: "https://www.gothamcenter.org/blog/100-years-ago-when-a-socialist-nearly-became-mayor-of-nyc", label: "Gotham Center: when a Socialist nearly became mayor" }
   },
   {
     id: "hillquit-1917-housing",
@@ -1276,7 +1293,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "NYCHA was created in 1934 and ultimately became the largest public-housing system in the country. 17-year lag.",
-    threads: ["housing", "municipal"]
+    threads: ["housing", "municipal"],
+    link: { url: "https://www.gothamcenter.org/blog/100-years-ago-when-a-socialist-nearly-became-mayor-of-nyc", label: "Gotham Center: when a Socialist nearly became mayor" }
   },
   {
     id: "hillquit-1917-milk",
@@ -1286,8 +1304,9 @@ const PROPOSALS = [
     quote: { text: "Put the milk profiteers out of business.", attrib: "Hillquit, Socialist platform language (1917-1932)" },
     category: "won",
     fate: "adopted",
-    whatHappened: "La Guardia later set up city-run milk distribution and direct purchasing as a Depression-era price-control measure. The same logic — public provision to break cartels in essential goods — surfaces a century later in Mamdani's 2025 city-grocery plan.",
-    threads: ["municipal"]
+    whatHappened: "La Guardia later set up city-run milk distribution and direct purchasing as a Depression-era price-control measure. The same logic — public provision to break cartels in essential goods — has resurfaced in nearly every Socialist and democratic-socialist mayoral platform since.",
+    threads: ["municipal"],
+    link: { url: "https://forward.com/news/780430/zohran-mamdani-morris-hillquit-socialism-jewish/", label: "The Forward: Hillquit lineage" }
   },
   {
     id: "hylan-1925-transit",
@@ -1297,7 +1316,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "By 1940 the city had bought out the IRT and BMT and merged them with the IND. 15-year lag from Hylan's losing primary to law. Andrew Cuomo ran on an MTA city-takeover plan exactly a century later, in 2025, and lost.",
-    threads: ["transit", "municipal"]
+    threads: ["transit", "municipal"],
+    link: { url: "https://en.wikipedia.org/wiki/1925_New_York_City_mayoral_election", label: "1925 election (Wikipedia)" }
   },
   {
     id: "thomas-1929-newdeal",
@@ -1308,7 +1328,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Most of the platform was inside the New Deal by 1938 and inside the Great Society by 1965. Thomas's reply to Roosevelt: \"I thought that was a damned obvious thing to say.\"",
-    threads: ["economy", "housing", "civilrights"]
+    threads: ["economy", "housing", "civilrights"],
+    link: { url: "https://en.wikipedia.org/wiki/Norman_Thomas", label: "Norman Thomas (Wikipedia)" }
   },
   {
     id: "marcantonio-1949-ccrb",
@@ -1318,7 +1339,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "An NYPD-internal review board was established 1953 (three deputy police commissioners, not civilian). The first civilian-majority board came in 1966 under Lindsay and was repealed by referendum the same year. The genuinely independent civilian CCRB dates to 1993. 44-year lag to a real version.",
-    threads: ["safety", "civilrights"]
+    threads: ["safety", "civilrights"],
+    link: { url: "https://www.nyc.gov/site/ccrb/about/history.page", label: "CCRB official history" }
   },
   {
     id: "buckley-1965-bike",
@@ -1329,7 +1351,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "First protected bike lanes built 2007; hundreds of miles installed under Bloomberg and de Blasio. 42-year lag.",
-    threads: ["transit"]
+    threads: ["transit"],
+    link: { url: "https://historynet.com/demand-a-recount-bill-buckleys-quixotic-1965-run-for-nyc-mayor/", label: "HistoryNet: Buckley's 1965 run" }
   },
   {
     id: "buckley-1965-decrim",
@@ -1339,7 +1362,8 @@ const PROPOSALS = [
     category: "won",
     fate: "alive",
     whatHappened: "Now mainstream thinking on opioids and methadone, partial reality with cannabis. The conservative case for harm reduction predated the progressive one by decades.",
-    threads: ["health"]
+    threads: ["health"],
+    link: { url: "https://historynet.com/demand-a-recount-bill-buckleys-quixotic-1965-run-for-nyc-mayor/", label: "HistoryNet: Buckley's 1965 run" }
   },
   {
     id: "buckley-1965-uber",
@@ -1349,7 +1373,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Functional implementation arrived in the 2010s as ride-hail. The medallion market collapsed. The intellectual paternity sits with someone who got 13 percent of the 1965 vote.",
-    threads: ["transit"]
+    threads: ["transit"],
+    link: { url: "https://historynet.com/demand-a-recount-bill-buckleys-quixotic-1965-run-for-nyc-mayor/", label: "HistoryNet: Buckley's 1965 run" }
   },
   {
     id: "buckley-1965-welfare",
@@ -1359,7 +1384,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Codified federally under Clinton-era welfare reform in 1996.",
-    threads: ["economy"]
+    threads: ["economy"],
+    link: { url: "https://historynet.com/demand-a-recount-bill-buckleys-quixotic-1965-run-for-nyc-mayor/", label: "HistoryNet: Buckley's 1965 run" }
   },
   {
     id: "badillo-1973-clt",
@@ -1369,7 +1395,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "First New York City CLTs established in the 1990s; significantly expanded under de Blasio and Adams.",
-    threads: ["housing"]
+    threads: ["housing"],
+    link: { url: "https://en.wikipedia.org/wiki/1973_New_York_City_mayoral_election", label: "1973 election (Wikipedia)" }
   },
   {
     id: "green-2001-311",
@@ -1379,17 +1406,19 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Bloomberg launched 311 in 2003 — a two-year lag. It is now arguably the most-copied municipal innovation of the 21st century. The intellectual paternity sits with someone who never made it to City Hall.",
-    threads: ["government"]
+    threads: ["government"],
+    link: { url: "https://en.wikipedia.org/wiki/Mark_J._Green", label: "Mark J. Green (Wikipedia)" }
   },
   {
-    id: "ferrer-2005-twocities",
+    id: "ferrer-2005-stocktransfer",
     year: 2005, candidate: "Fernando Ferrer", role: "Mayoral candidate, former Bronx BP", party: "Democrat",
-    proposal: "Two New Yorks: inequality as the central frame",
-    summary: "Ferrer's 2005 campaign against Bloomberg made the gap between rich and poor New Yorkers — the 'Two New Yorks' — the organizing theme of his run. He won the Democratic primary outright after losing the 2001 runoff to Mark Green. He lost the general to Bloomberg by 19 points.",
-    category: "won",
-    fate: "adopted",
-    whatHappened: "Bill de Blasio's 2013 'A Tale of Two Cities' campaign adopted the frame nearly verbatim and won. 8-year lag from Ferrer's loss to a winning carrier of the same argument.",
-    threads: ["housing", "civilrights"]
+    proposal: "Reinstate the stock-transfer tax",
+    summary: "Ferrer's most concrete fiscal plank in 2005 was reinstating New York's stock-transfer tax — a small per-trade levy that had existed since 1905 but had been rebated to brokers since the early 1980s, costing the city and state billions annually. He paired it with restored funding for school construction.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Ferrer lost to Bloomberg by 19 points after winning the Democratic primary outright. The stock-transfer tax revival has resurfaced periodically (Stringer raised it in 2021) but has never moved in Albany.",
+    threads: ["taxation", "education"],
+    link: { url: "https://en.wikipedia.org/wiki/2005_New_York_City_mayoral_election", label: "2005 election (Wikipedia)" }
   },
   {
     id: "thompson-2009-paid-sick",
@@ -1399,7 +1428,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Earned Sick Time Act enacted 2014. Five-year lag.",
-    threads: ["economy"]
+    threads: ["economy"],
+    link: { url: "https://abetterbalance.org/resources/background-on-paid-sick-time-in-new-york-city", label: "A Better Balance: paid sick time history" }
   },
   {
     id: "quinn-2013-paid-sick",
@@ -1409,7 +1439,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Effective April 2014. Quinn lost the Democratic primary to de Blasio. The policy survived and was expanded under his administration.",
-    threads: ["economy", "government"]
+    threads: ["economy", "government"],
+    link: { url: "https://abetterbalance.org/resources/background-on-paid-sick-time-in-new-york-city", label: "A Better Balance: paid sick time history" }
   },
   {
     id: "thompson-2013-stopfrisk",
@@ -1419,7 +1450,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "A federal court declared the program unconstitutional in August 2013, the same year. Stops fell from 685,000 in 2011 to under 13,000 by 2017.",
-    threads: ["safety"]
+    threads: ["safety"],
+    link: { url: "https://en.wikipedia.org/wiki/Stop-and-frisk_in_New_York_City", label: "Stop-and-frisk in New York City (Wikipedia)" }
   },
   {
     id: "lhota-2013-bodycam",
@@ -1429,17 +1461,8 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Pilot launched 2014; phased rollout in 2017; full deployment of all uniformed patrol officers in March 2019. About a 6-year lag.",
-    threads: ["safety"]
-  },
-  {
-    id: "deblasio-2013-prek",
-    year: 2013, candidate: "Bill de Blasio (and 80 years of socialists)", role: "Mayoral candidate (won)", party: "Democrat",
-    proposal: "Universal pre-kindergarten",
-    summary: "De Blasio won. But pre-K had been a losing-candidate idea since Norman Thomas put it on the Socialist platform in 1932 as a workforce and equity measure. De Blasio was the first to make it a winning issue.",
-    category: "won",
-    fate: "adopted",
-    whatHappened: "Implemented 2014; 3-K added later. 82-year lag from first proposal to law.",
-    threads: ["education", "civilrights"]
+    threads: ["safety"],
+    link: { url: "https://www.nyc.gov/site/nypd/about/about-nypd/equipment-tech/body-worn-cameras.page", label: "NYPD body-worn cameras (NYC.gov)" }
   },
 
   /* ==========================================
@@ -1453,7 +1476,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "The subways were eventually municipalized in 1940; electricity was not. La Guardia tried to build a $101 million municipal power plant in 1934 and was sued out of it by Consolidated Gas. The question of public utilities returns every time rates spike.",
-    threads: ["municipal"]
+    threads: ["municipal"],
+    link: { url: "https://en.wikipedia.org/wiki/1905_New_York_City_mayoral_election", label: "1905 election (Wikipedia)" }
   },
   {
     id: "mailer-1969-51st-state",
@@ -1464,7 +1488,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Peter Vallone introduced a secession bill in 2003. The frustration is recurring; the structural answer never gets traction because Article IV requires both Albany and Congress to sign off.",
-    threads: ["government"]
+    threads: ["government"],
+    link: { url: "https://www.gothamcenter.org/blog/the-51st-state-norman-mailer-jimmy-breslin-and-the-politics-of-imagination", label: "Gotham Center: The 51st State" }
   },
   {
     id: "mailer-1969-neighborhood",
@@ -1474,7 +1499,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Community boards, participatory budgeting, neighborhood-level land-use review have all been adopted in piecemeal form. The full version has not.",
-    threads: ["government", "education"]
+    threads: ["government", "education"],
+    link: { url: "https://www.gothamcenter.org/blog/the-51st-state-norman-mailer-jimmy-breslin-and-the-politics-of-imagination", label: "Gotham Center: The 51st State" }
   },
   {
     id: "mailer-1969-rentcontrol",
@@ -1484,7 +1510,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "New York has stayed roughly inside the lines of what Mailer-Breslin proposed, with a multi-tier stabilization system covering about a million units.",
-    threads: ["housing"]
+    threads: ["housing"],
+    link: { url: "https://projectmailer.net/pm/The_Mailer_Review/Volume_13,_2019/Jimmy_Breslin%E2%80%99s_Run_to_Win", label: "Project Mailer: Breslin's Run to Win" }
   },
   {
     id: "mailer-1969-heroin",
@@ -1494,7 +1521,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "We are decades into a partial version: methadone, Suboxone, near-universal medical use of opioids, and supervised consumption sites in the experimental phase.",
-    threads: ["health", "safety"]
+    threads: ["health", "safety"],
+    link: { url: "https://projectmailer.net/pm/The_Mailer_Review/Volume_13,_2019/Jimmy_Breslin%E2%80%99s_Run_to_Win", label: "Project Mailer: Breslin's Run to Win" }
   },
   {
     id: "marchi-1969-autonomy",
@@ -1504,7 +1532,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Staten Island held an advisory secession referendum in 1993 that passed 65-35. The state legislature blocked it. The fight is dormant but recurring.",
-    threads: ["government"]
+    threads: ["government"],
+    link: { url: "https://en.wikipedia.org/wiki/John_Marchi", label: "John Marchi (Wikipedia)" }
   },
   {
     id: "abzug-1977-gayrights",
@@ -1514,7 +1543,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "adopted",
     whatHappened: "City Council passed the ordinance in 1986, nine years after her loss. The 1977 mayoral race is remembered for fiscal crisis, the blackout, and Son of Sam. The woman who finished fourth was running the platform that aged best.",
-    threads: ["civilrights"]
+    threads: ["civilrights"],
+    link: { url: "https://en.wikipedia.org/wiki/Bella_Abzug", label: "Bella Abzug (Wikipedia)" }
   },
   {
     id: "abzug-1977-payequity",
@@ -1524,27 +1554,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "adopted",
     whatHappened: "Both became baseline assumptions by the Dinkins administration and after, though representation gains were uneven.",
-    threads: ["civilrights", "economy"]
-  },
-  {
-    id: "cuomo-mario-1977-deathpenalty",
-    year: 1977, candidate: "Mario Cuomo", role: "Mayoral candidate, Secretary of State of NY", party: "Democrat / Liberal",
-    proposal: "Opposition to the death penalty",
-    summary: "Cuomo lost the 1977 runoff to Koch in a campaign defined in part by Koch's tough-on-crime, pro-death-penalty pitch and Cuomo's principled opposition. He had emerged as a serious figure during the 1972-74 Forest Hills public-housing fight, where he negotiated a scaled-down compromise.",
-    category: "won",
-    fate: "adopted",
-    whatHappened: "Cuomo became governor in 1982 and vetoed reinstatement of the death penalty 12 times. New York's last death-penalty statute was struck down by the Court of Appeals in 2004. Mediation-as-policy in housing siting has been used unevenly since.",
-    threads: ["safety", "housing"]
-  },
-  {
-    id: "bellamy-1985-women",
-    year: 1985, candidate: "Carol Bellamy", role: "Mayoral candidate, City Council President", party: "Democrat",
-    proposal: "First major-party female mayoral nominee in New York history",
-    summary: "Bellamy was the first woman to top a major-party ticket in a New York City mayoral race. She lost to Koch's third-term reelection. Her platform emphasized library and education investment and ethics reform after the Donald Manes / Parking Violations Bureau scandals broke during the campaign.",
-    category: "ahead",
-    fate: "alive",
-    whatHappened: "Helped open the door for the women who followed — Messinger 1997, Quinn 2013, the Wiley/Garcia/Morales 2021 trio, and Adrienne Adams 2025. New York City has still not elected a female mayor.",
-    threads: ["civilrights", "education"]
+    threads: ["civilrights", "economy"],
+    link: { url: "https://en.wikipedia.org/wiki/Bella_Abzug", label: "Bella Abzug (Wikipedia)" }
   },
   {
     id: "badillo-1973-bilingual",
@@ -1554,7 +1565,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Partially adopted; debated and reorganized cyclically. Mayoral control of the schools — Badillo's later cause — was a 2002 Bloomberg-era victory that Badillo helped frame.",
-    threads: ["education", "civilrights"]
+    threads: ["education", "civilrights"],
+    link: { url: "https://en.wikipedia.org/wiki/Herman_Badillo", label: "Herman Badillo (Wikipedia)" }
   },
   {
     id: "badillo-1977-southbronx",
@@ -1564,7 +1576,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "buried",
     whatHappened: "Koch effectively buried it after Badillo, briefly his deputy mayor, resigned over Koch's lack of follow-through. The South Bronx was eventually rebuilt — but largely through Koch's housing program, not Badillo's.",
-    threads: ["housing", "economy"]
+    threads: ["housing", "economy"],
+    link: { url: "https://en.wikipedia.org/wiki/Herman_Badillo", label: "Herman Badillo (Wikipedia)" }
   },
   {
     id: "ravitch-1989-landuse",
@@ -1574,7 +1587,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Active debate as of 2025. Member deference remains intact.",
-    threads: ["housing", "government"]
+    threads: ["housing", "government"],
+    link: { url: "https://en.wikipedia.org/wiki/Richard_Ravitch", label: "Richard Ravitch (Wikipedia)" }
   },
   {
     id: "messinger-1997-landuse",
@@ -1584,7 +1598,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "The community-control idea has had a strange life since. NIMBY neighborhood groups use it as a cudgel to block housing; Mamdani-style left politics uses it as the basis for democratic planning. The ambivalence in Messinger's platform — community control as both protection and obstacle — is a problem her successors haven't resolved.",
-    threads: ["housing", "government"]
+    threads: ["housing", "government"],
+    link: { url: "https://en.wikipedia.org/wiki/1997_New_York_City_mayoral_election", label: "1997 election (Wikipedia)" }
   },
   {
     id: "messinger-1997-commissioner",
@@ -1594,7 +1609,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Revived by Maya Wiley in 2021. Not implemented.",
-    threads: ["safety", "government"]
+    threads: ["safety", "government"],
+    link: { url: "https://en.wikipedia.org/wiki/1997_New_York_City_mayoral_election", label: "1997 election (Wikipedia)" }
   },
   {
     id: "weiner-2005-middleclass",
@@ -1604,7 +1620,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Property-tax reform aimed at outerborough homeowners is a recurring (still-unsolved) policy target. The political coalition Weiner described — outerborough working-class Democrats — became the explicit target of the de Blasio and Adams campaigns.",
-    threads: ["taxation", "housing", "economy"]
+    threads: ["taxation", "housing", "economy"],
+    link: { url: "https://en.wikipedia.org/wiki/2005_New_York_City_mayoral_election", label: "2005 election (Wikipedia)" }
   },
   {
     id: "catsimatidis-2013-yimby",
@@ -1614,7 +1631,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Core argument of Adams's 2024 City of Yes proposal. The idea didn't change. The political coalition did.",
-    threads: ["housing"]
+    threads: ["housing"],
+    link: { url: "https://en.wikipedia.org/wiki/2013_New_York_City_mayoral_election", label: "2013 election (Wikipedia)" }
   },
   {
     id: "weiner-2013-keys",
@@ -1624,7 +1642,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Weiner finished fifth in the primary after his second sexting scandal. The single-payer plank remains a periodic state proposal; bus-lane expansion accelerated under de Blasio and Adams; the public-banking idea was carried by Stringer in 2021.",
-    threads: ["transit", "municipal", "health"]
+    threads: ["transit", "municipal", "health"],
+    link: { url: "https://en.wikipedia.org/wiki/2013_New_York_City_Democratic_mayoral_primary", label: "2013 Dem primary (Wikipedia)" }
   },
   {
     id: "albanese-2017-cuny",
@@ -1634,7 +1653,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Tuition-free CUNY remains a recurring proposal at city and state level (the state's Excelsior program is a partial version). The public-matching expansion happened in different form under the 2018 charter revision.",
-    threads: ["education"]
+    threads: ["education"],
+    link: { url: "https://en.wikipedia.org/wiki/2017_New_York_City_mayoral_election", label: "2017 election (Wikipedia)" }
   },
   {
     id: "stringer-2021-bank",
@@ -1644,7 +1664,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Public Bank NYC coalition active; state authorization stalled. Costa Rica, North Dakota, and a small public-banking movement in California operate versions.",
-    threads: ["municipal"]
+    threads: ["municipal"],
+    link: { url: "https://www.publicbanknyc.org/", label: "Public Bank NYC coalition" }
   },
   {
     id: "donovan-2021-vacancy",
@@ -1654,7 +1675,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Requires state authorization. Pending.",
-    threads: ["housing", "taxation"]
+    threads: ["housing", "taxation"],
+    link: { url: "https://en.wikipedia.org/wiki/2021_New_York_City_Democratic_mayoral_primary", label: "2021 Dem primary (Wikipedia)" }
   },
   {
     id: "donovan-2021-equity-bonds",
@@ -1664,7 +1686,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Connecticut launched a similar baby-bonds program in 2023; Washington, D.C. and California followed. New York City has not. Donovan finished seventh in the ranked-choice primary.",
-    threads: ["economy", "taxation", "civilrights"]
+    threads: ["economy", "taxation", "civilrights"],
+    link: { url: "https://en.wikipedia.org/wiki/2021_New_York_City_Democratic_mayoral_primary", label: "2021 Dem primary (Wikipedia)" }
   },
   {
     id: "morales-2021-mhresponse",
@@ -1674,7 +1697,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "The B-HEARD civilian mental-health pilot launched in 2021 and expanded under Adams. Brad Lander made expanding it a central plank in 2025. The full budget-shift version remains the most contested piece.",
-    threads: ["safety", "health"]
+    threads: ["safety", "health"],
+    link: { url: "https://en.wikipedia.org/wiki/Dianne_Morales", label: "Dianne Morales (Wikipedia)" }
   },
   {
     id: "mcguire-2021-comeback",
@@ -1684,7 +1708,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Pieces of this — small-business support, MWBE capital-access programs — have continued under Adams. The full apprenticeship program has not. McGuire finished mid-pack in the ranked-choice primary.",
-    threads: ["economy"]
+    threads: ["economy"],
+    link: { url: "https://en.wikipedia.org/wiki/Ray_McGuire", label: "Ray McGuire (Wikipedia)" }
   },
   {
     id: "sliwa-2021-vacancy",
@@ -1694,7 +1719,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Same fate as Donovan's plan. The agreement is real and revealing; the politics never followed.",
-    threads: ["housing", "taxation"]
+    threads: ["housing", "taxation"],
+    link: { url: "https://en.wikipedia.org/wiki/2021_New_York_City_mayoral_election", label: "2021 election (Wikipedia)" }
   },
   {
     id: "garcia-2021-streets",
@@ -1704,7 +1730,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Partial implementation. Mixed reviews on permanence.",
-    threads: ["transit"]
+    threads: ["transit"],
+    link: { url: "https://en.wikipedia.org/wiki/Kathryn_Garcia", label: "Kathryn Garcia (Wikipedia)" }
   },
   {
     id: "wiley-2021-commissioner",
@@ -1714,7 +1741,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Active debate. Not implemented.",
-    threads: ["safety"]
+    threads: ["safety"],
+    link: { url: "https://en.wikipedia.org/wiki/Maya_Wiley", label: "Maya Wiley (Wikipedia)" }
   },
   {
     id: "yang-2021-cash",
@@ -1724,27 +1752,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "buried",
     whatHappened: "Small pilots launched in other cities. No New York City version.",
-    threads: ["economy"]
-  },
-  {
-    id: "mamdani-2025-grocery",
-    year: 2025, candidate: "Zohran Mamdani", role: "Mayoral candidate (won)", party: "Democrat / DSA",
-    proposal: "City-owned grocery stores",
-    summary: "Municipal grocery stores in food deserts — directly echoing Hillquit's 1932 Socialist platform on city food distribution and his 1917 milk-at-cost plan. Whether either works depends on whether a real cartel-style market failure exists today.",
-    category: "ahead",
-    fate: "alive",
-    whatHappened: "Pilot rolling out in 2026 under the new administration.",
-    threads: ["municipal", "health"]
-  },
-  {
-    id: "mamdani-2025-buses",
-    year: 2025, candidate: "Zohran Mamdani", role: "Mayoral candidate (won)", party: "Democrat / DSA",
-    proposal: "Free city buses",
-    summary: "A flagship Mamdani proposal. Pilot programs in 2024 produced mixed but mostly positive results.",
-    category: "ahead",
-    fate: "alive",
-    whatHappened: "Pilot completed. Full implementation contested over funding.",
-    threads: ["transit"]
+    threads: ["economy"],
+    link: { url: "https://en.wikipedia.org/wiki/Andrew_Yang", label: "Andrew Yang (Wikipedia)" }
   },
   {
     id: "cuomo-2025-mta",
@@ -1754,7 +1763,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "buried",
     whatHappened: "Cuomo lost. Idea remains dormant. 100-year lag and counting.",
-    threads: ["transit", "municipal", "government"]
+    threads: ["transit", "municipal", "government"],
+    link: { url: "https://en.wikipedia.org/wiki/2025_New_York_City_mayoral_election", label: "2025 election (Wikipedia)" }
   },
   {
     id: "stringer-2025-piedaterre",
@@ -1764,7 +1774,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Requires state authorization; repeatedly blocked.",
-    threads: ["housing", "taxation"]
+    threads: ["housing", "taxation"],
+    link: { url: "https://en.wikipedia.org/wiki/Scott_Stringer", label: "Scott Stringer (Wikipedia)" }
   },
   {
     id: "lander-2025-golf",
@@ -1774,17 +1785,19 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Lander lost the Democratic primary and cross-endorsed Mamdani. The golf-course-to-housing conversion idea has begun appearing in city housing-supply debates; whether the Mamdani administration takes it up is open.",
-    threads: ["housing"]
+    threads: ["housing"],
+    link: { url: "https://en.wikipedia.org/wiki/Brad_Lander", label: "Brad Lander (Wikipedia)" }
   },
   {
-    id: "myrie-2025-million",
+    id: "myrie-2025-transit-upzone",
     year: 2025, candidate: "Zellnor Myrie", role: "Mayoral candidate, State Senator", party: "Democrat",
-    proposal: "One million new homes",
-    summary: "Myrie's central plank was a numerical target of one million new units of housing — the most concrete YIMBY production goal of any candidate in the 2025 field.",
+    proposal: "As-of-right upzoning within a half-mile of every subway station",
+    summary: "Myrie's signature housing plank was eliminating discretionary review for residential projects within a half-mile of any subway station — turning the zoning code into a transit-oriented production map. He paired it with NYCHA preservation and a tenant-protection package.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Myrie lost the Democratic primary and endorsed Mamdani. The one-million number has become a benchmark in subsequent housing-supply debate.",
-    threads: ["housing"]
+    whatHappened: "Myrie lost the Democratic primary and endorsed Mamdani. Transit-oriented as-of-right upzoning is now a recurring frame in city housing-policy debate.",
+    threads: ["housing", "transit"],
+    link: { url: "https://en.wikipedia.org/wiki/Zellnor_Myrie", label: "Zellnor Myrie (Wikipedia)" }
   },
   {
     id: "adamsadrienne-2025-mh",
@@ -1794,7 +1807,8 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Adams lost the Democratic primary. Several of her planks track adjacent to Lander's mental-health expansion and Mamdani's housing investment.",
-    threads: ["education", "health", "safety", "housing"]
+    threads: ["education", "health", "safety", "housing"],
+    link: { url: "https://en.wikipedia.org/wiki/Adrienne_Adams", label: "Adrienne Adams (Wikipedia)" }
   },
   {
     id: "tilson-2025-charters",
@@ -1804,17 +1818,19 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Tilson finished low in the ranked-choice primary. The charter-cap fight remains active at the state level, with periodic proposals to expand or remove it.",
-    threads: ["education"]
+    threads: ["education"],
+    link: { url: "https://en.wikipedia.org/wiki/Whitney_Tilson", label: "Whitney Tilson (Wikipedia)" }
   },
   {
-    id: "ramos-2025-housing",
+    id: "ramos-2025-goodcause",
     year: 2025, candidate: "Jessica Ramos", role: "Mayoral candidate, State Senator from Queens", party: "Democrat",
-    proposal: "Working-class housing and transit reinvestment",
-    summary: "Ramos centered her platform on tenant protections, public-housing repair, and transit reinvestment in the outer-borough Queens corridor she represents in Albany. She dropped out and endorsed Cuomo before pivoting to Mamdani.",
+    proposal: "Citywide enforcement of Good Cause Eviction",
+    summary: "Ramos, who had carried the state-level Good Cause Eviction bill in Albany for years, ran on aggressive city-level enforcement of the 2024 statute — including a dedicated tenant-protection unit at HPD and an eviction-defense fund.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Several of Ramos's tenant-protection planks track to Mamdani's broader housing platform now in implementation.",
-    threads: ["housing", "transit"]
+    whatHappened: "Ramos dropped out and endorsed Cuomo, then pivoted to Mamdani. The state Good Cause statute remains weakly enforced; the city-level enforcement gap is one of the new administration's open questions.",
+    threads: ["housing"],
+    link: { url: "https://en.wikipedia.org/wiki/Jessica_Ramos", label: "Jessica Ramos (Wikipedia)" }
   },
 
   /* ==========================================
@@ -1828,7 +1844,8 @@ const PROPOSALS = [
     category: "bad",
     fate: "buried",
     whatHappened: "Congestion pricing — a much milder version of the same instinct — took 60 years to implement and remains contested. The ban-cars-and-build-elevated-rail version was a thought experiment, not a plan.",
-    threads: ["transit"]
+    threads: ["transit"],
+    link: { url: "https://www.gothamcenter.org/blog/the-51st-state-norman-mailer-jimmy-breslin-and-the-politics-of-imagination", label: "Gotham Center: The 51st State" }
   },
   {
     id: "buckley-1965-quarantine",
@@ -1838,17 +1855,8 @@ const PROPOSALS = [
     category: "bad",
     fate: "buried",
     whatHappened: "The decriminalization plank from the same platform aged into mainstream policy. The civil-commitment plank did not. Buckley got the diagnosis right (prohibition produces the criminal market) and the treatment partly wrong.",
-    threads: ["health", "civilrights", "safety"]
-  },
-  {
-    id: "hearst-1905-runthings",
-    year: 1905, candidate: "William Randolph Hearst", role: "Mayoral candidate", party: "Municipal Ownership League",
-    proposal: "I should run things because I'm rich",
-    summary: "Hearst's policy ideas were better than his political character. His underlying argument for municipal ownership was substantive. His personal pitch — \"I should be mayor because I'm rich enough not to need the salary\" — was a cruder version of what we'd later get from Bloomberg, with none of the operational discipline.",
-    category: "bad",
-    fate: "buried",
-    whatHappened: "His press empire's behavior during both campaigns suggested someone whose interest in checking concentrated power did not extend to his own. He later ran for governor and president for the same reason.",
-    threads: ["government"]
+    threads: ["health", "civilrights", "safety"],
+    link: { url: "https://historynet.com/demand-a-recount-bill-buckleys-quixotic-1965-run-for-nyc-mayor/", label: "HistoryNet: Buckley's 1965 run" }
   },
 
   /* ==========================================
@@ -1862,7 +1870,8 @@ const PROPOSALS = [
     category: "strange",
     fate: "alive",
     whatHappened: "Half-step toward what Paris does monthly with car-free Sundays, what Bogotá does weekly with Ciclovía, and what New York City did in 2020 with Open Streets at much smaller scale. As proposed, a logistical nightmare for a 24/7 city. As a thought experiment, it captured something about urban scale and rest that nothing in the actual mayoral debate has captured since.",
-    threads: ["transit", "health"]
+    threads: ["transit", "health"],
+    link: { url: "https://www.gothamcenter.org/blog/the-51st-state-norman-mailer-jimmy-breslin-and-the-politics-of-imagination", label: "Gotham Center: The 51st State" }
   },
   {
     id: "mailer-1969-huey",
@@ -1872,17 +1881,19 @@ const PROPOSALS = [
     category: "strange",
     fate: "buried",
     whatHappened: "Newton was freed in 1970 on appeal, unrelated to the mayoral campaign. Fluoridation in New York City continues.",
-    threads: ["civilrights"]
+    threads: ["civilrights"],
+    link: { url: "https://projectmailer.net/pm/The_Mailer_Review/Volume_13,_2019/Jimmy_Breslin%E2%80%99s_Run_to_Win", label: "Project Mailer: Breslin's Run to Win" }
   },
   {
-    id: "procaccino-1969-limousine",
+    id: "procaccino-1969-police",
     year: 1969, candidate: "Mario Procaccino", role: "Mayoral candidate, City Comptroller", party: "Democrat",
-    proposal: "Limousine liberals",
-    summary: "Procaccino won the 1969 Democratic primary and lost the general to Lindsay (running on the Liberal line). He coined the phrase 'limousine liberal' to describe affluent reform Democrats he argued had abandoned outerborough working-class voters.",
-    category: "strange",
+    proposal: "Add 10,000 officers to the NYPD; restore the 'four-letter word'",
+    summary: "Procaccino won the 1969 Democratic primary and lost the general to Lindsay. His specific public-safety plank was a 10,000-officer NYPD expansion (then about a 30 percent increase) and what he called restoring 'the four-letter word' — discipline. He coined 'limousine liberal' to describe Lindsay's coalition.",
+    category: "ahead",
     fate: "adopted",
-    whatHappened: "The phrase has outlasted every other rhetorical contribution from any 1969 New York City mayoral campaign. It is in the dictionary, on Wikipedia, and in routine American political commentary.",
-    threads: ["government"]
+    whatHappened: "NYPD headcount climbed past 30,000 by the late 1980s. The phrase 'limousine liberal' entered the American political lexicon and has outlasted every other contribution from any 1969 New York City mayoral campaign.",
+    threads: ["safety", "government"],
+    link: { url: "https://en.wikipedia.org/wiki/Mario_Procaccino", label: "Mario Procaccino (Wikipedia)" }
   },
   {
     id: "buckley-1965-cabs",
@@ -1892,7 +1903,8 @@ const PROPOSALS = [
     category: "strange",
     fate: "adopted",
     whatHappened: "Functional unification arrived in the 21st century with the green-cab program and the TLC's app-based licensing.",
-    threads: ["transit"]
+    threads: ["transit"],
+    link: { url: "https://historynet.com/demand-a-recount-bill-buckleys-quixotic-1965-run-for-nyc-mayor/", label: "HistoryNet: Buckley's 1965 run" }
   }
 ];
 
@@ -1913,9 +1925,9 @@ const PAIRINGS = [
     who: "Hylan 1925 / Cuomo 2025"
   },
   {
-    title: "From Hillquit's milk to Mamdani's grocery",
-    body: "Morris Hillquit proposed direct municipal milk distribution in 1917 as a response to documented price-fixing by the dairy cartel. Mamdani proposed city-owned grocery stores in 2025 as an affordability measure. Same ideological lineage, 108 years apart, with the second carrier finally winning the office. Whether the underlying market failure is the same is the question that matters for whether it works.",
-    who: "Hillquit 1917 / Mamdani 2025"
+    title: "Hillquit's milk and the long lineage of municipal provision",
+    body: "Morris Hillquit proposed direct municipal milk distribution in 1917 as a response to documented price-fixing by the dairy cartel. La Guardia adopted a version in the 1930s. The argument — public provision to break cartels in essential goods — has surfaced in nearly every Socialist and democratic-socialist mayoral platform since, including the most recent. Whether the underlying market failure is comparable across a century is the only question that matters for whether it works.",
+    who: "Hillquit 1917 / 1930s La Guardia adoption"
   },
   {
     title: "Catsimatidis to Adams: the YIMBY journey",
@@ -2080,6 +2092,7 @@ function renderChapters() {
           ${quoteHtml}
           <div class="card-fate"><strong>${fm.label}</strong>${escapeHtml(p.whatHappened || "")}</div>
           ${threadHtml ? `<div class="card-threads">${threadHtml}</div>` : ""}
+          ${p.link ? `<a class="card-link" href="${escapeHtml(p.link.url)}" target="_blank" rel="noopener">${escapeHtml(p.link.label)} &rarr;</a>` : ""}
         </article>`;
       });
     }
@@ -2227,6 +2240,7 @@ function renderAppendix() {
       <td class="col-chapter">${escapeHtml(CHAPTER_LABEL[p.category] || p.category)}</td>
       <td class="col-fate ${p.fate}">${escapeHtml(p.fate)}</td>
       <td class="col-threads">${escapeHtml(threadNames || "—")}</td>
+      <td class="col-source">${p.link ? `<a href="${escapeHtml(p.link.url)}" target="_blank" rel="noopener">${escapeHtml(p.link.label)}</a>` : "—"}</td>
       <td class="col-source">${escapeHtml(sourceFor(p))}</td>
     </tr>`;
   }).join("");
@@ -2240,7 +2254,7 @@ function renderAppendix() {
 
 function downloadCsv() {
   const list = PROPOSALS.filter(filterPredicate);
-  const headers = ["Year","Candidate","Role","Party","Proposal","Summary","Chapter","Fate","WhatHappened","Threads","Source"];
+  const headers = ["Year","Candidate","Role","Party","Proposal","Summary","Chapter","Fate","WhatHappened","Threads","CoverageURL","CoverageLabel","Source"];
   const esc = v => {
     const s = String(v == null ? "" : v).replace(/"/g, '""');
     return /[",\n]/.test(s) ? `"${s}"` : s;
@@ -2258,6 +2272,8 @@ function downloadCsv() {
       p.fate,
       p.whatHappened || "",
       (p.threads || []).map(k => THREADS[k] ? THREADS[k].label : k).join("; "),
+      (p.link && p.link.url) || "",
+      (p.link && p.link.label) || "",
       sourceFor(p)
     ].map(esc).join(","));
   });
