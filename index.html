@@ -1043,14 +1043,16 @@
    ============================== */
 
 const THREADS = {
-  housing:    { label: "Housing & rent",          color: "#217ebe" },
-  policing:   { label: "Police oversight",        color: "#8c2820" },
-  municipal:  { label: "Municipal ownership",     color: "#394882" },
-  transit:    { label: "Transit",                 color: "#a07a1f" },
-  congestion: { label: "Congestion & streets",    color: "#c0644a" },
-  drugs:      { label: "Drug policy",             color: "#5a6b3c" },
-  rights:     { label: "Civil rights",            color: "#76716a" },
-  taxation:   { label: "Taxation & land value",   color: "#4a5566" }
+  housing:     { label: "Housing & rent",                color: "#217ebe" },
+  safety:      { label: "Public safety & policing",      color: "#8c2820" },
+  transit:     { label: "Transit & streets",             color: "#c9943e" },
+  education:   { label: "Education",                     color: "#5a6b3c" },
+  economy:     { label: "Economy & jobs",                color: "#394882" },
+  health:      { label: "Health & welfare",              color: "#c0644a" },
+  municipal:   { label: "Municipal ownership",           color: "#76716a" },
+  taxation:    { label: "Taxation & fiscal",             color: "#4a5566" },
+  civilrights: { label: "Civil rights & representation", color: "#9b3a82" },
+  government:  { label: "Government structure",          color: "#3d6868" }
 };
 
 const CATEGORIES = {
@@ -1135,7 +1137,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Most of the platform was inside the New Deal by 1938 and inside the Great Society by 1965. Thomas's reply to Roosevelt: \"I thought that was a damned obvious thing to say.\"",
-    threads: ["housing", "rights"]
+    threads: ["economy", "housing", "civilrights"]
   },
   {
     id: "marcantonio-1949-ccrb",
@@ -1145,7 +1147,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "An NYPD-internal review board was established 1953 (three deputy police commissioners, not civilian). The first civilian-majority board came in 1966 under Lindsay and was repealed by referendum the same year. The genuinely independent civilian CCRB dates to 1993. 44-year lag to a real version.",
-    threads: ["policing", "rights"]
+    threads: ["safety", "civilrights"]
   },
   {
     id: "buckley-1965-bike",
@@ -1156,7 +1158,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "First protected bike lanes built 2007; hundreds of miles installed under Bloomberg and de Blasio. 42-year lag.",
-    threads: ["congestion"]
+    threads: ["transit"]
   },
   {
     id: "buckley-1965-decrim",
@@ -1166,7 +1168,7 @@ const PROPOSALS = [
     category: "won",
     fate: "alive",
     whatHappened: "Now mainstream thinking on opioids and methadone, partial reality with cannabis. The conservative case for harm reduction predated the progressive one by decades.",
-    threads: ["drugs"]
+    threads: ["health"]
   },
   {
     id: "buckley-1965-uber",
@@ -1176,7 +1178,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Functional implementation arrived in the 2010s as ride-hail. The medallion market collapsed. The intellectual paternity sits with someone who got 13 percent of the 1965 vote.",
-    threads: ["transit", "congestion"]
+    threads: ["transit"]
   },
   {
     id: "buckley-1965-welfare",
@@ -1186,7 +1188,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Codified federally under Clinton-era welfare reform in 1996.",
-    threads: []
+    threads: ["economy"]
   },
   {
     id: "badillo-1973-clt",
@@ -1206,7 +1208,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Bloomberg launched 311 in 2003 — a two-year lag. It is now arguably the most-copied municipal innovation of the 21st century. The intellectual paternity sits with someone who never made it to City Hall.",
-    threads: []
+    threads: ["government"]
   },
   {
     id: "ferrer-2005-twocities",
@@ -1216,7 +1218,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Bill de Blasio's 2013 'A Tale of Two Cities' campaign adopted the frame nearly verbatim and won. 8-year lag from Ferrer's loss to a winning carrier of the same argument.",
-    threads: ["housing", "rights"]
+    threads: ["housing", "civilrights"]
   },
   {
     id: "thompson-2009-paid-sick",
@@ -1226,7 +1228,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Earned Sick Time Act enacted 2014. Five-year lag.",
-    threads: []
+    threads: ["economy"]
   },
   {
     id: "quinn-2013-paid-sick",
@@ -1236,7 +1238,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Effective April 2014. Quinn lost the Democratic primary to de Blasio. The policy survived and was expanded under his administration.",
-    threads: []
+    threads: ["economy", "government"]
   },
   {
     id: "thompson-2013-stopfrisk",
@@ -1246,7 +1248,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "A federal court declared the program unconstitutional in August 2013, the same year. Stops fell from 685,000 in 2011 to under 13,000 by 2017.",
-    threads: ["policing"]
+    threads: ["safety"]
   },
   {
     id: "lhota-2013-bodycam",
@@ -1256,7 +1258,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Pilot launched 2014; phased rollout in 2017; full deployment of all uniformed patrol officers in March 2019. About a 6-year lag.",
-    threads: ["policing"]
+    threads: ["safety"]
   },
   {
     id: "deblasio-2013-prek",
@@ -1266,7 +1268,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Implemented 2014; 3-K added later. 82-year lag from first proposal to law.",
-    threads: ["rights"]
+    threads: ["education", "civilrights"]
   },
 
   /* ==========================================
@@ -1291,7 +1293,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Peter Vallone introduced a secession bill in 2003. The frustration is recurring; the structural answer never gets traction because Article IV requires both Albany and Congress to sign off.",
-    threads: []
+    threads: ["government"]
   },
   {
     id: "mailer-1969-neighborhood",
@@ -1301,7 +1303,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Community boards, participatory budgeting, neighborhood-level land-use review have all been adopted in piecemeal form. The full version has not.",
-    threads: []
+    threads: ["government", "education"]
   },
   {
     id: "mailer-1969-rentcontrol",
@@ -1321,7 +1323,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "We are decades into a partial version: methadone, Suboxone, near-universal medical use of opioids, and supervised consumption sites in the experimental phase.",
-    threads: ["drugs"]
+    threads: ["health", "safety"]
   },
   {
     id: "marchi-1969-autonomy",
@@ -1331,7 +1333,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Staten Island held an advisory secession referendum in 1993 that passed 65-35. The state legislature blocked it. The fight is dormant but recurring.",
-    threads: []
+    threads: ["government"]
   },
   {
     id: "abzug-1977-gayrights",
@@ -1341,7 +1343,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "adopted",
     whatHappened: "City Council passed the ordinance in 1986, nine years after her loss. The 1977 mayoral race is remembered for fiscal crisis, the blackout, and Son of Sam. The woman who finished fourth was running the platform that aged best.",
-    threads: ["rights"]
+    threads: ["civilrights"]
   },
   {
     id: "abzug-1977-payequity",
@@ -1351,7 +1353,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "adopted",
     whatHappened: "Both became baseline assumptions by the Dinkins administration and after, though representation gains were uneven.",
-    threads: ["rights"]
+    threads: ["civilrights", "economy"]
   },
   {
     id: "cuomo-mario-1977-deathpenalty",
@@ -1361,7 +1363,7 @@ const PROPOSALS = [
     category: "won",
     fate: "adopted",
     whatHappened: "Cuomo became governor in 1982 and vetoed reinstatement of the death penalty 12 times. New York's last death-penalty statute was struck down by the Court of Appeals in 2004. Mediation-as-policy in housing siting has been used unevenly since.",
-    threads: ["policing", "housing"]
+    threads: ["safety", "housing"]
   },
   {
     id: "bellamy-1985-women",
@@ -1371,7 +1373,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Helped open the door for the women who followed — Messinger 1997, Quinn 2013, the Wiley/Garcia/Morales 2021 trio, and Adrienne Adams 2025. New York City has still not elected a female mayor.",
-    threads: ["rights"]
+    threads: ["civilrights", "education"]
   },
   {
     id: "badillo-1973-bilingual",
@@ -1381,7 +1383,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Partially adopted; debated and reorganized cyclically. Mayoral control of the schools — Badillo's later cause — was a 2002 Bloomberg-era victory that Badillo helped frame.",
-    threads: ["rights"]
+    threads: ["education", "civilrights"]
   },
   {
     id: "badillo-1977-southbronx",
@@ -1391,7 +1393,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "buried",
     whatHappened: "Koch effectively buried it after Badillo, briefly his deputy mayor, resigned over Koch's lack of follow-through. The South Bronx was eventually rebuilt — but largely through Koch's housing program, not Badillo's.",
-    threads: ["housing"]
+    threads: ["housing", "economy"]
   },
   {
     id: "ravitch-1989-landuse",
@@ -1401,7 +1403,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Active debate as of 2025. Member deference remains intact.",
-    threads: ["housing"]
+    threads: ["housing", "government"]
   },
   {
     id: "messinger-1997-landuse",
@@ -1411,7 +1413,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "The community-control idea has had a strange life since. NIMBY neighborhood groups use it as a cudgel to block housing; Mamdani-style left politics uses it as the basis for democratic planning. The ambivalence in Messinger's platform — community control as both protection and obstacle — is a problem her successors haven't resolved.",
-    threads: ["housing"]
+    threads: ["housing", "government"]
   },
   {
     id: "messinger-1997-commissioner",
@@ -1421,7 +1423,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Revived by Maya Wiley in 2021. Not implemented.",
-    threads: ["policing"]
+    threads: ["safety", "government"]
   },
   {
     id: "weiner-2005-middleclass",
@@ -1431,7 +1433,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Property-tax reform aimed at outerborough homeowners is a recurring (still-unsolved) policy target. The political coalition Weiner described — outerborough working-class Democrats — became the explicit target of the de Blasio and Adams campaigns.",
-    threads: ["taxation", "housing"]
+    threads: ["taxation", "housing", "economy"]
   },
   {
     id: "catsimatidis-2013-yimby",
@@ -1451,7 +1453,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Weiner finished fifth in the primary after his second sexting scandal. The single-payer plank remains a periodic state proposal; bus-lane expansion accelerated under de Blasio and Adams; the public-banking idea was carried by Stringer in 2021.",
-    threads: ["transit", "municipal"]
+    threads: ["transit", "municipal", "health"]
   },
   {
     id: "albanese-2017-cuny",
@@ -1461,7 +1463,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Tuition-free CUNY remains a recurring proposal at city and state level (the state's Excelsior program is a partial version). The public-matching expansion happened in different form under the 2018 charter revision.",
-    threads: ["rights"]
+    threads: ["education"]
   },
   {
     id: "stringer-2021-bank",
@@ -1491,7 +1493,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Connecticut launched a similar baby-bonds program in 2023; Washington, D.C. and California followed. New York City has not. Donovan finished seventh in the ranked-choice primary.",
-    threads: ["rights", "taxation"]
+    threads: ["economy", "taxation", "civilrights"]
   },
   {
     id: "morales-2021-mhresponse",
@@ -1501,7 +1503,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "The B-HEARD civilian mental-health pilot launched in 2021 and expanded under Adams. Brad Lander made expanding it a central plank in 2025. The full budget-shift version remains the most contested piece.",
-    threads: ["policing"]
+    threads: ["safety", "health"]
   },
   {
     id: "mcguire-2021-comeback",
@@ -1511,7 +1513,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Pieces of this — small-business support, MWBE capital-access programs — have continued under Adams. The full apprenticeship program has not. McGuire finished mid-pack in the ranked-choice primary.",
-    threads: []
+    threads: ["economy"]
   },
   {
     id: "sliwa-2021-vacancy",
@@ -1531,7 +1533,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Partial implementation. Mixed reviews on permanence.",
-    threads: ["congestion"]
+    threads: ["transit"]
   },
   {
     id: "wiley-2021-commissioner",
@@ -1541,7 +1543,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Active debate. Not implemented.",
-    threads: ["policing"]
+    threads: ["safety"]
   },
   {
     id: "yang-2021-cash",
@@ -1551,7 +1553,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "buried",
     whatHappened: "Small pilots launched in other cities. No New York City version.",
-    threads: []
+    threads: ["economy"]
   },
   {
     id: "mamdani-2025-grocery",
@@ -1561,7 +1563,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Pilot rolling out in 2026 under the new administration.",
-    threads: ["municipal"]
+    threads: ["municipal", "health"]
   },
   {
     id: "mamdani-2025-buses",
@@ -1581,7 +1583,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "buried",
     whatHappened: "Cuomo lost. Idea remains dormant. 100-year lag and counting.",
-    threads: ["transit", "municipal"]
+    threads: ["transit", "municipal", "government"]
   },
   {
     id: "stringer-2025-piedaterre",
@@ -1621,7 +1623,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Adams lost the Democratic primary. Several of her planks track adjacent to Lander's mental-health expansion and Mamdani's housing investment.",
-    threads: ["policing", "housing"]
+    threads: ["education", "health", "safety", "housing"]
   },
   {
     id: "tilson-2025-charters",
@@ -1631,7 +1633,7 @@ const PROPOSALS = [
     category: "ahead",
     fate: "alive",
     whatHappened: "Tilson finished low in the ranked-choice primary. The charter-cap fight remains active at the state level, with periodic proposals to expand or remove it.",
-    threads: ["rights"]
+    threads: ["education"]
   },
   {
     id: "ramos-2025-housing",
@@ -1655,7 +1657,7 @@ const PROPOSALS = [
     category: "bad",
     fate: "buried",
     whatHappened: "Congestion pricing — a much milder version of the same instinct — took 60 years to implement and remains contested. The ban-cars-and-build-elevated-rail version was a thought experiment, not a plan.",
-    threads: ["congestion", "transit"]
+    threads: ["transit"]
   },
   {
     id: "buckley-1965-quarantine",
@@ -1665,7 +1667,7 @@ const PROPOSALS = [
     category: "bad",
     fate: "buried",
     whatHappened: "The decriminalization plank from the same platform aged into mainstream policy. The civil-commitment plank did not. Buckley got the diagnosis right (prohibition produces the criminal market) and the treatment partly wrong.",
-    threads: ["drugs", "rights"]
+    threads: ["health", "civilrights", "safety"]
   },
   {
     id: "hearst-1905-runthings",
@@ -1675,7 +1677,7 @@ const PROPOSALS = [
     category: "bad",
     fate: "buried",
     whatHappened: "His press empire's behavior during both campaigns suggested someone whose interest in checking concentrated power did not extend to his own. He later ran for governor and president for the same reason.",
-    threads: []
+    threads: ["government"]
   },
 
   /* ==========================================
@@ -1689,7 +1691,7 @@ const PROPOSALS = [
     category: "strange",
     fate: "alive",
     whatHappened: "Half-step toward what Paris does monthly with car-free Sundays, what Bogotá does weekly with Ciclovía, and what New York City did in 2020 with Open Streets at much smaller scale. As proposed, a logistical nightmare for a 24/7 city. As a thought experiment, it captured something about urban scale and rest that nothing in the actual mayoral debate has captured since.",
-    threads: ["congestion"]
+    threads: ["transit", "health"]
   },
   {
     id: "mailer-1969-huey",
@@ -1699,7 +1701,7 @@ const PROPOSALS = [
     category: "strange",
     fate: "buried",
     whatHappened: "Newton was freed in 1970 on appeal, unrelated to the mayoral campaign. Fluoridation in New York City continues.",
-    threads: ["rights"]
+    threads: ["civilrights"]
   },
   {
     id: "procaccino-1969-limousine",
@@ -1709,7 +1711,7 @@ const PROPOSALS = [
     category: "strange",
     fate: "adopted",
     whatHappened: "The phrase has outlasted every other rhetorical contribution from any 1969 New York City mayoral campaign. It is in the dictionary, on Wikipedia, and in routine American political commentary.",
-    threads: []
+    threads: ["government"]
   },
   {
     id: "buckley-1965-cabs",
