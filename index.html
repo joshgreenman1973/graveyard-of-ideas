@@ -861,8 +861,8 @@
   <p class="dek">A century-and-change of New York City mayoral platforms from candidates who lost the race — and the surprising number of their proposals that eventually clawed their way back to life.</p>
   <div class="hero-meta">
     <span><strong>1886 to 2025</strong></span>
-    <span>48 proposals from 22 losing campaigns</span>
-    <span>Median lag from loss to law: about 22 years</span>
+    <span>64 proposals from 44 losing campaigns</span>
+    <span>Median lag from loss to law: about 17 years</span>
   </div>
 </header>
 
@@ -874,10 +874,10 @@
 
 <!-- STATS STRIP -->
 <section class="stats">
-  <div class="stat"><span class="num">48</span><span class="label">Proposals tracked</span></div>
-  <div class="stat"><span class="num">16</span><span class="label">Eventually adopted, in whole or part</span></div>
-  <div class="stat"><span class="num">24</span><span class="label">Still alive in current debate</span></div>
-  <div class="stat"><span class="num">8</span><span class="label">Decisively buried</span></div>
+  <div class="stat"><span class="num">64</span><span class="label">Proposals tracked</span></div>
+  <div class="stat"><span class="num">22</span><span class="label">Eventually adopted, in whole or part</span></div>
+  <div class="stat"><span class="num">35</span><span class="label">Still alive in current debate</span></div>
+  <div class="stat"><span class="num">7</span><span class="label">Decisively buried</span></div>
 </section>
 
 <!-- CONTROLS -->
@@ -1028,7 +1028,7 @@
       </ul>
 
       <h4>A note on what's missing</h4>
-      <p>This is not a complete record. Several losing campaigns — David Dinkins's 1993 reelection bid, Fernando Ferrer's 2001 and 2005 runs, Bill Thompson's 2013 second-place finish — produced platforms that haven't been mined here. Reader suggestions welcome.</p>
+      <p>This is not a complete record. David Dinkins's 1993 reelection bid, Mark Green's 1997 and 1998 races for higher office, the full 2017 primary field beyond Sal Albanese, and Whitney Tilson's deeper education-policy planks all sit just outside what's catalogued here. Reader suggestions welcome.</p>
     </div>
   </details>
 </section>
@@ -1076,6 +1076,16 @@ const PROPOSALS = [
     threads: ["taxation", "housing"]
   },
   {
+    id: "george-1897-finalrun",
+    year: 1897, candidate: "Henry George", role: "Mayoral candidate", party: "Jefferson Democracy",
+    proposal: "The single tax, second time",
+    summary: "George ran again on the same single-tax platform a decade after his stunning 1886 second-place finish. He died of a stroke on October 29, 1897 — four days before the election. His son Henry George Jr. finished the campaign in his stead.",
+    category: "won",
+    fate: "alive",
+    whatHappened: "Same outcome as 1886: a substantial vote share for an idea that wouldn't become law. The single-tax revival continues into the 21st century through land-value-tax reform debates.",
+    threads: ["taxation", "housing"]
+  },
+  {
     id: "hillquit-1917-transit",
     year: 1917, candidate: "Morris Hillquit", role: "Mayoral candidate", party: "Socialist",
     proposal: "Public ownership of the subways",
@@ -1099,19 +1109,29 @@ const PROPOSALS = [
     id: "hillquit-1917-milk",
     year: 1917, candidate: "Morris Hillquit", role: "Mayoral candidate", party: "Socialist",
     proposal: "Buy milk direct from farmers, sell at cost",
-    summary: "Hillquit proposed bypassing the milk distribution cartel by having the city buy directly from upstate farmers and sell at cost — a response to documented price-fixing by the major distributors.",
-    quote: { text: "Put the milk profiteers out of business.", attrib: "Hillquit's slogan, 1917" },
+    summary: "Hillquit proposed bypassing the milk distribution cartel by having the city buy directly from upstate farmers and sell at cost — a response to documented price-fixing by the major distributors. He carried the same plank into his 1932 run.",
+    quote: { text: "Put the milk profiteers out of business.", attrib: "Hillquit, Socialist platform language (1917-1932)" },
     category: "won",
     fate: "adopted",
     whatHappened: "La Guardia later set up city-run milk distribution and direct purchasing as a Depression-era price-control measure. The same logic — public provision to break cartels in essential goods — surfaces a century later in Mamdani's 2025 city-grocery plan.",
     threads: ["municipal"]
   },
   {
+    id: "hylan-1925-transit",
+    year: 1925, candidate: "John F. Hylan", role: "Incumbent Mayor (lost primary)", party: "Democrat",
+    proposal: "City takeover of the subways",
+    summary: "Hylan, the two-term incumbent Mayor, ran his entire 1925 Democratic primary on city ownership of all subway and elevated lines. Tammany backed Jimmy Walker, who beat Hylan in the primary.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "By 1940 the city had bought out the IRT and BMT and merged them with the IND. 15-year lag from Hylan's losing primary to law. Andrew Cuomo ran on an MTA city-takeover plan exactly a century later, in 2025, and lost.",
+    threads: ["transit", "municipal"]
+  },
+  {
     id: "thomas-1929-newdeal",
     year: 1929, candidate: "Norman Thomas", role: "Mayoral candidate", party: "Socialist",
     proposal: "The proto-New Deal bundle",
     summary: "Thomas's 1929 mayoral platform and 1932 presidential platform together demanded minimum-wage laws, low-cost public housing, a five-day workweek, unemployment insurance, health insurance for the elderly, civil rights for Black Americans, and old-age pensions.",
-    quote: { text: "You know, Norman, I think I'm a better politician than you are.", attrib: "Franklin Roosevelt to Thomas, after enacting most of his platform" },
+    quote: { text: "You know, Norman, I think I'm a better politician than you are.", attrib: "Franklin Roosevelt to Thomas, during his presidency, after enacting much of Thomas's earlier platform" },
     category: "won",
     fate: "adopted",
     whatHappened: "Most of the platform was inside the New Deal by 1938 and inside the Great Society by 1965. Thomas's reply to Roosevelt: \"I thought that was a damned obvious thing to say.\"",
@@ -1124,7 +1144,7 @@ const PROPOSALS = [
     summary: "Marcantonio called for an independent civilian board to investigate police misconduct — decades before such a body existed in any major U.S. city.",
     category: "won",
     fate: "adopted",
-    whatHappened: "Civilian Complaint Review Board established 1953 (advisory), made independent and binding 1993. 44-year lag to a real version.",
+    whatHappened: "An NYPD-internal review board was established 1953 (three deputy police commissioners, not civilian). The first civilian-majority board came in 1966 under Lindsay and was repealed by referendum the same year. The genuinely independent civilian CCRB dates to 1993. 44-year lag to a real version.",
     threads: ["policing", "rights"]
   },
   {
@@ -1172,7 +1192,7 @@ const PROPOSALS = [
     id: "badillo-1973-clt",
     year: 1973, candidate: "Herman Badillo", role: "Mayoral candidate", party: "Democrat",
     proposal: "Community land trusts",
-    summary: "Badillo lost a 1973 runoff to Abe Beame by four points. His housing platform centered on community-controlled land trusts as an alternative to public housing or speculation.",
+    summary: "Badillo lost the 1973 Democratic primary first round to Abe Beame by 5 points (Beame 34.5%, Badillo 29.0%) and the runoff by 22. His housing platform centered on community-controlled land trusts as an alternative to public housing or speculation.",
     category: "won",
     fate: "adopted",
     whatHappened: "First New York City CLTs established in the 1990s; significantly expanded under de Blasio and Adams.",
@@ -1189,6 +1209,16 @@ const PROPOSALS = [
     threads: []
   },
   {
+    id: "ferrer-2005-twocities",
+    year: 2005, candidate: "Fernando Ferrer", role: "Mayoral candidate, former Bronx BP", party: "Democrat",
+    proposal: "Two New Yorks: inequality as the central frame",
+    summary: "Ferrer's 2005 campaign against Bloomberg made the gap between rich and poor New Yorkers — the 'Two New Yorks' — the organizing theme of his run. He won the Democratic primary outright after losing the 2001 runoff to Mark Green. He lost the general to Bloomberg by 19 points.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Bill de Blasio's 2013 'A Tale of Two Cities' campaign adopted the frame nearly verbatim and won. 8-year lag from Ferrer's loss to a winning carrier of the same argument.",
+    threads: ["housing", "rights"]
+  },
+  {
     id: "thompson-2009-paid-sick",
     year: 2009, candidate: "William Thompson", role: "Mayoral candidate, Comptroller", party: "Democrat",
     proposal: "Citywide mandatory paid sick leave",
@@ -1199,13 +1229,33 @@ const PROPOSALS = [
     threads: []
   },
   {
+    id: "quinn-2013-paid-sick",
+    year: 2013, candidate: "Christine Quinn", role: "Mayoral candidate, City Council Speaker", party: "Democrat",
+    proposal: "Push paid sick leave through over Bloomberg's veto",
+    summary: "Quinn's signature pre-mayoral accomplishment as Council Speaker was forcing the Earned Sick Time Act through the Council in 2013, overriding Bloomberg's veto. Her mayoral platform doubled down on the policy and on Council-driven legislative reform more broadly.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Effective April 2014. Quinn lost the Democratic primary to de Blasio. The policy survived and was expanded under his administration.",
+    threads: []
+  },
+  {
+    id: "thompson-2013-stopfrisk",
+    year: 2013, candidate: "William Thompson", role: "Mayoral candidate", party: "Democrat",
+    proposal: "Major stop-and-frisk reform",
+    summary: "Thompson's second mayoral run made overhauling the NYPD's stop-and-frisk practice a central plank. He finished second to de Blasio in the Democratic primary.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "A federal court declared the program unconstitutional in August 2013, the same year. Stops fell from 685,000 in 2011 to under 13,000 by 2017.",
+    threads: ["policing"]
+  },
+  {
     id: "lhota-2013-bodycam",
     year: 2013, candidate: "Joseph Lhota", role: "Mayoral candidate", party: "Republican",
     proposal: "Body cameras on every NYPD officer",
     summary: "Lhota called for outfitting all officers with body-worn cameras — at the time a fringe demand associated with police-reform advocates, not Republican mayoral candidates.",
     category: "won",
     fate: "adopted",
-    whatHappened: "Pilot launched 2014; full deployment by 2017. 4-year lag.",
+    whatHappened: "Pilot launched 2014; phased rollout in 2017; full deployment of all uniformed patrol officers in March 2019. About a 6-year lag.",
     threads: ["policing"]
   },
   {
@@ -1237,7 +1287,7 @@ const PROPOSALS = [
     year: 1969, candidate: "Norman Mailer / Jimmy Breslin", role: "Democratic primary candidates", party: "Democrat",
     proposal: "Statehood for New York City",
     summary: "Make the five boroughs the 51st state. Theodore White called the campaign \"one of the most serious campaigns run in the United States in the last five years.\" They finished fourth.",
-    quote: { text: "It's insanity that we let a bunch of lobster fishermen from Montauk and a bunch of jerks from Niagara Falls tell us how to run our schools.", attrib: "Jimmy Breslin, 1969" },
+    quote: { text: "The business of running this city is done by lobster peddlers from Montauk and old Republicans from Niagara Falls.", attrib: "Jimmy Breslin, 1969" },
     category: "ahead",
     fate: "alive",
     whatHappened: "Peter Vallone introduced a secession bill in 2003. The frustration is recurring; the structural answer never gets traction because Article IV requires both Albany and Congress to sign off.",
@@ -1274,6 +1324,16 @@ const PROPOSALS = [
     threads: ["drugs"]
   },
   {
+    id: "marchi-1969-autonomy",
+    year: 1969, candidate: "John Marchi", role: "Mayoral candidate, State Senator", party: "Republican / Conservative",
+    proposal: "Borough autonomy and Staten Island self-government",
+    summary: "Marchi beat Lindsay in the Republican primary by running against Lindsay's perceived neglect of the outer boroughs. He lost the general to Lindsay, who ran on the Liberal line. His platform foreshadowed every Staten Island secession push that has come since.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Staten Island held an advisory secession referendum in 1993 that passed 65-35. The state legislature blocked it. The fight is dormant but recurring.",
+    threads: []
+  },
+  {
     id: "abzug-1977-gayrights",
     year: 1977, candidate: "Bella Abzug", role: "Mayoral candidate", party: "Democrat",
     proposal: "A New York City gay civil rights ordinance",
@@ -1291,6 +1351,26 @@ const PROPOSALS = [
     category: "ahead",
     fate: "adopted",
     whatHappened: "Both became baseline assumptions by the Dinkins administration and after, though representation gains were uneven.",
+    threads: ["rights"]
+  },
+  {
+    id: "cuomo-mario-1977-deathpenalty",
+    year: 1977, candidate: "Mario Cuomo", role: "Mayoral candidate, Secretary of State of NY", party: "Democrat / Liberal",
+    proposal: "Opposition to the death penalty",
+    summary: "Cuomo lost the 1977 runoff to Koch in a campaign defined in part by Koch's tough-on-crime, pro-death-penalty pitch and Cuomo's principled opposition. He had emerged as a serious figure during the 1972-74 Forest Hills public-housing fight, where he negotiated a scaled-down compromise.",
+    category: "won",
+    fate: "adopted",
+    whatHappened: "Cuomo became governor in 1982 and vetoed reinstatement of the death penalty 12 times. New York's last death-penalty statute was struck down by the Court of Appeals in 2004. Mediation-as-policy in housing siting has been used unevenly since.",
+    threads: ["policing", "housing"]
+  },
+  {
+    id: "bellamy-1985-women",
+    year: 1985, candidate: "Carol Bellamy", role: "Mayoral candidate, City Council President", party: "Democrat",
+    proposal: "First major-party female mayoral nominee in New York history",
+    summary: "Bellamy was the first woman to top a major-party ticket in a New York City mayoral race. She lost to Koch's third-term reelection. Her platform emphasized library and education investment and ethics reform after the Donald Manes / Parking Violations Bureau scandals broke during the campaign.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Helped open the door for the women who followed — Messinger 1997, Quinn 2013, the Wiley/Garcia/Morales 2021 trio, and Adrienne Adams 2025. New York City has still not elected a female mayor.",
     threads: ["rights"]
   },
   {
@@ -1344,14 +1424,14 @@ const PROPOSALS = [
     threads: ["policing"]
   },
   {
-    id: "stringer-2013-broadband",
-    year: 2013, candidate: "Scott Stringer", role: "Mayoral candidate", party: "Democrat",
-    proposal: "Municipal broadband",
-    summary: "A city-run broadband utility to address the digital divide, particularly in NYCHA developments.",
+    id: "weiner-2005-middleclass",
+    year: 2005, candidate: "Anthony Weiner", role: "Mayoral candidate, Congressman", party: "Democrat",
+    proposal: "Middle-class tax cut as the central frame",
+    summary: "Weiner finished a strong second in the 2005 Democratic primary on a 'middle-class tax cut' message that argued the Democratic Party had abandoned outerborough working families. His populist outerborough framing prefigured both his 2013 run and a broader recasting of the party's coalition.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Pilot programs launched. Comprehensive rollout is still in debate.",
-    threads: ["municipal"]
+    whatHappened: "Property-tax reform aimed at outerborough homeowners is a recurring (still-unsolved) policy target. The political coalition Weiner described — outerborough working-class Democrats — became the explicit target of the de Blasio and Adams campaigns.",
+    threads: ["taxation", "housing"]
   },
   {
     id: "catsimatidis-2013-yimby",
@@ -1362,6 +1442,26 @@ const PROPOSALS = [
     fate: "alive",
     whatHappened: "Core argument of Adams's 2024 City of Yes proposal. The idea didn't change. The political coalition did.",
     threads: ["housing"]
+  },
+  {
+    id: "weiner-2013-keys",
+    year: 2013, candidate: "Anthony Weiner", role: "Mayoral candidate, former Congressman", party: "Democrat",
+    proposal: "Keys to the City: 125 specific proposals",
+    summary: "Weiner's 2013 platform was published as a 64-page pamphlet with 125 specific policy proposals — substantially more programmatic than any other campaign in the field. Planks ranged from single-payer city health insurance to dramatically expanded bus rapid transit to a public-bank-style city financing authority.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Weiner finished fifth in the primary after his second sexting scandal. The single-payer plank remains a periodic state proposal; bus-lane expansion accelerated under de Blasio and Adams; the public-banking idea was carried by Stringer in 2021.",
+    threads: ["transit", "municipal"]
+  },
+  {
+    id: "albanese-2017-cuny",
+    year: 2017, candidate: "Sal Albanese", role: "Mayoral candidate, former Council Member", party: "Democrat (then Reform)",
+    proposal: "Tuition-free CUNY and full public matching funds",
+    summary: "Albanese ran as a reform Democrat against de Blasio in the 2017 primary, then on the Reform Party line in the general. His core planks were tuition-free CUNY and an expansion of the public-matching campaign-finance system to crowd out big donors entirely.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Tuition-free CUNY remains a recurring proposal at city and state level (the state's Excelsior program is a partial version). The public-matching expansion happened in different form under the 2018 charter revision.",
+    threads: ["rights"]
   },
   {
     id: "stringer-2021-bank",
@@ -1375,13 +1475,43 @@ const PROPOSALS = [
   },
   {
     id: "donovan-2021-vacancy",
-    year: 2021, candidate: "Shaun Donovan", role: "Mayoral candidate (RCV)", party: "Democrat",
+    year: 2021, candidate: "Shaun Donovan", role: "Mayoral candidate, former HUD Secretary (RCV)", party: "Democrat",
     proposal: "Vacancy tax on warehoused units",
-    summary: "A tax on residential and commercial properties left vacant — to discourage warehousing of housing.",
+    summary: "Donovan brought the most policy-dense platform of the 2021 field — a former Obama HUD Secretary with a multi-hundred-page agenda. The vacancy tax on residential and commercial units left empty was meant to discourage warehousing of housing.",
     category: "ahead",
     fate: "alive",
     whatHappened: "Requires state authorization. Pending.",
     threads: ["housing", "taxation"]
+  },
+  {
+    id: "donovan-2021-equity-bonds",
+    year: 2021, candidate: "Shaun Donovan", role: "Mayoral candidate, former HUD Secretary (RCV)", party: "Democrat",
+    proposal: "NYC Equity Bonds: baby bonds for every newborn",
+    summary: "Donovan's signature plank: a city-funded savings account opened for every newborn New Yorker, growing tax-free until age 18 — bigger contributions for poorer families. Designed to close the racial wealth gap a generation at a time.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Connecticut launched a similar baby-bonds program in 2023; Washington, D.C. and California followed. New York City has not. Donovan finished seventh in the ranked-choice primary.",
+    threads: ["rights", "taxation"]
+  },
+  {
+    id: "morales-2021-mhresponse",
+    year: 2021, candidate: "Dianne Morales", role: "Mayoral candidate, former nonprofit executive (RCV)", party: "Democrat",
+    proposal: "Defund the NYPD, civilian mental-health crisis response",
+    summary: "Morales ran the most explicitly leftist 2021 campaign — a 50 percent NYPD budget cut redirected to civilian mental-health response, universal childcare, and community-led safety teams. Her campaign collapsed mid-primary over staff-organizing disputes.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "The B-HEARD civilian mental-health pilot launched in 2021 and expanded under Adams. Brad Lander made expanding it a central plank in 2025. The full budget-shift version remains the most contested piece.",
+    threads: ["policing"]
+  },
+  {
+    id: "mcguire-2021-comeback",
+    year: 2021, candidate: "Ray McGuire", role: "Mayoral candidate, former Citi vice chairman (RCV)", party: "Democrat",
+    proposal: "The 'Comeback Plan': apprenticeships, small-business recovery, capital access",
+    summary: "McGuire's 2021 platform centered on a 'greatest comeback in NYC history' framing: a 500,000-job apprenticeship and small-business recovery program, expanded capital access for minority-owned businesses, and a tax credit for hiring out-of-school youth.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Pieces of this — small-business support, MWBE capital-access programs — have continued under Adams. The full apprenticeship program has not. McGuire finished mid-pack in the ranked-choice primary.",
+    threads: []
   },
   {
     id: "sliwa-2021-vacancy",
@@ -1455,13 +1585,63 @@ const PROPOSALS = [
   },
   {
     id: "stringer-2025-piedaterre",
-    year: 2025, candidate: "Scott Stringer", role: "Mayoral candidate", party: "Democrat",
+    year: 2025, candidate: "Scott Stringer", role: "Mayoral candidate, former Comptroller", party: "Democrat",
     proposal: "Pied-à-terre tax on luxury second homes",
     summary: "A tax on luxury units occupied less than half the year — primarily affecting Billionaire's Row.",
     category: "ahead",
     fate: "alive",
     whatHappened: "Requires state authorization; repeatedly blocked.",
     threads: ["housing", "taxation"]
+  },
+  {
+    id: "lander-2025-golf",
+    year: 2025, candidate: "Brad Lander", role: "Mayoral candidate, City Comptroller (RCV)", party: "Democrat",
+    proposal: "Build housing on city-owned golf courses",
+    summary: "Lander's most distinctive plank: convert underused city-owned golf courses (Mosholu, Ferry Point, others) into mixed-income housing. He paired this with major B-HEARD mental-health-response expansion and stronger tenant protections.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Lander lost the Democratic primary and cross-endorsed Mamdani. The golf-course-to-housing conversion idea has begun appearing in city housing-supply debates; whether the Mamdani administration takes it up is open.",
+    threads: ["housing"]
+  },
+  {
+    id: "myrie-2025-million",
+    year: 2025, candidate: "Zellnor Myrie", role: "Mayoral candidate, State Senator", party: "Democrat",
+    proposal: "One million new homes",
+    summary: "Myrie's central plank was a numerical target of one million new units of housing — the most concrete YIMBY production goal of any candidate in the 2025 field.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Myrie lost the Democratic primary and endorsed Mamdani. The one-million number has become a benchmark in subsequent housing-supply debate.",
+    threads: ["housing"]
+  },
+  {
+    id: "adamsadrienne-2025-mh",
+    year: 2025, candidate: "Adrienne Adams", role: "Mayoral candidate, City Council Speaker", party: "Democrat",
+    proposal: "School-based mental-health and NYCHA capital",
+    summary: "The first Black woman to run a serious New York City mayoral campaign, Adams centered her platform on expanded school-based mental-health services, NYCHA capital reinvestment, and Council-driven legislative reform of the NYPD.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Adams lost the Democratic primary. Several of her planks track adjacent to Lander's mental-health expansion and Mamdani's housing investment.",
+    threads: ["policing", "housing"]
+  },
+  {
+    id: "tilson-2025-charters",
+    year: 2025, candidate: "Whitney Tilson", role: "Mayoral candidate, hedge-fund manager and education reformer", party: "Democrat",
+    proposal: "Lift the charter-school cap, expand school choice",
+    summary: "Tilson ran an explicitly contrarian Democratic primary campaign focused on lifting the New York City charter-school cap, expanding selective high-school admissions, and resisting what he called 'progressive' education orthodoxy.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Tilson finished low in the ranked-choice primary. The charter-cap fight remains active at the state level, with periodic proposals to expand or remove it.",
+    threads: ["rights"]
+  },
+  {
+    id: "ramos-2025-housing",
+    year: 2025, candidate: "Jessica Ramos", role: "Mayoral candidate, State Senator from Queens", party: "Democrat",
+    proposal: "Working-class housing and transit reinvestment",
+    summary: "Ramos centered her platform on tenant protections, public-housing repair, and transit reinvestment in the outer-borough Queens corridor she represents in Albany. She dropped out and endorsed Cuomo before pivoting to Mamdani.",
+    category: "ahead",
+    fate: "alive",
+    whatHappened: "Several of Ramos's tenant-protection planks track to Mamdani's broader housing platform now in implementation.",
+    threads: ["housing", "transit"]
   },
 
   /* ==========================================
@@ -1497,16 +1677,6 @@ const PROPOSALS = [
     whatHappened: "His press empire's behavior during both campaigns suggested someone whose interest in checking concentrated power did not extend to his own. He later ran for governor and president for the same reason.",
     threads: []
   },
-  {
-    id: "stein-1989-trial",
-    year: 1989, candidate: "Andrew Stein", role: "City Council President", party: "Democrat",
-    proposal: "Trial-balloon position papers",
-    summary: "Stein, the City Council President and son of a publisher, considered running for mayor in 1989 and 1993. He produced a series of position papers — heavy on senior services, nursing-home reform, and tough-on-crime rhetoric — that mostly read in retrospect as a hunt for a coalition rather than a coherent governing vision.",
-    category: "bad",
-    fate: "buried",
-    whatHappened: "Never made it onto the mayoral ballot. His nursing-home work, however, was genuinely consequential and produced lasting state-level reform. Some politicians have one good fight in them and shouldn't reach for the largest office.",
-    threads: []
-  },
 
   /* ==========================================
      CHAPTER IV - TRULY STRANGE
@@ -1532,24 +1702,14 @@ const PROPOSALS = [
     threads: ["rights"]
   },
   {
-    id: "hillquit-1932-bank",
-    year: 1932, candidate: "Morris Hillquit", role: "Mayoral candidate", party: "Socialist",
-    proposal: "A city-chartered public bank",
-    summary: "Hillquit proposed that New York City charter its own bank to break the dependency of the city on the Wall Street firms whose collapse had triggered its near-default. Extreme at the time.",
+    id: "procaccino-1969-limousine",
+    year: 1969, candidate: "Mario Procaccino", role: "Mayoral candidate, City Comptroller", party: "Democrat",
+    proposal: "Limousine liberals",
+    summary: "Procaccino won the 1969 Democratic primary and lost the general to Lindsay (running on the Liberal line). He coined the phrase 'limousine liberal' to describe affluent reform Democrats he argued had abandoned outerborough working-class voters.",
     category: "strange",
-    fate: "alive",
-    whatHappened: "More or less what Costa Rica, North Dakota, and a small public-banking movement in California propose now. Whether New York City should have a public bank is a real, current policy debate — see Stringer 2021.",
-    threads: ["municipal"]
-  },
-  {
-    id: "thomas-1925-garden",
-    year: 1925, candidate: "Norman Thomas", role: "Mayoral candidate", party: "Socialist",
-    proposal: "Ebenezer Howard garden cities, scaled to the boroughs",
-    summary: "Thomas proposed building Howard-style planned new towns within the boroughs — shared green space, mixed housing, integrated transit. Forest Hills Gardens had been built on the model in 1908; Thomas wanted to scale it citywide.",
-    category: "strange",
-    fate: "alive",
-    whatHappened: "Prefigured Greenbelt, Maryland and what eventually got built at Co-op City and Starrett City, though the planned-community ambition was steadily diluted in execution.",
-    threads: ["housing"]
+    fate: "adopted",
+    whatHappened: "The phrase has outlasted every other rhetorical contribution from any 1969 New York City mayoral campaign. It is in the dictionary, on Wikipedia, and in routine American political commentary.",
+    threads: []
   },
   {
     id: "buckley-1965-cabs",
@@ -1626,7 +1786,22 @@ const SOURCES = {
   "Kathryn Garcia": "Garcia 2021 platform; DOT open-streets program documentation",
   "Curtis Sliwa": "Sliwa 2021 platform; press coverage",
   "Zohran Mamdani": "Mamdani 2025 platform; Jacobin; New York Times campaign coverage",
-  "Andrew Cuomo": "Cuomo 2025 campaign documents; press coverage"
+  "Andrew Cuomo": "Cuomo 2025 campaign documents; press coverage",
+  "John F. Hylan": "Wikipedia: John Francis Hylan; Wikipedia: 1925 NYC mayoral election",
+  "Mario Procaccino": "Wikipedia: Mario Procaccino; Wikipedia: 1969 NYC mayoral election",
+  "Mario Cuomo": "Wikipedia: Mario Cuomo; Wikipedia: 1977 NYC mayoral election; New York Times archive",
+  "Carol Bellamy": "Wikipedia: Carol Bellamy; Wikipedia: 1985 NYC mayoral election",
+  "Fernando Ferrer": "Wikipedia: Fernando Ferrer; Wikipedia: 2005 NYC mayoral election",
+  "Anthony Weiner": "Wikipedia: Anthony Weiner; Keys to the City (2013 platform pamphlet); contemporaneous press coverage",
+  "Christine Quinn": "Wikipedia: Christine Quinn; Wikipedia: 2013 NYC mayoral election; Earned Sick Time Act legislative history",
+  "Sal Albanese": "Wikipedia: Sal Albanese; Wikipedia: 2017 NYC mayoral election; Reform Party platform documents",
+  "Dianne Morales": "Wikipedia: Dianne Morales; Morales 2021 platform documents; press coverage",
+  "Ray McGuire": "Wikipedia: Ray McGuire; McGuire 2021 'Comeback Plan' platform; press coverage",
+  "Brad Lander": "Wikipedia: Brad Lander; Lander 2025 platform documents; press coverage",
+  "Zellnor Myrie": "Wikipedia: Zellnor Myrie; Myrie 2025 'One Million Homes' platform",
+  "Adrienne Adams": "Wikipedia: Adrienne Adams; press coverage of 2025 NYC Democratic mayoral primary",
+  "Whitney Tilson": "Wikipedia: Whitney Tilson; Tilson 2025 platform documents",
+  "Jessica Ramos": "Wikipedia: Jessica Ramos; Ramos 2025 platform; press coverage"
 };
 
 function sourceFor(p) {
