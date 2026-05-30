@@ -970,8 +970,8 @@
   <p class="dek">A century-and-change of New York City mayoral platforms from candidates who lost the race — and the surprising number of their proposals that eventually clawed their way back to life.</p>
   <div class="hero-meta">
     <span><strong>1886 to 2025</strong></span>
-    <span>58 proposals from 38 losing campaigns</span>
-    <span>Median lag from loss to law: about 16 years</span>
+    <span>57 proposals from 37 losing campaigns</span>
+    <span>Median lag from loss to law: about 15 years</span>
   </div>
 </header>
 
@@ -983,8 +983,8 @@
 
 <!-- STATS STRIP -->
 <section class="stats">
-  <div class="stat"><span class="num">58</span><span class="label">Proposals tracked</span></div>
-  <div class="stat"><span class="num">19</span><span class="label">Eventually adopted, in whole or part</span></div>
+  <div class="stat"><span class="num">57</span><span class="label">Proposals tracked</span></div>
+  <div class="stat"><span class="num">18</span><span class="label">Eventually adopted, in whole or part</span></div>
   <div class="stat"><span class="num">33</span><span class="label">Still alive in current debate</span></div>
   <div class="stat"><span class="num">6</span><span class="label">Decisively buried</span></div>
 </section>
@@ -1124,13 +1124,6 @@
   <div class="quixotic-grid">
 
     <article class="quix-card">
-      <div class="quix-meta"><span class="qy">1985</span><span class="qf">~0.5%</span></div>
-      <h3>Gracie Mansion</h3>
-      <p class="qparty">Independent</p>
-      <p class="qidea">East Village artist who legally took the name of the mayor's residence and ran a conceptual-art campaign promising to turn City Hall into a gallery.</p>
-    </article>
-
-    <article class="quix-card">
       <div class="quix-meta"><span class="qy">1985</span><span class="qf">~0.4%</span></div>
       <h3>Lenora Fulani</h3>
       <p class="qparty">New Alliance Party</p>
@@ -1155,21 +1148,21 @@
       <div class="quix-meta"><span class="qy">2017</span><span class="qf">~0.3%</span></div>
       <h3>Akeem Browder</h3>
       <p class="qparty">Green</p>
-      <p class="qidea">Brother of Kalief Browder, who took his life in 2015 after three years on Rikers awaiting trial. Browder's flagship plank was closing Rikers immediately and ending cash bail.</p>
+      <p class="qidea">Brother of Kalief Browder, who took his life in 2015 after three years on Rikers awaiting trial. Browder's flagship plank was closing Rikers immediately, paired with a broader criminal-justice and homelessness platform.</p>
     </article>
 
     <article class="quix-card">
       <div class="quix-meta"><span class="qy">2017</span><span class="qf">~1.0%</span></div>
       <h3>Bo Dietl</h3>
       <p class="qparty">Independent</p>
-      <p class="qidea">Celebrity ex-NYPD detective whose flagship plank was placing an armed retired cop in every public school to prevent, in his framing, a "Sandy Hook in New York."</p>
+      <p class="qidea">Celebrity ex-NYPD detective whose 2017 platform fused aggressive pro-police rhetoric, opposition to bike lanes, and an unusually hands-on focus on street homelessness. Ran on the Dump de Blasio line.</p>
     </article>
 
     <article class="quix-card">
       <div class="quix-meta"><span class="qy">2017</span><span class="qf">~0.4%</span></div>
       <h3>Robert Gangi</h3>
-      <p class="qparty">Reform Party</p>
-      <p class="qidea">Longtime director of the Police Reform Organizing Project running a single-issue campaign to end Broken Windows policing.</p>
+      <p class="qparty">Democratic primary</p>
+      <p class="qidea">Longtime director of the Police Reform Organizing Project who challenged de Blasio in the 2017 Democratic primary on a single-issue platform of ending Broken Windows policing.</p>
     </article>
 
     <article class="quix-card">
@@ -1183,7 +1176,7 @@
       <div class="quix-meta"><span class="qy">2021</span><span class="qf">&lt;0.5%</span></div>
       <h3>Quanda Francis</h3>
       <p class="qparty">Empowerment Party</p>
-      <p class="qidea">Self-described first AI-assisted mayoral candidate, with an algorithmic-budgeting platform that no one else was talking about in 2021 and many people are talking about in 2025.</p>
+      <p class="qidea">Self-described data-driven Smart City candidate, running an accounting-style budget analysis well ahead of the field — every line item, every contract.</p>
     </article>
 
   </div>
@@ -1324,7 +1317,7 @@ const PROPOSALS = [
     year: 1929, candidate: "Norman Thomas", role: "Mayoral candidate", party: "Socialist",
     proposal: "The proto-New Deal bundle",
     summary: "Thomas's 1929 mayoral platform and 1932 presidential platform together demanded minimum-wage laws, low-cost public housing, a five-day workweek, unemployment insurance, health insurance for the elderly, civil rights for Black Americans, and old-age pensions.",
-    quote: { text: "You know, Norman, I think I'm a better politician than you are.", attrib: "Franklin Roosevelt to Thomas, during his presidency, after enacting much of Thomas's earlier platform" },
+    quote: { text: "Norman, I'm a damn sight better politician than you.", attrib: "Franklin Roosevelt to Thomas, during his presidency, attributed in Murray Seidler's 1961 biography" },
     category: "won",
     fate: "adopted",
     whatHappened: "Most of the platform was inside the New Deal by 1938 and inside the Great Society by 1965. Thomas's reply to Roosevelt: \"I thought that was a damned obvious thing to say.\"",
@@ -1332,21 +1325,10 @@ const PROPOSALS = [
     link: { url: "https://en.wikipedia.org/wiki/Norman_Thomas", label: "Norman Thomas (Wikipedia)" }
   },
   {
-    id: "marcantonio-1949-ccrb",
-    year: 1949, candidate: "Vito Marcantonio", role: "Mayoral candidate", party: "American Labor",
-    proposal: "Independent civilian review of police",
-    summary: "Marcantonio called for an independent civilian board to investigate police misconduct — decades before such a body existed in any major U.S. city.",
-    category: "won",
-    fate: "adopted",
-    whatHappened: "An NYPD-internal review board was established 1953 (three deputy police commissioners, not civilian). The first civilian-majority board came in 1966 under Lindsay and was repealed by referendum the same year. The genuinely independent civilian CCRB dates to 1993. 44-year lag to a real version.",
-    threads: ["safety", "civilrights"],
-    link: { url: "https://www.nyc.gov/site/ccrb/about/history.page", label: "CCRB official history" }
-  },
-  {
     id: "buckley-1965-bike",
     year: 1965, candidate: "William F. Buckley Jr.", role: "Mayoral candidate", party: "Conservative",
-    proposal: "A network of bikeways the length of Manhattan",
-    summary: "Buckley's ten-point plan included dedicated bike infrastructure across Manhattan. The press laughed.",
+    proposal: "An elevated bicycle highway above Second Avenue",
+    summary: "Buckley's ten-point plan featured a single elevated bicycle highway running above Second Avenue, the length of Manhattan. The press laughed.",
     quote: { text: "What would you do if you won? Demand a recount.", attrib: "Buckley to a reporter, 1965" },
     category: "won",
     fate: "adopted",
@@ -1405,7 +1387,7 @@ const PROPOSALS = [
     summary: "Green proposed a 311 system for non-emergency complaints, modeled on Baltimore's, while serving as the city's first Public Advocate. He won the 2001 Democratic primary and lost the general to Bloomberg by 2.5 points after 9/11.",
     category: "won",
     fate: "adopted",
-    whatHappened: "Bloomberg launched 311 in 2003 — a two-year lag. It is now arguably the most-copied municipal innovation of the 21st century. The intellectual paternity sits with someone who never made it to City Hall.",
+    whatHappened: "Bloomberg launched 311 in 2003 — a two-year lag. Green lost the general to Bloomberg by 2.4 points. The intellectual paternity for 311 sits with someone who never made it to City Hall.",
     threads: ["government"],
     link: { url: "https://en.wikipedia.org/wiki/Mark_J._Green", label: "Mark J. Green (Wikipedia)" }
   },
@@ -1413,7 +1395,7 @@ const PROPOSALS = [
     id: "ferrer-2005-stocktransfer",
     year: 2005, candidate: "Fernando Ferrer", role: "Mayoral candidate, former Bronx BP", party: "Democrat",
     proposal: "Reinstate the stock-transfer tax",
-    summary: "Ferrer's most concrete fiscal plank in 2005 was reinstating New York's stock-transfer tax — a small per-trade levy that had existed since 1905 but had been rebated to brokers since the early 1980s, costing the city and state billions annually. He paired it with restored funding for school construction.",
+    summary: "Ferrer's most concrete fiscal plank in 2005 was reinstating New York's stock-transfer tax — a small per-trade levy that had existed since 1905 but had been rebated to brokers since the early 1980s, costing the city and state billions annually. He paired it with restoring full Campaign for Fiscal Equity education funding.",
     category: "ahead",
     fate: "alive",
     whatHappened: "Ferrer lost to Bloomberg by 19 points after winning the Democratic primary outright. The stock-transfer tax revival has resurfaced periodically (Stringer raised it in 2021) but has never moved in Albany.",
@@ -1648,11 +1630,11 @@ const PROPOSALS = [
   {
     id: "albanese-2017-cuny",
     year: 2017, candidate: "Sal Albanese", role: "Mayoral candidate, former Council Member", party: "Democrat (then Reform)",
-    proposal: "Tuition-free CUNY and full public matching funds",
-    summary: "Albanese ran as a reform Democrat against de Blasio in the 2017 primary, then on the Reform Party line in the general. His core planks were tuition-free CUNY and an expansion of the public-matching campaign-finance system to crowd out big donors entirely.",
+    proposal: "Close the LLC loophole and expand campaign-finance reform",
+    summary: "Albanese ran as a reform Democrat against de Blasio in the 2017 primary, then on the Reform Party line in the general. His core planks were closing New York's LLC campaign-finance loophole, banning outside income for elected officials, and a general anti-corruption agenda built around de Blasio's donor-investigation history.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Tuition-free CUNY remains a recurring proposal at city and state level (the state's Excelsior program is a partial version). The public-matching expansion happened in different form under the 2018 charter revision.",
+    whatHappened: "The 2018 charter revision tightened campaign-finance rules in some of the directions Albanese had argued for. The LLC loophole was closed by Albany in 2019.",
     threads: ["education"],
     link: { url: "https://en.wikipedia.org/wiki/2017_New_York_City_mayoral_election", label: "2017 election (Wikipedia)" }
   },
@@ -1671,7 +1653,7 @@ const PROPOSALS = [
     id: "donovan-2021-vacancy",
     year: 2021, candidate: "Shaun Donovan", role: "Mayoral candidate, former HUD Secretary (RCV)", party: "Democrat",
     proposal: "Vacancy tax on warehoused units",
-    summary: "Donovan brought the most policy-dense platform of the 2021 field — a former Obama HUD Secretary with a multi-hundred-page agenda. The vacancy tax on residential and commercial units left empty was meant to discourage warehousing of housing.",
+    summary: "Donovan brought the most policy-dense platform of the 2021 field — a former Obama HUD Secretary with an unusually detailed multi-binder agenda. The vacancy tax on residential and commercial units left empty was meant to discourage warehousing of housing.",
     category: "ahead",
     fate: "alive",
     whatHappened: "Requires state authorization. Pending.",
@@ -1703,8 +1685,8 @@ const PROPOSALS = [
   {
     id: "mcguire-2021-comeback",
     year: 2021, candidate: "Ray McGuire", role: "Mayoral candidate, former Citi vice chairman (RCV)", party: "Democrat",
-    proposal: "The 'Comeback Plan': apprenticeships, small-business recovery, capital access",
-    summary: "McGuire's 2021 platform centered on a 'greatest comeback in NYC history' framing: a 500,000-job apprenticeship and small-business recovery program, expanded capital access for minority-owned businesses, and a tax credit for hiring out-of-school youth.",
+    proposal: "The 'Comeback Plan': 500,000 jobs across infrastructure, small business, and workforce",
+    summary: "McGuire's 2021 platform was a 500,000-job 'Comeback Plan' combining accelerated infrastructure investment, small-business wage subsidies, expanded capital access for minority-owned businesses, and a tax credit for hiring out-of-school youth.",
     category: "ahead",
     fate: "alive",
     whatHappened: "Pieces of this — small-business support, MWBE capital-access programs — have continued under Adams. The full apprenticeship program has not. McGuire finished mid-pack in the ranked-choice primary.",
@@ -1758,8 +1740,8 @@ const PROPOSALS = [
   {
     id: "cuomo-2025-mta",
     year: 2025, candidate: "Andrew Cuomo", role: "Mayoral candidate", party: "Democrat (Independent line)",
-    proposal: "Transfer MTA city operations from state to city",
-    summary: "Cuomo proposed handing New York City subway and bus operations from the state-controlled MTA to city control — almost a century after John Hylan ran on the same idea in 1925.",
+    proposal: "City oversight of MTA capital construction and maintenance",
+    summary: "Cuomo proposed shifting city subway and bus capital construction and maintenance from full state-controlled MTA control to direct city oversight — a partial version of the full operational takeover John Hylan had proposed exactly a century earlier in 1925.",
     category: "ahead",
     fate: "buried",
     whatHappened: "Cuomo lost. Idea remains dormant. 100-year lag and counting.",
@@ -1781,7 +1763,7 @@ const PROPOSALS = [
     id: "lander-2025-golf",
     year: 2025, candidate: "Brad Lander", role: "Mayoral candidate, City Comptroller (RCV)", party: "Democrat",
     proposal: "Build housing on city-owned golf courses",
-    summary: "Lander's most distinctive plank: convert underused city-owned golf courses (Mosholu, Ferry Point, others) into mixed-income housing. He paired this with major B-HEARD mental-health-response expansion and stronger tenant protections.",
+    summary: "Lander's most distinctive plank: convert four of the city's twelve municipal golf courses (to be identified by feasibility study) into mixed-income housing — projected at roughly 50,000 units, declared via emergency powers as part of a 500,000-home plan. He paired it with major B-HEARD mental-health-response expansion and stronger tenant protections.",
     category: "ahead",
     fate: "alive",
     whatHappened: "Lander lost the Democratic primary and cross-endorsed Mamdani. The golf-course-to-housing conversion idea has begun appearing in city housing-supply debates; whether the Mamdani administration takes it up is open.",
@@ -1791,11 +1773,11 @@ const PROPOSALS = [
   {
     id: "myrie-2025-transit-upzone",
     year: 2025, candidate: "Zellnor Myrie", role: "Mayoral candidate, State Senator", party: "Democrat",
-    proposal: "As-of-right upzoning within a half-mile of every subway station",
-    summary: "Myrie's signature housing plank was eliminating discretionary review for residential projects within a half-mile of any subway station — turning the zoning code into a transit-oriented production map. He paired it with NYCHA preservation and a tenant-protection package.",
+    proposal: "Rebuild NYC: Mega Midtown rezoning + NYCHA infill + lower-density upzoning",
+    summary: "Myrie's 'Rebuild NYC' housing plan targeted roughly one million new and renovated homes through a Midtown rezoning ('Mega Midtown'), large-scale NYCHA infill, office-to-residential conversions, and removing discretionary review in lower-density neighborhoods. The most concrete production-side proposal of the 2025 Democratic primary field.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Myrie lost the Democratic primary and endorsed Mamdani. Transit-oriented as-of-right upzoning is now a recurring frame in city housing-policy debate.",
+    whatHappened: "Myrie lost the Democratic primary and endorsed Mamdani. The component pieces — Midtown rezoning, NYCHA infill, conversions — remain on the table.",
     threads: ["housing", "transit"],
     link: { url: "https://en.wikipedia.org/wiki/Zellnor_Myrie", label: "Zellnor Myrie (Wikipedia)" }
   },
@@ -1825,7 +1807,7 @@ const PROPOSALS = [
     id: "ramos-2025-goodcause",
     year: 2025, candidate: "Jessica Ramos", role: "Mayoral candidate, State Senator from Queens", party: "Democrat",
     proposal: "Citywide enforcement of Good Cause Eviction",
-    summary: "Ramos, who had carried the state-level Good Cause Eviction bill in Albany for years, ran on aggressive city-level enforcement of the 2024 statute — including a dedicated tenant-protection unit at HPD and an eviction-defense fund.",
+    summary: "Ramos, who had carried the state-level Good Cause Eviction bill in Albany for years, ran on aggressive city-level enforcement of the 2024 statute and stronger HPD-side housing oversight.",
     category: "ahead",
     fate: "alive",
     whatHappened: "Ramos dropped out and endorsed Cuomo, then pivoted to Mamdani. The state Good Cause statute remains weakly enforced; the city-level enforcement gap is one of the new administration's open questions.",
@@ -1887,11 +1869,11 @@ const PROPOSALS = [
   {
     id: "procaccino-1969-police",
     year: 1969, candidate: "Mario Procaccino", role: "Mayoral candidate, City Comptroller", party: "Democrat",
-    proposal: "Add 10,000 officers to the NYPD; restore the 'four-letter word'",
-    summary: "Procaccino won the 1969 Democratic primary and lost the general to Lindsay. His specific public-safety plank was a 10,000-officer NYPD expansion (then about a 30 percent increase) and what he called restoring 'the four-letter word' — discipline. He coined 'limousine liberal' to describe Lindsay's coalition.",
+    proposal: "Put cops back on the beat; harder line on disorder",
+    summary: "Procaccino won the 1969 Democratic primary and lost the general to Lindsay. His public-safety plank emphasized expanded foot patrols, mobile command units, push-button street alarms, and what he framed as a harder line against disorder. He coined 'limousine liberal' to describe Lindsay's reform coalition.",
     category: "ahead",
     fate: "adopted",
-    whatHappened: "NYPD headcount climbed past 30,000 by the late 1980s. The phrase 'limousine liberal' entered the American political lexicon and has outlasted every other contribution from any 1969 New York City mayoral campaign.",
+    whatHappened: "The phrase 'limousine liberal' entered the American political lexicon. NYPD strategy through the 1990s leaned heavily on the disorder-focused policing Procaccino had argued for in 1969.",
     threads: ["safety", "government"],
     link: { url: "https://en.wikipedia.org/wiki/Mario_Procaccino", label: "Mario Procaccino (Wikipedia)" }
   },
@@ -1949,7 +1931,6 @@ const SOURCES = {
   "Morris Hillquit": "Wikipedia: Morris Hillquit; Stromquist, contemporaneous Socialist Party publications; Gotham Center essays",
   "Norman Thomas": "Wikipedia: Norman Thomas; FDR-Thomas exchange documented in multiple Thomas biographies",
   "William Randolph Hearst": "New-York Historical Society; Wikipedia: 1905 NYC mayoral election",
-  "Vito Marcantonio": "Wikipedia: Vito Marcantonio; CCRB official history (nyc.gov/ccrb)",
   "William F. Buckley Jr.": "Buckley, The Unmaking of a Mayor (1966); Wikipedia: 1965 NYC mayoral election",
   "Norman Mailer / Jimmy Breslin": "Flaherty, Managing Mailer (1970); Theodore White, contemporaneous reporting; Wikipedia: 1969 NYC mayoral election",
   "Norman Mailer": "Flaherty, Managing Mailer (1970); Wikipedia: 1969 NYC mayoral election",
