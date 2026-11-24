@@ -978,8 +978,8 @@
   <p class="dek">Proposals from candidates who lost New York City mayoral races between 1886 and 2025, and what became of each one.</p>
   <div class="hero-meta">
     <span><strong>1886 to 2025</strong></span>
-    <span>36 proposals from 24 losing campaigns</span>
-    <span>Median lag from loss to adoption: 17 years</span>
+    <span>35 proposals from 23 losing campaigns</span>
+    <span>Median lag from loss to adoption: 20 years</span>
   </div>
 </header>
 
@@ -990,8 +990,8 @@
 
 <!-- STATS STRIP -->
 <section class="stats">
-  <div class="stat"><span class="num">36</span><span class="label">Proposals tracked</span></div>
-  <div class="stat"><span class="num">9</span><span class="label">Eventually adopted, in whole or part</span></div>
+  <div class="stat"><span class="num">35</span><span class="label">Proposals tracked</span></div>
+  <div class="stat"><span class="num">8</span><span class="label">Eventually adopted, in whole or part</span></div>
   <div class="stat"><span class="num">23</span><span class="label">Still in debate</span></div>
   <div class="stat"><span class="num">4</span><span class="label">Dropped</span></div>
 </section>
@@ -1099,11 +1099,11 @@
   <div class="patterns-grid">
     <div class="pattern">
       <h3>Adoption usually took decades.</h3>
-      <p>Of the 9 adopted ideas, the median wait from the losing campaign to adoption was 17 years. Buckley's bike lanes and taxi plan took more than 40. Mark Green's 311 line took two.</p>
+      <p>Of the 8 adopted ideas, the median wait from the losing campaign to adoption was 20 years. Buckley's bike lanes and taxi plan took more than 40. Norman Thomas's call for unemployment insurance took six.</p>
     </div>
     <div class="pattern">
       <h3>Someone else usually finished the job.</h3>
-      <p>La Guardia's administration bought out the private subways Hillquit and Hylan wanted the city to own. Bloomberg launched Green's 311 line. Koch, who beat Abzug, signed the gay rights law she had promised.</p>
+      <p>La Guardia's administration bought out the private subways Hillquit and Hylan wanted the city to own. Koch, who beat Abzug, signed the gay rights law she had promised.</p>
     </div>
     <div class="pattern">
       <h3>The same ideas came back from different parties.</h3>
@@ -1129,14 +1129,14 @@
       <div class="quix-meta"><span class="qy">2005, 2009, 2013</span><span class="qf">0.2–0.3%</span></div>
       <h3>Jimmy McMillan</h3>
       <p class="qparty">Rent Is Too Damn High Party</p>
-      <p class="qidea">McMillan's <a href="https://en.wikipedia.org/wiki/Jimmy_McMillan">platform was the party's name</a>. He ran for mayor three times and wore black gloves at every appearance.</p>
+      <p class="qidea">McMillan's <a href="https://en.wikipedia.org/wiki/Jimmy_McMillan">platform was the party's name</a>. He ran for mayor three times and wore his trademark black gloves.</p>
     </article>
 
     <article class="quix-card">
       <div class="quix-meta"><span class="qy">2017</span><span class="qf">1.4%</span></div>
       <h3>Akeem Browder</h3>
       <p class="qparty">Green</p>
-      <p class="qidea">Browder's brother Kalief spent three years on Rikers Island without trial and died by suicide in 2015. Browder ran on the <a href="https://gpnys.nationbuilder.com/akeem_browder_for_mayor_of_nyc">immediate shutdown of Rikers</a>.</p>
+      <p class="qidea">Browder's brother Kalief spent three years on Rikers Island without trial and died by suicide in 2015. Browder ran on the <a href="https://www.gpny.org/akeem_browder_for_mayor_of_nyc">immediate shutdown of Rikers</a>.</p>
     </article>
 
     <article class="quix-card">
@@ -1182,7 +1182,6 @@
         <li>William F. Buckley Jr., The Unmaking of a Mayor (1966)</li>
         <li>Joe Flaherty, Managing Mailer (1970)</li>
         <li>Peter Manso, ed., Running Against the Machine (1969)</li>
-        <li>Evan Mandery, The Campaign (1999)</li>
         <li>Henry George, Progress and Poverty (1879)</li>
       </ul>
     </div>
@@ -1212,7 +1211,7 @@ const THREADS = {
 };
 
 const CATEGORIES = {
-  won:     { label: "Ideas that eventually won",                  num: "I",   roman: "I",   sub: "Each of these started in a losing campaign and later became law or policy, two to 46 years afterward." },
+  won:     { label: "Ideas that eventually won",                  num: "I",   roman: "I",   sub: "Each of these started in a losing campaign and later became law or policy, six to 46 years afterward." },
   ahead:   { label: "Ideas ahead of their time", num: "II",  roman: "II",  sub: "Proposals that are still debated, or were carried out only in part." },
   bad:     { label: "Ideas that were probably bad",               num: "III", roman: "III", sub: "Parts of serious platforms that have held up worst." },
   strange: { label: "The truly strange",                          num: "IV",  roman: "IV",  sub: "Proposals that fit no other chapter." }
@@ -1230,7 +1229,7 @@ const PROPOSALS = [
     summary: "Hillquit, a Riga-born labor lawyer, [took about 22 percent](https://en.wikipedia.org/wiki/1917_New_York_City_mayoral_election) and finished third behind the Tammany Democrat John Hylan and Mayor John Purroy Mitchel. The Socialists wanted the city to own and run the transit lines, which two private companies operated: the Interborough Rapid Transit Company and the Brooklyn Rapid Transit Company.",
     category: "won",
     fate: "adopted",
-    whatHappened: "In 1940 the city [bought both private systems](https://en.wikipedia.org/wiki/Independent_Subway_System) (the Brooklyn company had become the BMT) and merged them with its own Independent subway. That was 23 years later.",
+    whatHappened: "In 1940 the city [bought both private systems](https://en.wikipedia.org/wiki/New_York_City_Subway) (the Brooklyn company had become the BMT) and merged them with its own Independent subway. That was 23 years later.",
     threads: ["transit", "municipal"]
   },
   {
@@ -1251,25 +1250,25 @@ const PROPOSALS = [
     summary: "Hylan, finishing his second term, ran the 1925 Democratic primary on the five-cent fare and city-owned transit, including the Independent subway he had pushed. Tammany and Gov. Al Smith backed state Sen. Jimmy Walker, who [beat him](https://en.wikipedia.org/wiki/1925_New_York_City_mayoral_election).",
     category: "won",
     fate: "adopted",
-    whatHappened: "The city [bought out the two private subway companies](https://en.wikipedia.org/wiki/Independent_Subway_System) in 1940, 15 years later. Andrew Cuomo [proposed city control](https://www.yahoo.com/news/articles/cuomo-proposes-nyc-control-subway-195100407.html) of subway construction and maintenance in 2025 and lost too.",
+    whatHappened: "The city [bought out the two private subway companies](https://en.wikipedia.org/wiki/New_York_City_Subway) in 1940, 15 years later. Andrew Cuomo [proposed city control](https://www.yahoo.com/news/articles/cuomo-proposes-nyc-control-subway-195100407.html) of subway construction and maintenance in 2025 and lost too.",
     threads: ["transit", "municipal"]
   },
   {
     id: "thomas-1929-newdeal",
     year: 1929, candidate: "Norman Thomas", role: "Mayoral candidate", party: "Socialist",
-    proposal: "Unemployment insurance, pensions and a shorter workweek",
-    summary: "[Thomas](https://en.wikipedia.org/wiki/Norman_Thomas) ran for mayor in 1929 and for president in 1932 on Socialist platforms that called for unemployment insurance, old-age pensions, public housing and a shorter workweek.",
+    proposal: "Unemployment insurance and a shorter workweek",
+    summary: "[Thomas](https://en.wikipedia.org/wiki/Norman_Thomas) ran for mayor in 1929 and [took about 12 percent](https://en.wikipedia.org/wiki/1929_New_York_City_mayoral_election), the Socialists' best showing in the city to that date. He [backed unemployment insurance, a five-day workweek and a minimum wage](https://www.encyclopedia.com/people/history/us-history-biographies/norman-mattoon-thomas).",
     quote: { text: "Norman, I'm a damned sight better politician than you are.", attrib: "Franklin Roosevelt to Thomas, as quoted in the [Harvard Crimson](https://www.thecrimson.com/article/1976/12/8/uncommon-common-decency-pprinciples-could-not/), 1976" },
     category: "won",
     fate: "adopted",
-    whatHappened: "Unemployment insurance and old-age pensions became federal law in the [Social Security Act of 1935](https://en.wikipedia.org/wiki/Social_Security_Act), six years after Thomas's mayoral run. The [Fair Labor Standards Act of 1938](https://en.wikipedia.org/wiki/Fair_Labor_Standards_Act_of_1938) set the 40-hour week.",
+    whatHappened: "Unemployment insurance became federal law in the [Social Security Act of 1935](https://en.wikipedia.org/wiki/Social_Security_Act), six years after Thomas's mayoral run. The [Fair Labor Standards Act of 1938](https://www.britannica.com/money/Fair-Labor-Standards-Act) set a 44-hour week that dropped to 40 hours in 1940, along with a federal minimum wage.",
     threads: ["economy", "housing"]
   },
   {
     id: "buckley-1965-bike",
     year: 1965, candidate: "William F. Buckley Jr.", role: "Mayoral candidate", party: "Conservative",
     proposal: "An elevated bikeway down Manhattan",
-    summary: "Buckley [proposed an elevated bikeway](https://www.historynet.com/demand-a-recount-bill-buckleys-quixotic-1965-run-for-nyc-mayor/) about 20 feet wide running from 125th Street down to 1st Street. He got [13 percent of the vote](https://en.wikipedia.org/wiki/1965_New_York_City_mayoral_election).",
+    summary: "Buckley [proposed an elevated bikeway](https://time.com/3962718/buckley-uber/) about 20 feet wide above Second Avenue, [running from 125th Street down to 1st Street](https://www.historynet.com/demand-a-recount-bill-buckleys-quixotic-1965-run-for-nyc-mayor/). He got [13 percent of the vote](https://en.wikipedia.org/wiki/1965_New_York_City_mayoral_election).",
     quote: { text: "Demand a recount.", attrib: "Buckley, asked what he would do if he won, [1965](https://www.historynet.com/demand-a-recount-bill-buckleys-quixotic-1965-run-for-nyc-mayor/)" },
     category: "won",
     fate: "adopted",
@@ -1300,21 +1299,11 @@ const PROPOSALS = [
     id: "abzug-1977-gayrights",
     year: 1977, candidate: "Bella Abzug", role: "Mayoral candidate", party: "Democrat",
     proposal: "A city gay rights law",
-    summary: "Abzug [finished fourth](https://en.wikipedia.org/wiki/1977_New_York_City_mayoral_election) in the 1977 Democratic primary. She [committed during the campaign](https://www.pbs.org/wnet/americanmasters/bella-abzug-biography-and-career-timeline/28563) to a city gay rights law. In Congress she had introduced the first federal gay civil rights bill, the Equality Act of 1974, and Ed Koch, who won the 1977 primary, [co-sponsored a version](https://contrarian.substack.com/p/a-half-century-ago-house-members) of it that June.",
+    summary: "Abzug [finished fourth](https://en.wikipedia.org/wiki/1977_New_York_City_mayoral_election) in the 1977 Democratic primary. She [committed during the campaign](https://www.pbs.org/wnet/americanmasters/five-ways-bella-abzug-opened-up-politics-to-women-and-fought-for-social-change/37863/) to a city gay rights law. In Congress she had introduced the first federal gay civil rights bill, the Equality Act of 1974, and Ed Koch, who won the 1977 primary, [co-sponsored a version](https://contrarian.substack.com/p/a-half-century-ago-house-members) of it that June.",
     category: "won",
     fate: "adopted",
-    whatHappened: "The City Council [passed the gay rights law](https://www.archives.nyc/blog/2020/7/10/the-battle-for-gay-civil-rights) 21 to 14 in March 1986, and Koch signed it on April 2. That was nine years after Abzug lost.",
+    whatHappened: "The City Council [passed the gay rights law 21 to 14](https://en.wikipedia.org/wiki/New_York_City_Gay_Rights_Bill_of_1986) in March 1986, and Koch [signed it](https://www.archives.nyc/blog/2020/7/10/the-battle-for-gay-civil-rights) on April 2. That was nine years after Abzug lost.",
     threads: ["civilrights"]
-  },
-  {
-    id: "green-2001-311",
-    year: 2001, candidate: "Mark Green", role: "Mayoral candidate, public advocate", party: "Democrat",
-    proposal: "A 311 line for nonemergency complaints",
-    summary: "[Green](https://en.wikipedia.org/wiki/Mark_J._Green), the city's first public advocate, proposed a single 311 number for nonemergency city services. He won the Democratic nomination in a runoff and [lost the general election](https://en.wikipedia.org/wiki/2001_New_York_City_mayoral_election) to Michael Bloomberg, 50.3 percent to 47.9 percent, two months after 9/11.",
-    category: "won",
-    fate: "adopted",
-    whatHappened: "Bloomberg [launched 311](https://en.wikipedia.org/wiki/3-1-1) in March 2003, two years later.",
-    threads: ["government"]
   },
 
   /* ==========================================
@@ -1337,7 +1326,7 @@ const PROPOSALS = [
     summary: "George ran again in 1897, the first election for the consolidated five-borough city. He died of a stroke on October 29, four days before the vote, and his son Henry George Jr. took his place on the ballot.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Henry George Jr. [finished fourth with about 4 percent](https://en.wikipedia.org/wiki/1897_New_York_City_mayoral_election). The single tax has never been enacted in New York.",
+    whatHappened: "Henry George Jr. [finished fourth with about 4 percent](https://www.progress.org/wiki/1897-nyc-mayoral-campaign/). The single tax has never been enacted in New York.",
     threads: ["taxation", "housing"]
   },
   {
@@ -1357,7 +1346,7 @@ const PROPOSALS = [
     summary: "Hillquit's campaign [promoted a city agency](https://jacobin.com/2024/12/mamdani-hillquist-nyc-mayor-socialists) that would buy milk and bread directly from farmers and bakers and sell them at cost, as some European cities did. He [blamed Mitchel](https://www.salon.com/2025/10/26/that-time-a-foreign-born-socialist-ran-for-mayor-of-new-york) for high rents and 14-cent milk.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "La Guardia [fought the big distributors over milk prices](https://www.archives.nyc/blog/2018/2/8/got-milk-regulations) through the 1930s but never set up city sales. Zohran Mamdani won the mayoralty in 2025 promising city-owned grocery stores.",
+    whatHappened: "La Guardia [fought the big distributors over milk prices](https://www.archives.nyc/blog/2018/2/8/got-milk-regulations) through the 1930s. Zohran Mamdani won the mayoralty in 2025 promising city-owned grocery stores.",
     threads: ["municipal"]
   },
   {
@@ -1385,10 +1374,10 @@ const PROPOSALS = [
     id: "mailer-1969-neighborhood",
     year: 1969, candidate: "Norman Mailer / Jimmy Breslin", role: "Democratic primary candidates", party: "Democrat",
     proposal: "Neighborhood government",
-    summary: "Under Mailer and Breslin's [plan](https://www.gothamcenter.org/blog/the-51st-state-norman-mailer-jimmy-breslin-and-the-politics-of-imagination), each neighborhood would run its own schools and its own police, with officers who lived there. The campaign slogan was \"Power to the Neighborhoods.\"",
+    summary: "Under Mailer and Breslin's [plan](https://www.gothamcenter.org/blog/the-51st-state-norman-mailer-jimmy-breslin-and-the-politics-of-imagination), each neighborhood would run its own schools and its own police, [with officers who lived there](https://en.wikipedia.org/wiki/New_York_City:_the_51st_State). The campaign slogan was \"Power to the Neighborhoods.\"",
     category: "ahead",
     fate: "alive",
-    whatHappened: "The 1975 charter revision gave community boards an advisory role in land use. [Participatory budgeting](https://en.wikipedia.org/wiki/Participatory_budgeting) began in four Council districts in 2011. Schools and police are still run citywide.",
+    whatHappened: "The 1975 charter revision gave [community boards an advisory role in land use](https://www.nyc.gov/site/communityboards/mandates/land-use-and-zoning.page). [Participatory budgeting](https://council.nyc.gov/pb/) began in four Council districts in 2011. Schools and police are still run citywide.",
     threads: ["government", "education", "safety"]
   },
   {
@@ -1418,34 +1407,34 @@ const PROPOSALS = [
     summary: "Marchi, a state senator from Staten Island, [beat Mayor John Lindsay](https://en.wikipedia.org/wiki/1969_New_York_City_mayoral_election) in the 1969 Republican primary and lost the general election to him; Lindsay ran on the Liberal line. [Marchi](https://en.wikipedia.org/wiki/John_J._Marchi) stayed in the Senate and became the leading sponsor of legislation to let Staten Island leave the city.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "In 1993 Staten Island voters approved secession by about 65 percent in a nonbinding vote. The state Senate [passed a bill](https://www.nysenate.gov/transcripts/1995-04-12t1106) in 1995; the Assembly never acted.",
+    whatHappened: "In 1993 Staten Island voters [approved secession by about 65 percent](https://www.cityandstateny.com/articles/politics/new-york-city/staten-island-keeps-thinking-seceding.html) in a nonbinding vote. Assembly Speaker Sheldon Silver blocked it, saying the city would first have to request it in a home-rule message.",
     threads: ["government"]
   },
   {
     id: "ferrer-2005-stocktransfer",
     year: 2005, candidate: "Fernando Ferrer", role: "Mayoral candidate, former Bronx borough president", party: "Democrat",
     proposal: "Collect the stock-transfer tax",
-    summary: "Ferrer [proposed raising about $4 billion](https://www.nysun.com/article/new-york-as-bloomberg-pledges-no-new-taxes-ferrer-campaign) by collecting New York's stock-transfer tax, which dates to 1905 and has been fully rebated to traders since 1981. He tied the money to the city's share of school funding sought in the Campaign for Fiscal Equity lawsuit.",
+    summary: "Ferrer proposed collecting New York's stock-transfer tax [to pay for $4 billion in education](https://gothamgazette.com/open-government/3025-the-real-issues-in-the-2005-mayoral-race/). The tax [dates to 1905 and has been fully rebated since 1981](https://citylimits.org/2013/05/31/comedian-running-for-mayor-not-joking-about-tax-on-stocks/). He tied the money to the city's share of school funding sought in the Campaign for Fiscal Equity lawsuit.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Ferrer [won the Democratic primary](https://en.wikipedia.org/wiki/2005_New_York_City_mayoral_election) with just over 40 percent after Anthony Weiner declined a runoff, then lost to Bloomberg by 19 points. Progressive groups and candidates, [Scott Stringer among them in 2021](https://projects.thecity.nyc/meet-your-mayor/taxes.html), have kept proposing to collect the tax. Albany has not.",
+    whatHappened: "Ferrer [won the Democratic primary](https://en.wikipedia.org/wiki/2005_New_York_City_mayoral_election) with just over 40 percent after Anthony Weiner declined a runoff, then lost to Bloomberg by 19 points. Progressive groups and candidates, [Scott Stringer among them in 2021](https://projects.thecity.nyc/meet-your-mayor/taxes.html), have kept calling for collecting the tax. Albany has not.",
     threads: ["taxation", "education"]
   },
   {
     id: "weiner-2005-middleclass",
     year: 2005, candidate: "Anthony Weiner", role: "Mayoral candidate, congressman", party: "Democrat",
-    proposal: "A middle-class income-tax cut paid for by millionaires",
-    summary: "Weiner [finished second](https://en.wikipedia.org/wiki/2005_New_York_City_mayoral_election) in the 2005 Democratic primary with about 29 percent. He [proposed](https://www.nysun.com/article/new-york-weiner-says-budget-cuts-not-tax-hikes-would-allow) cutting city income taxes 10 percent for people earning under $150,000 and raising them on people earning more than $1 million.",
+    proposal: "A middle-class income-tax cut and a tax increase on millionaires",
+    summary: "Weiner [finished second](https://en.wikipedia.org/wiki/2005_New_York_City_mayoral_election) in the 2005 Democratic primary with about 29 percent. He [proposed](https://www.nyccfb.info/public/voter-guide/primary_2005/cd_profile/M_Weiner_BB.aspx) cutting city income taxes 10 percent for people earning $150,000 or less and [raising them on millionaires](https://villagevoice.com/2005/04/19/weiner-sets-the-pace/).",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Albany [raised state income taxes on top earners](https://kpmg.com/ky/en/home/insights_new/2021/04/flash-alert-2021-120.html) in 2021. New York City's own income-tax rates were not cut for the middle class.",
+    whatHappened: "Albany [raised state income taxes on top earners](https://www.cnbc.com/2021/04/08/new-york-is-raising-taxes-for-millionaires-will-other-states-follow.html) in 2021. New York City's own income-tax rates were not cut for the middle class.",
     threads: ["taxation", "economy"]
   },
   {
     id: "weiner-2013-keys",
     year: 2013, candidate: "Anthony Weiner", role: "Mayoral candidate, former congressman", party: "Democrat",
     proposal: "Keys to the City: 64 ideas, including city single-payer health care",
-    summary: "Weiner [published his platform as a booklet](https://www.huffpost.com/entry/anthony-weiner-releases-new-york-city-policy-booklet-mayor_n_3086699), Keys to the City: 64 Ideas to Keep New York the Capital of the Middle Class. Its biggest idea was a city-run single-payer health system.",
+    summary: "Weiner [published his platform as a booklet](https://www.huffpost.com/entry/anthony-weiner-releases-new-york-city-policy-booklet-mayor_n_3086699), Keys to the City: 64 Ideas to Keep New York the Capital of the Middle Class. Among its ideas was a city-run single-payer health system.",
     category: "ahead",
     fate: "alive",
     whatHappened: "Weiner [finished fifth](https://en.wikipedia.org/wiki/2013_New_York_City_mayoral_election) after a second sexting scandal. A state single-payer bill, the [New York Health Act](https://en.wikipedia.org/wiki/New_York_Health_Act), has passed the Assembly several times but never the Senate.",
@@ -1455,10 +1444,10 @@ const PROPOSALS = [
     id: "albanese-2017-reform",
     year: 2017, candidate: "Sal Albanese", role: "Mayoral candidate, former Council member", party: "Democrat (then Reform)",
     proposal: "Campaign-finance reform and a five-year lobbying ban",
-    summary: "Albanese challenged Bill de Blasio in the 2017 Democratic primary, [taking 15 percent](https://en.wikipedia.org/wiki/2017_New_York_City_mayoral_election), then ran on the Reform Party line in November. He centered his campaign on de Blasio's fundraising and proposed barring former city officials from lobbying for five years.",
+    summary: "Albanese challenged Bill de Blasio in the 2017 Democratic primary, [taking 15 percent](https://en.wikipedia.org/wiki/2017_New_York_City_mayoral_election), then ran on the Reform Party line in November. He centered his campaign on de Blasio's fundraising and [proposed barring former city officials from lobbying for five years](https://nyunews.com/2017/11/06/a-qa-with-mayor-potential-and-nyu-alum-sal-albanese/).",
     category: "ahead",
     fate: "alive",
-    whatHappened: "In 2019 voters [approved a charter amendment](https://ballotpedia.org/New_York_City_2019_Charter_Revision_Commission,_ballot_proposals) that doubled the lobbying ban for elected officials and senior appointees, from one year to two, starting in 2022.",
+    whatHappened: "In 2019 voters [approved a charter amendment](https://ballotpedia.org/New_York_City_2019_Charter_Revision_Commission,_ballot_proposals) that doubled, from one year to two, the period in which former elected officials and senior appointees may not appear before their old agencies, starting in 2022.",
     threads: ["government"]
   },
   {
@@ -1468,24 +1457,24 @@ const PROPOSALS = [
     summary: "Donovan [proposed a savings account](https://www.cityandstateny.com/policy/2021/03/nyc-mayoral-contenders-propose-direct-cash-assistance/183009) for each of the city's roughly 1.4 million children, starting with $1,000, with deposits of up to $2,000 a year for lower-income children. His campaign put the cost at about $3.2 billion in the first year.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Donovan [finished eighth](https://en.wikipedia.org/wiki/2021_New_York_City_mayoral_election) in the first round of the Democratic primary. [Connecticut](https://portal.ct.gov/ctbabybonds) began baby bonds for children born on Medicaid after July 1, 2023, and Washington, D.C., has its own program. New York City has none.",
+    whatHappened: "Donovan [finished eighth](https://en.wikipedia.org/wiki/2021_New_York_City_mayoral_election) in the first round of the Democratic primary. [Connecticut](https://portal.ct.gov/ott/ct-baby-bonds/faq) began baby bonds for children born on Medicaid on or after July 1, 2023, and [Washington, D.C.](https://www.npr.org/local/2021/10/21/1047946734/low-income-d-c-kids-will-get-up-to-1-000-a-year-under-new-baby-bonds-program), has its own program. New York City has none.",
     threads: ["economy", "civilrights"]
   },
   {
     id: "morales-2021-mhresponse",
     year: 2021, candidate: "Dianne Morales", role: "Mayoral candidate, former nonprofit executive", party: "Democrat",
     proposal: "Move $3 billion from the police to civilian crisis response",
-    summary: "Morales [proposed shifting $3 billion](https://www.nbcnews.com/news/latino/dianne-morales-bets-progressive-vision-run-become-n-y-c-n1268703) of the New York Police Department's roughly $6 billion budget to social services, including civilian teams for mental-health calls. Her campaign was hit mid-primary by [firings and a fight with staff](https://cityandstateny.com/politics/2021/06/dianne-morales-refuses-her-staff-unions-demands/182799) trying to unionize.",
+    summary: "Morales [proposed shifting $3 billion](https://www.nbcnews.com/news/latino/dianne-morales-bets-progressive-vision-run-become-n-y-c-n1268703) of the New York Police Department's roughly $6 billion budget to social services, including a new agency to respond to some crises in place of the police. Her campaign was hit mid-primary by [firings and a fight with staff](https://cityandstateny.com/politics/2021/06/dianne-morales-refuses-her-staff-unions-demands/182799) trying to unionize.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Morales [finished sixth](https://en.wikipedia.org/wiki/2021_New_York_City_mayoral_election). De Blasio started [B-HEARD](https://mentalhealth.cityofnewyork.us/b-heard), a pilot sending social workers and paramedics to some mental-health calls in Harlem, in June 2021, and it expanded under Adams. The budget shift never happened.",
+    whatHappened: "Morales [finished sixth](https://en.wikipedia.org/wiki/2021_New_York_City_mayoral_election). De Blasio started [B-HEARD](https://mentalhealth.cityofnewyork.us/b-heard), a pilot sending emergency medical technicians, paramedics and mental-health professionals to some mental-health calls in Harlem, in June 2021, and it expanded under Adams. The budget shift never happened.",
     threads: ["safety", "health"]
   },
   {
     id: "mcguire-2021-comeback",
     year: 2021, candidate: "Ray McGuire", role: "Mayoral candidate, former Citigroup vice chairman", party: "Democrat",
     proposal: "The Comeback Plan: 500,000 jobs",
-    summary: "[McGuire](https://en.wikipedia.org/wiki/Ray_McGuire) promised 500,000 jobs, half of them at small businesses. The centerpiece would have paid half the salary of new hires for a year.",
+    summary: "[McGuire](https://en.wikipedia.org/wiki/Ray_McGuire) [promised more than 500,000 jobs](https://www.cnbc.com/2021/01/26/mcguire-pushes-for-infrastructure-projects-cooperation-with-tech-firms-in-nyc-jobs-plan.html). The centerpiece would have paid half the salary of up to 50,000 new hires at small businesses for a year.",
     category: "ahead",
     fate: "alive",
     whatHappened: "McGuire [finished seventh](https://en.wikipedia.org/wiki/2021_New_York_City_mayoral_election) in the first round. The city has not paid private wages on that scale.",
@@ -1508,17 +1497,17 @@ const PROPOSALS = [
     summary: "Yang [proposed paying about $2,000 a year](https://www.cityandstateny.com/policy/2021/03/nyc-mayoral-contenders-propose-direct-cash-assistance/183009) to roughly 500,000 of the city's poorest residents, at a cost of about $1 billion a year.",
     category: "ahead",
     fate: "alive",
-    whatHappened: "Yang [finished fourth](https://en.wikipedia.org/wiki/2021_New_York_City_mayoral_election). The city has no program of its own. The privately funded [Bridge Project](https://www.pbs.org/wnet/chasing-the-dream/2022/03/the-bridge-project-is-helping-single-mothers) began monthly cash payments to low-income mothers in 2021.",
+    whatHappened: "Yang [finished fourth](https://en.wikipedia.org/wiki/2021_New_York_City_mayoral_election). The city has not adopted his plan. The nonprofit [Bridge Project](https://www.pbs.org/wnet/chasing-the-dream/2022/03/the-bridge-project-is-helping-single-mothers) began monthly cash payments to low-income mothers in 2021.",
     threads: ["economy"]
   },
   {
     id: "cuomo-2025-mta",
     year: 2025, candidate: "Andrew Cuomo", role: "Mayoral candidate", party: "Democrat (independent line)",
     proposal: "City control of subway construction and maintenance",
-    summary: "Cuomo [proposed](https://www.yahoo.com/news/articles/cuomo-proposes-nyc-control-subway-195100407.html) that the city take over capital construction and maintenance of the subways from the state-run Metropolitan Transportation Authority, where the mayor appoints 4 of 17 board members. John Hylan had run on city-run transit a century earlier.",
+    summary: "Cuomo [proposed](https://www.yahoo.com/news/articles/cuomo-proposes-nyc-control-subway-195100407.html) that the city take over capital construction and maintenance of the subways from the state-run Metropolitan Transportation Authority, where the mayor recommends 4 of the 17 voting board members. John Hylan had run on city-run transit a century earlier.",
     category: "ahead",
     fate: "buried",
-    whatHappened: "Cuomo lost the Democratic primary to Zohran Mamdani, then [lost the general election](https://www.nbcnews.com/politics/2025-elections/new-york-city-mayor-results) on the Fight and Deliver line, 50 percent to 42 percent.",
+    whatHappened: "Cuomo lost the Democratic primary to Zohran Mamdani, then [lost the general election](https://en.wikipedia.org/wiki/2025_New_York_City_mayoral_election) on the Fight and Deliver line, 51 percent to 41 percent.",
     threads: ["transit", "municipal", "government"]
   },
   {
@@ -1545,7 +1534,7 @@ const PROPOSALS = [
     id: "tilson-2025-charters",
     year: 2025, candidate: "Whitney Tilson", role: "Mayoral candidate, investor and education reformer", party: "Democrat",
     proposal: "More charter schools",
-    summary: "Tilson, a founder of [Democrats for Education Reform](https://en.wikipedia.org/wiki/Democrats_for_Education_Reform), [ran on expanding charter schools](https://www.cityandstateny.com/politics/2025/05/whitney-tilson-running-education-and-hes-claiming-pro-charter-lane-mayoral-race/405335/), a position at odds with most of the Democratic field.",
+    summary: "Tilson, a founder of [Democrats for Education Reform](https://en.wikipedia.org/wiki/Democrats_for_Education_Reform), [ran on expanding charter schools](https://www.cityandstateny.com/politics/2025/05/whitney-tilson-running-education-and-hes-claiming-pro-charter-lane-mayoral-race/405335/).",
     category: "ahead",
     fate: "alive",
     whatHappened: "Tilson got under 1 percent. Charter expansion remains a state-level fight because Albany caps the number of charters.",
@@ -1559,10 +1548,10 @@ const PROPOSALS = [
     id: "mailer-1969-monorail",
     year: 1969, candidate: "Norman Mailer / Jimmy Breslin", role: "Democratic primary candidates", party: "Democrat",
     proposal: "Ban private cars in Manhattan, build a monorail",
-    summary: "Private cars would be [banned from Manhattan](https://en.wikipedia.org/wiki/New_York_City:_the_51st_State), leaving taxis and buses. Drivers would park in lots at the edges of the city and ride a monorail around the island; free buses, jitneys and bicycles would serve Midtown.",
+    summary: "Private cars would be [banned from Manhattan](https://en.wikipedia.org/wiki/New_York_City:_the_51st_State), leaving taxis and buses. Drivers would park in lots outside Manhattan and ride a monorail around the island; free buses, jitneys and bicycles would serve Midtown.",
     category: "bad",
     fate: "buried",
-    whatHappened: "[Congestion pricing](https://en.wikipedia.org/wiki/Congestion_pricing_in_New_York_City), a toll on cars entering Manhattan below 60th Street, began on January 5, 2025, 56 years later. No monorail was built.",
+    whatHappened: "[Congestion pricing](https://en.wikipedia.org/wiki/Congestion_pricing_in_New_York_City), a toll on cars entering Manhattan at or below 60th Street, began on January 5, 2025, 56 years later. No monorail was built.",
     threads: ["transit"]
   },
   {
@@ -1586,14 +1575,14 @@ const PROPOSALS = [
     summary: "One Sunday a month, [all mechanical transportation](https://en.wikipedia.org/wiki/New_York_City:_the_51st_State) in the city would stop, elevators included, with [exceptions for emergency vehicles](https://www.theamericanconservative.com/summer-of-69/).",
     category: "strange",
     fate: "alive",
-    whatHappened: "Bogotá has closed major roads to cars on Sundays since 1974 under its [Ciclovía](https://en.wikipedia.org/wiki/Ciclov%C3%ADa). Paris closes the Champs-Élysées to cars on the first Sunday of each month. New York City's [Summer Streets](https://en.wikipedia.org/wiki/Summer_Streets) closes Park Avenue for a few Saturdays each August.",
+    whatHappened: "Bogotá has closed major roads to cars on Sundays since 1974 under its [Ciclovía](https://en.wikipedia.org/wiki/Ciclov%C3%ADa). Paris closes the Champs-Élysées to cars on one Sunday a month, usually the first. New York City's [Summer Streets](https://en.wikipedia.org/wiki/Summer_Streets) closes Park Avenue for a few Saturdays each August.",
     threads: ["transit", "health"]
   },
   {
     id: "mailer-1969-huey",
     year: 1969, candidate: "Norman Mailer", role: "Democratic primary candidate", party: "Democrat",
-    proposal: "Free Huey Newton to end fluoridation",
-    summary: "Mailer backed freeing the Black Panther leader Huey Newton and opposed fluoridating the water. [One campaign slogan joined the two](https://www.theamericanconservative.com/summer-of-69/), a left-wing cause and a right-wing one. The Panthers [endorsed the ticket](https://patch.com/new-york/new-york-city/norman-mailer-jimmy-breslin-ran-win-1969-they-didnt).",
+    proposal: "Free Huey Newton, end fluoridation",
+    summary: "Mailer backed [freeing the Black Panther leader Huey Newton](https://rozsixties.unl.edu/items/show/796) and [talked about ending fluoridation](https://patch.com/new-york/new-york-city/norman-mailer-jimmy-breslin-ran-win-1969-they-didnt) of the water, a left-wing cause and a right-wing one. The Panthers [endorsed the ticket](https://rozsixties.unl.edu/items/show/796).",
     category: "strange",
     fate: "buried",
     whatHappened: "A California appeals court overturned [Newton](https://en.wikipedia.org/wiki/Huey_P._Newton)'s manslaughter conviction in 1970, and he was released that August. New York City still fluoridates its water.",
@@ -1609,7 +1598,7 @@ const PAIRINGS = [
   },
   {
     title: "John Hylan and Andrew Cuomo on city control of the subways",
-    body: "Hylan ran on city-owned transit in 1925 and lost his primary; the city bought out the private lines 15 years later. Cuomo [ran on city control](https://www.yahoo.com/news/articles/cuomo-proposes-nyc-control-subway-195100407.html) of subway construction and maintenance in 2025 and lost. The Metropolitan Transportation Authority, created in 1968, is run by the state.",
+    body: "Hylan ran on city-owned transit in 1925 and lost his primary; the city bought out the private lines 15 years later. Cuomo [ran on city control](https://www.yahoo.com/news/articles/cuomo-proposes-nyc-control-subway-195100407.html) of subway construction and maintenance in 2025 and lost. The Metropolitan Transportation Authority, which took that name in 1968, is run by the state.",
     who: "Hylan 1925 / Cuomo 2025"
   },
   {
